@@ -152,12 +152,6 @@
 	</div>
 	
 	<div class="row">
-	  <div class="span12">
-	    <p>Mosh is available from these operating systems and package managers:</p>
-	  </div>
-	</div>
-	
-	<div class="row">
 	  <div class="span6"><h2 class="callout">Debian GNU/Linux <small>unstable</small></h2>
 	    <p><pre># apt-get install mosh</pre></p>
 	  </div>
@@ -177,54 +171,54 @@ $ sudo apt-get install mosh</pre></p>
 	  </div>
 	</div>
 
-	<p>
+        <hr />
 
 	<div class="row">
-	  <div class="span7 well">
+	  <div class="span7">
 	    <p><h2>Building from source</h2></p>
 
-	    <p>Mosh may also be installed from source:</p>
+            <div class="well">
 
-	    <ol><li>Download and untar <a href="https://github.com/downloads/keithw/mosh/mosh-1.0.tar.gz">mosh-1.0.tar.gz</a>.</li>
+              <table class="table" style="width: 100%;">
+                <thead><tr><th>Dependency</th><td><em>Debian/Ubuntu package</em></td><td><em>Fedora
+                  package</em></td></tr></thead>
+                <tr class="deps"><td><a href="http://code.google.com/p/protobuf/">Protocol Buffers</a></td><td>protobuf-compiler, libprotobuf-dev</td><td>protobuf-compiler, protobuf-devel</td></tr>
+                <tr><td><a href="http://www.boost.org">Boost</a></td>
+                  <td>libboost-dev</td><td>boost-devel</td></tr>
+                <tr><td>utempter</td><td>libutempter-dev</td><td>libutempter-devel</td></tr>
+                <tr><td>ncurses</td><td>libncurses5-dev</td><td>ncurses-devel</td></tr>
+                <tr><td>zlib</td><td>zlib1g-dev</td><td>zlib-devel</td></tr>
+              </table>
 
-	      <li>Install the dependencies:
-		<div class="row">
-		<table class="table table-striped" style="width: 100%;">
-		  <tr><th>Name</th><th>Debian/Ubuntu</th><th>Fedora</th></tr>
-		  <tr><td><a href="http://code.google.com/p/protobuf/">Google Protocol Buffers</a></td><td>protobuf-compiler, libprotobuf-dev</td><td>protobuf-compiler, protobuf-devel</td></tr>
-		  <tr><td>utempter</td><td>libutempter-dev</td><td>libutempter-devel</td></tr>
-		  <tr><td><a href="http://www.boost.org">boost</a></td>
-		    <td>libboost-dev</td><td>boost-devel</td></tr>
-		  <tr><td>ncurses</td><td>libncurses5-dev</td><td>ncurses-devel</td></tr>
-		  <tr><td>zlib</td><td>zlig1g-dev</td><td>zlib-devel</td></tr>
-		</table>
-		</div>
+              <p>Download and extract
+                <tt><a
+                href="https://github.com/downloads/keithw/mosh/mosh-1.0.tar.gz">mosh-1.0.tar.gz</a></tt>,
+                then</p>
 
-	      <li><code>$ ./configure</code></li>
-
-	      <li><code>$ make</code></li>
-
-	      <li><code>$ make install</code></li>
-	    </ol>
+<pre>$ ./configure
+$ make
+# make install</pre>
+	    </div>
 	  </div>
-	  <div class="span4">
+	  <div class="span5">
 	    <p><h2>Static server binary</h2></p>
 
-	    <p>If you cannot install a Mosh package on the server, you
-	      can put a statically-linked <code>mosh-server</code> in
-	      your home directory.</p>
+            <div class="well">
 
-	    <p>You will need to pass
-	    a <code>--server=./mosh-server</code> argument
-	    to <code>mosh</code>.</p>
- 
-	    <p>Download a static server binary for:
-	      <ul>
-		<li><a>Debian/Ubuntu</a>
-		<li><a>Fedora</a>
-		<li><a>Mac OS X</a>
-	    </ul>
-	  </div>
+              <p>If you cannot install a Mosh package on the server, you can put a statically-linked
+              <tt>mosh-server</tt> binary in your home directory.</p>
+
+              <p>You will need to launch <tt>mosh</tt> as</p>
+              <pre>$ mosh --server=./mosh-server</pre>
+
+              <p>Download a static server binary for:
+                <ul>
+                  <li><a>Debian/Ubuntu</a>
+                  <li><a>Fedora</a>
+                  <li><a>Mac OS X</a>
+              </ul>
+            </div>
+          </div>
 
 	</div>
       </section>
