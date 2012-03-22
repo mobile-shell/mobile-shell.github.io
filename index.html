@@ -79,7 +79,7 @@
 	</div>
 	</p>
 
-        <p><a class="btn btn-primary btn-large">Getting Mosh &raquo;</a></p>
+        <p><a class="btn btn-primary btn-large" href="#getting">Getting Mosh &raquo;</a></p>
       </div>
 
       <div class="row">
@@ -185,16 +185,16 @@ $ sudo apt-get install mosh</pre></p>
 	<p>
 
 	<div class="row">
-	  <div class="span8 well">
+	  <div class="span7 well">
 	    <p><h2>Building from source</h2></p>
 
 	    <p>Mosh may also be installed from source:</p>
 
-	    <ol><li>Download <a href="https://github.com/downloads/keithw/mosh/mosh-1.0.tar.gz">mosh-1.0.tar.gz</a>.</li>
+	    <ol><li>Download and untar <a href="https://github.com/downloads/keithw/mosh/mosh-1.0.tar.gz">mosh-1.0.tar.gz</a>.</li>
 
 	      <li>Install the dependencies:
 		<div class="row">
-		<table class="span7 table table-striped">
+		<table class="table table-striped" style="width: 100%;">
 		  <tr><th>Name</th><th>Debian/Ubuntu</th><th>Fedora</th></tr>
 		  <tr><td><a href="http://code.google.com/p/protobuf/">Google Protocol Buffers</a></td><td>protobuf-compiler, libprotobuf-dev</td><td>protobuf-compiler, protobuf-devel</td></tr>
 		  <tr><td>utempter</td><td>libutempter-dev</td><td>libutempter-devel</td></tr>
@@ -212,6 +212,25 @@ $ sudo apt-get install mosh</pre></p>
 	      <li><code>$ make install</code></li>
 	    </ol>
 	  </div>
+	  <div class="span4">
+	    <p><h2>Static server binary</h2></p>
+
+	    <p>If you cannot install a Mosh package on the server, you
+	      can put a statically-linked <code>mosh-server</code> in
+	      your home directory.</p>
+
+	    <p>You will need to pass
+	    a <code>--server=./mosh-server</code> argument
+	    to <code>mosh</code>.</p>
+ 
+	    <p>Download a static server binary for:
+	      <ul>
+		<li><a>Debian/Ubuntu</a>
+		<li><a>Fedora</a>
+		<li><a>Mac OS X</a>
+	    </ul>
+	  </div>
+
 	</div>
       </section>
 
