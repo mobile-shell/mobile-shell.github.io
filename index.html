@@ -64,30 +64,22 @@
 
       <section id="about">
       <div class="hero-unit">
-	<p><div class="row">
-          <div class="span5">
-            <div class="hero-titles">
-              <h1>Mosh</h1>
-              <h2>SSH reinvented for the mobile world</h2>
-            </div>
-
-            <p>Mosh <strong class="callout">roams</strong> from Ethernet to Wi-Fi to cell.</p>
-
-            <p>Mosh <strong class="callout">comes back quickly</strong> after a connection drop or
-            resume from suspend.</p>
-
-            <p>Mosh has <strong class="callout">instant local editing</strong> that works
-            with your favorite text editor or IRC client.</p>
-
-            <p>Mosh <strong class="callout">handles latency and packet loss</strong> better than
-            SSH.</p>
-
-            <p>Mosh is <strong class="callout">free, open-source software</strong>, available for
-            GNU/Linux and <span style="white-space: nowrap;">Mac OS X</span>.</p>
-
-          </div>
-          <div class="span5"><img src="mosh.png" style="max-width:120%;"></div>
-	</div></p>
+	<p>
+	<div class="row">
+	<div class="span5">
+        <p><h1>Mosh</h1>
+	<h2>(mobile shell)</h2></p>
+          <p>Remote terminal application that
+        allows <strong class="callout">roaming</strong>, supports <strong class="callout">intermittent
+        connectivity</strong>, and provides intelligent
+	<strong class="callout">local echo</strong> and line editing of user keystrokes.</p>
+	  <p>Mosh is like SSH, but more robust and
+	responsive &mdash; especially over wireless or cross-country
+	links and ones with packet loss.</p>
+	  <p>Mosh is free software, available for GNU/Linux and Mac OS X.</p>
+	</div><div class="span5"><img src="mosh.png" style="max-width:120%;"></div>
+	</div>
+	</p>
 
         <p><a class="btn btn-primary btn-large" href="#getting">Getting Mosh &raquo;</a></p>
       </div>
@@ -95,54 +87,67 @@
       <div class="row">
 
         <div class="span4">
-          <h2 class="callout">Change IP, stay connected.</h2>
-          <p>Mosh adjusts instantly as you move between Internet connections.  Wi-Fi on the train,
-          Ethernet in the hotel, 3G on the beach.  You stay logged in, effortlessly.</p>
+          <h2 class="callout">Change IP address. Stay connected.</h2>
+          <p>Mosh automatically roams as you move between Internet
+          connections. Use Wi-Fi on the train, Ethernet in a hotel,
+          and LTE on the beach. You'll stay logged in.</p>
         </div>
-
         <div class="span4">
-          <h2 class="callout">Soar over Internet speedbumps.</h2>
-          <p>Train entering a tunnel?  Cosmic rays dazzled your cable modem?  Just sit back and
-          relax.  Mosh is back online as soon as you are.  Or suspend your laptop and return to a
-          live Mosh session in a minute or a week.</p>
-        </div>
-
+          <h2 class="callout">Lose the Internet without losing your session.</h2>
+           <p>With Mosh, you can put your laptop to sleep and wake it
+	     up later, keeping your connection intact. If your
+	     Internet connection drops, Mosh will warn you &mdash; but
+	     the connection will resume as soon as network service
+	     does.
+       </div>
         <div class="span4">
-          <h2 class="callout">What lag?</h2>
-          <p>Mosh gives you lag-free editing by predicting the effects of your keystrokes before the
-          server acknowledges them.  Not just at the command line; it also works in full-screen
-          curses programs like your text editor. Stale predictions are underlined so you aren't
+          <h2 class="callout">Get rid of network lag.</h2>
+          <p>Mosh's intelligent local echo gives lag-free typing, by
+          predicting the effects of keystrokes before the server
+          acknowledges them. It works at the command line and in
+          full-screen programs like emacs and vim. On a bad connection,
+          outstanding predictions are underlined so you aren't
           misled.</p>
         </div>
-
       </div>
-      <div class="row">
 
-        <div class="span4">
-          <h2 class="callout">Secure by reduction.</h2>
-          <p>Mosh connection setup happens over SSH, so it works with your SSH password, public key,
-          or secret agent keyfob.  You don't need special privileges to install or run Mosh.
-          There's no persistent daemon or setuid nonsense.  Just one process per connection, running
-          as your user.  And Mosh protects your connection with industry-standard authenticated
-          encryption.</p>
+      <div class="row">
+        <div class="span3">
+          <h2 class="callout">No privileged code. No daemons.</h2>
+           <p>You don't need to be the superuser to install or run
+	     Mosh. The client and server are executables run by an
+	     ordinary user and last only for the life of the
+	     connection.</p>
         </div>
 
-	<div class="span4">
-          <h2 class="callout">Your favorite GUI, or none at all.</h2> <p>Mosh is a
-          command-line program, just like <tt>ssh</tt>.  It works inside xterm, gnome-terminal, OS
-          X's Terminal.app, or that green-screen VT220 gathering dust in your basement.  But Mosh is
-          designed from scratch for the modern world of UTF-8 Unicode, so it will actually
-          compensate for Unicode bugs in other programs.
+        <div class="span3">
+          <h2 class="callout">Keep your remote-access method.</h2>
+           <p>Mosh doesn't listen on network ports or authenticate
+	     users. Users start their sessions with SSH and present
+	     the same credentials (e.g. password, public key,
+	     keyfob). The <tt>mosh</tt> client logs in to the
+	     server via SSH and runs the <tt>mosh-server</tt>
+	     remotely.</p>
+        </div>
+
+	<div class="span3">
+	  <h2 class="callout">Runs inside your terminal, but better.</h2>
+	  <p>Mosh is a command-line program, just like ssh. You can
+	  use it inside xterm, gnome-terminal, rxvt-unicode,
+	  Terminal.app, or emacs ansi-term. But mosh was designed from
+	  scratch to support UTF-8, and compensates for Unicode bugs
+	  in other terminals and in ssh.
+
 	</div>
 
-	<div class="span4">
-	  <h2 class="callout">Smart protocol, instant ^C.</h2>
-          <p>Mosh's UDP-based protocol has custom flow control which understands terminals and
-          estimates network conditions.  It recovers from dropped packets much faster than TCP-based
-          SSH.  And Mosh won't fill up network buffers, so you can kill a runaway process
-          immediately with a single Control-C.</p>
-	</div>
+	<div class="span3">
+	  <h2 class="callout">Control-C works great.</h2>
 
+	  <p>Unlike SSH, mosh's UDP-based protocol handles packet loss
+	    gracefully, and sets the frame rate based on network conditions. Mosh
+	    doesn't fill up network buffers, so Control-C always works
+	    within an RTT to halt a runaway process.</p>
+	</div>
       </div>
       </section>
       
