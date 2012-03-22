@@ -31,7 +31,7 @@
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
   </head>
 
-  <body>
+  <body data-spy="scroll">
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -44,7 +44,7 @@
           <a class="brand" href="#">Mosh</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="#">About</a></li>
+              <li><a href="#about">About</a></li>
               <li><a href="#getting">Getting Mosh</a></li>
               <li><a href="#usage">Usage</a></li>
               <li><a href="#techinfo">Technical Info</a></li>
@@ -59,6 +59,7 @@
 
     <div class="container">
 
+      <section id="about">
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
 	<p>
@@ -81,7 +82,6 @@
         <p><a class="btn btn-primary btn-large">Getting Mosh &raquo;</a></p>
       </div>
 
-      <!-- Example row of columns -->
       <div class="row">
         <div class="span4">
           <h2 class="callout">Change IP address. Keep your connection.</h2>
@@ -110,8 +110,6 @@
         </div>
       </div>
 
-      <hr>
-
       <div class="row">
         <div class="span3">
           <h2 class="callout">No privileged code. No daemons.</h2>
@@ -132,7 +130,7 @@
         </div>
 
 	<div class="span3">
-	  <h2 class="callout">Runs inside your terminal emulator, but with better Unicode.</h2>
+	  <h2 class="callout">Runs inside your terminal, with better Unicode.</h2>
 	  <p>Mosh is a command-line program, just like ssh. You can
 	  use it inside xterm, gnome-terminal, rxvt-unicode,
 	  Terminal.app, or emacs ansi-term. But mosh was built from
@@ -151,11 +149,71 @@
 	    runaway process.</p>
 	</div>
       </div>
+      </section>
+      
+      <section id="getting">
+	<div class="page-header">
+	  <h1>Getting Mosh</h1>
+	</div>
+	
+	<div class="row">
+	  <div class="span12">
+	    <p>Mosh is available from these operating systems and package managers:</p>
+	  </div>
+	</div>
+	
+	<div class="row">
+	  <div class="span6"><h2 class="callout">Debian GNU/Linux <small>unstable</small></h2>
+	    <p><pre># apt-get install mosh</pre></p>
+	  </div>
+	  
+	  <div class="span6"><h2 class="callout">Ubuntu <small>10.04 LTS or later</small></h2>
+	    <p><pre>$ sudo add-apt-repository ppa:keithw/mosh
+$ sudo apt-get update
+$ sudo apt-get install mosh</pre></p>
+	  </div>
 
-      <hr>
+	  <div class="span6"><h2 class="callout">MacPorts <small>OS X 10.6 or later</small></h2>
+	    <p><pre>$ sudo port install mosh</pre></p>
+	  </div>
+	  
+	  <div class="span6"><h2 class="callout">Homebrew <small>OS X 10.6 or later</small></h2>
+	    <p><pre>$ brew install mobile-shell</pre></p>
+	  </div>
+	</div>
 
-      <footer>
-      </footer>
+	<p>
+
+	<div class="row">
+	  <div class="span8 well">
+	    <p><h2>Building from source</h2></p>
+
+	    <p>Mosh may also be installed from source:</p>
+
+	    <ol><li>Download <a href="https://github.com/downloads/keithw/mosh/mosh-1.0.tar.gz">mosh-1.0.tar.gz</a>.</li>
+
+	      <li>Install the dependencies:
+		<div class="row">
+		<table class="span7 table table-striped">
+		  <tr><th>Name</th><th>Debian/Ubuntu</th><th>Fedora</th></tr>
+		  <tr><td><a href="http://code.google.com/p/protobuf/">Google Protocol Buffers</a></td><td>protobuf-compiler, libprotobuf-dev</td><td>protobuf-compiler, protobuf-devel</td></tr>
+		  <tr><td>utempter</td><td>libutempter-dev</td><td>libutempter-devel</td></tr>
+		  <tr><td><a href="http://www.boost.org">boost</a></td>
+		    <td>libboost-dev</td><td>boost-devel</td></tr>
+		  <tr><td>ncurses</td><td>libncurses5-dev</td><td>ncurses-devel</td></tr>
+		  <tr><td>zlib</td><td>zlig1g-dev</td><td>zlib-devel</td></tr>
+		</table>
+		</div>
+
+	      <li><code>$ ./configure</code></li>
+
+	      <li><code>$ make</code></li>
+
+	      <li><code>$ make install</code></li>
+	    </ol>
+	  </div>
+	</div>
+      </section>
 
     </div> <!-- /container -->
 
@@ -175,6 +233,5 @@
     <script src="assets/js/bootstrap-collapse.js"></script>
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
-
   </body>
 </html>
