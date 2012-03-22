@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mosh: the mobile shell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mobile shell that supports roaming and intelligent local echo. Like SSH secure shell, but allows mobility and more responsive and robust.">
+    <meta name="author" content="Keith Winstein <mosh-devel@mit.edu>">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .callout {
+      }
+    </style>
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Mosh</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">About</a></li>
+              <li><a href="#how">How it Works</a></li>
+              <li><a href="#getting">Getting Mosh</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#techinfo">Technical Info</a></li>
+              <li><a href="#lists">Mailing Lists</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+	<p>
+	<div class="row">
+	<div class="span5">
+        <p><h1>Mosh</h1>
+	<h2>(mobile shell)</h2></p>
+          <p>Remote terminal application that
+        allows <strong class="callout">roaming</strong>, supports <strong class="callout">intermittent
+        connectivity</strong>, and provides intelligent
+	<strong class="callout">local echo</strong> and line editing of user keystrokes.</p>
+	  <p>Mosh is like SSH, but more robust and
+	responsive &mdash; especially over wireless or cross-country
+	links and ones with packet loss.</p>
+	  <p>Mosh is free software, available for GNU/Linux and Mac OS X.</p>
+	</div><div class="span5"><img src="mosh.png" style="max-width:120%;"></div>
+	</div>
+	</p>
+
+        <p><a class="btn btn-primary btn-large">Getting Mosh &raquo;</a></p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2 class="callout">Change IP address. Keep your connection.</h2>
+           <p>Mosh won't die when your laptop roams from one Wi-Fi
+	     network to another, or from Wi-Fi to a cellular data
+	     connection to wired Ethernet. Go on a trip and visit five
+	     hotels and three airports: your connection will
+	     automatically follow you.</p>
+        </div>
+        <div class="span4">
+          <h2 class="callout">Lose the Internet without losing your session.</h2>
+           <p>With Mosh, you can put your laptop to sleep and wake it
+	     up later, while keeping your connection intact. If your
+	     Internet connection drops, Mosh will warn you that it
+	     hasn't heard from the server in a while &mdash; but the
+	     connection will resume as soon as network service does.
+       </div>
+        <div class="span4">
+          <h2 class="callout">Get rid of network lag.</h2>
+          <p>Mosh intelligently echoes keystrokes and some line
+	    editing at the client side, so your typing usually shows
+	    up on the screen instantly. No more waiting for your
+	    packets to get to the server and back before you see what
+	    you typed or where the cursor has landed.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="span3">
+          <h2 class="callout">No privileged code. No daemons.</h2>
+           <p>You don't need to be the superuser to install or run
+	     Mosh. The client and server are executables run by an
+	     ordinary user and last only for the life of the
+	     connection.</p>
+        </div>
+
+        <div class="span3">
+          <h2 class="callout">Keep your remote-access method.</h2>
+           <p>Mosh doesn't listen on network ports or authenticate
+	     users. Users keep the existing remote-access mechanism,
+	     probably SSH, and present the same credentials
+	     (e.g. password, public key). The <code>mosh</code> client
+	     takes care of logging in to the server via SSH and then
+	     runs the <code>mosh-server</code> program remotely.</p>
+        </div>
+
+	<div class="span3">
+	  <h2 class="callout">Runs inside your terminal emulator, but with better Unicode.</h2>
+	  <p>Mosh is a command-line program, just like ssh. You can
+	  use it inside xterm, gnome-terminal, rxvt-unicode,
+	  Terminal.app, or emacs ansi-term. But mosh was built from
+	  scratch to support UTF-8 as its only encoding, and fixes
+	    Unicode problems in other terminals and in ssh.
+
+	</div>
+
+	<div class="span3">
+	  <h2 class="callout">Control-C works great.</h2>
+
+	  <p>Mosh works at the terminal emulation layer and uses its
+	    own flow control to set the frame rate based on network
+	    conditions. It doesn't fill up network buffers, so
+	    Control-C always works instantly (within an RTT) to halt a
+	    runaway process.</p>
+	</div>
+      </div>
+
+      <hr>
+
+      <footer>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>
