@@ -274,13 +274,18 @@ $ make
 	<div class="row">
 	  <div class="span4 offset1">
 	    <h3 class="callout">Typical usage <small>with no options</h3>
-	    <p><pre>$ mosh <i>remote_host</i></pre></p>
+	    <p><pre>$ mosh <i>chewbacca.norad.mil</i></pre></p>
 	    <p>Mosh will log the user in via SSH, then start a connection on a UDP port between 60000 and 61000.</p>
 	  </div>
 
-	  <div class="span4 offset1">
-	    <h3 class="callout">Specify a port</h3>
-	    <p><pre>$ mosh <b>-p 1234</b> <i>remote_host</i></pre></p>
+	  <div class="span3 offset1">
+	    <h3 class="callout">With a username</h3>
+	    <p><pre>$ mosh <b>potus@</b><i>chewbacca.norad.mil</i></pre></p>
+	  </div>
+
+	  <div class="span3">
+	    <h3 class="callout">Particular port</h3>
+	    <p><pre>$ mosh <b>-p 1234</b> <i>chewbacca.norad.mil</i></pre></p>
 	    <p>If the server is behind a port-forwarder or NAT, a particular UDP port can be requested.</p>
 	  </div>
 	</div>
