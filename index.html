@@ -295,22 +295,24 @@ $ make
 	<div class="row">
 	  <div class="span4">
 	    <h3 class="callout">Server binary outside path</h3>
-	    <p><pre>$ mosh <b>--server=/path/to/mosh-server</b> <i>remote_host</i></pre></p>
+	    <p><pre>$ mosh <b>--server=/path/to/mosh-server</b> <i>r2d2</i></pre></p>
 	    <p>The user can specify an alternate path for the <code>mosh-server</code> on the remote host. The server binary can even
 	      be installed in the user's home directory.</p>
 	  </div>
 
 	  <div class="span4">
 	    <h3 class="callout">Disable instant echo</h3>
-	    <p><pre>$ mosh <b>--predict=never</b> <i>remote_host</i></pre></p>
-	    <p>The <code>-n</code> switch is a synonym.</p>
+	    <p><pre>$ mosh <b>--predict=never</b> <i>niennunb</i></pre></p>
+	    <p>The <code>-n</code> switch is a synonym. By contrast,
+	    passing <code style="white-space: nowrap;">--predict=always</code> or <code>-a</code>
+	    will enable instant local echo even on low-delay
+	    links.</p>
 	  </div>
 
 	  <div class="span4">
-	    <h3 class="callout">Always use instant echo</h3>
-	    <p><pre>$ mosh <b>--predict=always</b> <i>remote_host</i></pre></p>
-	    <p>By default, local echo is active only on higher-latency links. But for the hypersensitive, it can
-	    be forced on. The <code>-a</code> switch also works.</p>
+	    <h3 class="callout">With a command</h3>
+	    <p><pre>$ mosh <i>pello</i> <b>-- screen -dr</b></pre></p>
+	    <p>This reattaches to a long-running screen session.</p>
 	  </div>
 	</div>
 
