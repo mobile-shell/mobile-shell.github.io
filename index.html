@@ -224,7 +224,7 @@ $ sudo apt-get install mosh</pre></p>
 	</div>
 
 	<small><i>Operating system logos are trademarks or registered trademarks and are displayed for identification
-only. The vendors shown here aren't affiliated with and haven't endorsed Mosh.</i></small>
+only. The vendors shown aren't affiliated with and haven't endorsed Mosh.</i></small>
 
 	<p><h2>Building from source</h2></p>
 
@@ -265,6 +265,54 @@ $ make
 	  </div>
 	</div>
       </section>
+
+      <section id="usage">
+	<div class="page-header">
+	  <h1>Usage</h1>
+	</div>
+
+	<div class="row">
+	  <div class="span4 offset1">
+	    <h3 class="callout">Typical usage <small>with no options</h3>
+	    <p><pre>$ mosh <i>remote_host</i></pre></p>
+	    <p>Mosh will log the user in via SSH, then start a connection on a UDP port between 60000 and 61000.</p>
+	  </div>
+
+	  <div class="span4 offset1">
+	    <h3 class="callout">Specify a port</h3>
+	    <p><pre>$ mosh <b>-p 1234</b> <i>remote_host</i></pre></p>
+	    <p>If the server is behind a port-forwarder or NAT, a particular UDP port can be requested.</p>
+	  </div>
+	</div>
+
+	<p></p>
+
+	<div class="row">
+	  <div class="span4">
+	    <h3 class="callout">Server binary outside path</h3>
+	    <p><pre>$ mosh <b>--server=/path/to/mosh-server</b> <i>remote_host</i></pre></p>
+	    <p>The user can specify an alternate path for the <code>mosh-server</code> on the remote host. The server binary can even
+	      be installed in the user's home directory.</p>
+	  </div>
+
+	  <div class="span4">
+	    <h3 class="callout">Disable instant echo</h3>
+	    <p><pre>$ mosh <b>--predict=never</b> <i>remote_host</i></pre></p>
+	    <p>The <code>-n</code> switch is a synonym.</p>
+	  </div>
+
+	  <div class="span4">
+	    <h3 class="callout">Always use instant echo</h3>
+	    <p><pre>$ mosh <b>--predict=always</b> <i>remote_host</i></pre></p>
+	    <p>By default, local echo is active only on higher-latency links. But for the hypersensitive, it can
+	    be forced on. The <code>-a</code> switch also works.</p>
+	  </div>
+	</div>
+
+	To forcibly end the connection, Mosh accepts the escape
+	sequence <code>Ctrl-^ .</code> (typically typed with
+	Control-Shift-6, then a period). To send a literal <code>Ctrl-^</code>,
+	type <code>Ctrl-^ ^</code>.
 
     </div> <!-- /container -->
 
