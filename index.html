@@ -19,6 +19,24 @@
       .hero-titles {
         padding-bottom: 5%;
       }
+      .logo {
+        padding: 8px;
+      }
+      .prelike {
+      display: block;
+      padding: 8.5px;
+      margin: 0 0 9px;
+      font-size: 12.025px;
+      line-height: 18px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      word-break: break-all;
+      word-wrap: break-word;
+      }
     </style>
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -101,33 +119,36 @@
       <div class="row">
 
         <div class="span4">
-          <h2 class="callout">Change IP address. Stay connected.</h2>
+          <h2 class="callout">Change IP. Stay connected.</h2>
           <p>Mosh automatically roams as you move between Internet
           connections. Use Wi-Fi on the train, Ethernet in a hotel,
-          and LTE on the beach. You'll stay logged in.</p>
+          and LTE on a beach: you'll stay logged in. Most network
+          programs lose their connections after roaming &mdash;
+          including SSH and AJAX apps like Gmail or Google Talk. Mosh
+          is different.</p>
         </div>
         <div class="span4">
-          <h2 class="callout">Lose the Internet without losing your session.</h2>
+          <h2 class="callout">Makes for sweet dreams.</h2>
            <p>With Mosh, you can put your laptop to sleep and wake it
 	     up later, keeping your connection intact. If your
 	     Internet connection drops, Mosh will warn you &mdash; but
-	     the connection will resume as soon as network service
-	     does.
+	     the connection resumes when network service
+	     returns.
        </div>
         <div class="span4">
           <h2 class="callout">Get rid of network lag.</h2>
-          <p>Mosh's intelligent local echo gives lag-free typing, by
-          predicting the effects of keystrokes before the server
-          acknowledges them. It works at the command line and in
-          full-screen programs like emacs and vim. On a bad connection,
-          outstanding predictions are underlined so you aren't
-          misled.</p>
+          <p>Mosh's intelligent local echo gives lag-free typing,
+          deleting, and line editing. It predicts the effects of
+          keystrokes locally, with a technique that works at the
+          command line and in full-screen programs like emacs and
+          vim. On a bad connection, outstanding predictions are
+          underlined so you aren't misled.</p>
         </div>
       </div>
 
       <div class="row">
         <div class="span3">
-          <h2 class="callout">No privileged code. No daemons.</h2>
+          <h2 class="callout">No privileged code. No daemon.</h2>
            <p>You don't need to be the superuser to install or run
 	     Mosh. The client and server are executables run by an
 	     ordinary user and last only for the life of the
@@ -135,7 +156,7 @@
         </div>
 
         <div class="span3">
-          <h2 class="callout">Keep your remote-access method.</h2>
+          <h2 class="callout">Same login method.</h2>
            <p>Mosh doesn't listen on network ports or authenticate
 	     users. Users start their sessions with SSH and present
 	     the same credentials (e.g. password, public key,
@@ -146,12 +167,12 @@
 
 	<div class="span3">
 	  <h2 class="callout">Runs inside your terminal, but better.</h2>
-	  <p>Mosh is a command-line program, just like ssh. You can
-	  use it inside xterm, gnome-terminal, rxvt-unicode,
-	  Terminal.app, emacs ansi-term, screen, or tmux. But mosh was
-	  designed from scratch to support UTF-8, and compensates for
-	  Unicode bugs in other terminals and in ssh.
-
+	  <p>Mosh is a command-line program, like ssh. You can
+	  use it inside xterm, gnome-terminal, urxvt, Terminal.app,
+	  iTerm, emacs, screen, or tmux. But mosh was designed from
+	  scratch to support just one character set: Unicode as
+	  UTF-8. It's scrupulously correct and fixes Unicode bugs in
+	  other terminals and in SSH.
 	</div>
 
 	<div class="span3">
@@ -171,77 +192,78 @@
 	</div>
 	
 	<div class="row">
-	  <div class="span6"><h2 class="callout">Debian GNU/Linux <small>unstable</small></h2>
-	    <p><pre># apt-get install mosh</pre></p>
+	  <div class="span4"><h3 class="callout"><a href="http://www.debian.org"><img class="logo" src="debian.png"></a>Debian GNU/Linux <small>testing, unstable</small><br>
+	      <a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png"></a>Ubuntu <small>12.04 LTS (Precise)</small></h3>
+	    <p><pre>$ sudo apt-get install mosh</pre></p>
 	  </div>
-	  
-	  <div class="span6"><h2 class="callout">Ubuntu <small>10.04 LTS or later</small></h2>
-	    <p><pre>$ sudo add-apt-repository ppa:keithw/mosh
+
+	  <div class="span4"><h3 class="callout"><a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png"></a>Ubuntu <small>10.04 LTS or later</small></h3>
+	    <p>Available in the <a href="https://help.ubuntu.com/community/UbuntuBackports">backports repository</a> as <tt>mosh</tt>, or:
+	      <pre>$ sudo add-apt-repository keithw:ppa/mosh
 $ sudo apt-get update
 $ sudo apt-get install mosh</pre></p>
 	  </div>
 
-	  <div class="span4"><h2 class="callout">Mac OS X <small>10.6 or later</small></h2>
-	    <p><div class="well" style="padding: 7.5px;">Install <a>mosh-1.1.dmg</a>.</div></p>
+	  <div class="span4"><h3 class="callout"><a href="http://www.fedoraproject.org"><img class="logo" src="fedora.png"></a>Fedora <small>15 or later</small></h3>
+	    <p><pre>$ sudo yum install mosh</pre></p>
+	  </div>
+	</div>
+
+	<div class="row">
+	  <div class="span4"><h3 class="callout"><a href="http://www.apple.com"><img class="logo" src="macosx.png"></a>OS X <small>10.5 or later</small></h3>
+	    <p><div class="prelike">Install <a><img src="dmg.png"> mosh-1.1.3.dmg</a>.</div></p>
 	  </div>
 
-	  <div class="span4"><h2 class="callout">MacPorts <small>OS X 10.6 or later</small></h2>
+	  <div class="span4"><h3 class="callout"><a href="http://www.macports.org"><img class="logo" src="macports.png"></a>MacPorts <small>OS X 10.5 or later</small></h3>
 	    <p><pre>$ sudo port install mosh</pre></p>
 	  </div>
 	  
-	  <div class="span4"><h2 class="callout">Homebrew <small>OS X 10.6 or later</small></h2>
+	  <div class="span4"><h3 class="callout"><a href="http://mxcl.github.com/homebrew/">Homebrew</a> <small>OS X 10.6 or later</small></h3>
 	    <p><pre>$ brew install mobile-shell</pre></p>
 	  </div>
 	</div>
 
-        <hr />
+	<small><i>Operating system logos are trademarks or registered trademarks and are displayed for identification
+only. The vendors shown here aren't affiliated with and haven't endorsed Mosh.</i></small>
 
-	<div class="row">
-	  <div class="span7">
-	    <p><h2>Building from source</h2></p>
+	<p><h2>Building from source</h2></p>
 
-            <div class="well">
+        <div class="row">
 
-              <table class="table table-striped" style="width: 100%;">
-                <thead><tr><th>Dependency</th><td><em>Debian/Ubuntu package</em></td><td><em>Fedora
-                  package</em></td></tr></thead>
-                <tr class="deps"><td><a href="http://code.google.com/p/protobuf/">Protocol Buffers</a></td><td>protobuf-compiler, libprotobuf-dev</td><td>protobuf-compiler, protobuf-devel</td></tr>
-                <tr><td><a href="http://www.boost.org">Boost</a></td>
-                  <td>libboost-dev</td><td>boost-devel</td></tr>
-                <tr><td>utempter</td><td>libutempter-dev</td><td>libutempter-devel</td></tr>
-                <tr><td>ncurses</td><td>libncurses5-dev</td><td>ncurses-devel</td></tr>
-                <tr><td>zlib</td><td>zlib1g-dev</td><td>zlib-devel</td></tr>
-              </table>
+	  <div class="span4">
+	    <h3 class="callout">Dependencies</h3><br>
+	    <table class="table table-striped" style="width: 100%;">
+              <thead><tr><th>Name</th><th>Typical package</th></tr></thead>
+              <tr class="deps"><td><a href="http://code.google.com/p/protobuf/">Protocol Buffers</a></td><td>protobuf-compiler, libprotobuf-dev</td></tr>
+              <tr><td><a href="http://www.boost.org">Boost</a></td>
+                <td>libboost-dev</td></tr>
+              <tr><td>utempter</td><td>libutempter-dev</td></tr>
+              <tr><td>ncurses</td><td>libncurses5-dev</td></tr>
+              <tr><td>zlib</td><td>zlib1g-dev</td></tr>
+	    </table>
+	  </div>
 
-              <p>Download and extract
-                <tt><a>mosh-1.1.tar.gz</a></tt>,
-                then</p>
-
-<pre>$ ./configure
+	  <div class="span4">
+	    <h3 class="callout">Latest release</h3><br>
+	    <p>Download and extract
+              <a href="https://github.com/downloads/keithw/mosh/mosh-1.1.3.tar.gz">mosh-1.1.3.tar.gz</a>,
+              then</p>
+<pre>$ cd mosh-1.1.3
+$ ./configure
 $ make
 # make install</pre>
-	    </div>
 	  </div>
-	  <div class="span5">
-	    <p><h2>Static server binary</h2></p>
 
-            <div class="well">
-
-              <p>If you cannot install a Mosh package on the server, you can put a statically-linked
-		<tt>mosh-server</tt> binary in your home directory.</p>
-
-              <p>You will need to launch <tt>mosh</tt> as</p>
-              <pre>$ mosh --server=./mosh-server</pre>
-
-              <p>Download a static server binary for:
-		<table class="table">
-                  <tr><td>Debian/Ubuntu</td><td><a>i386</a></td><td><a>x86-64</a></td></tr>
-                  <tr><td>Fedora</td><td><a>i386</a></td><td><a>x86-64</a></td></tr>
-                  <tr><td>Mac OS X</td><td></td><td><a>x86-64</a></td></tr>
-		</table>
-	    </div>
-          </div>
-        </div>
+	  <div class="span4">
+	    <h3 class="callout">Compiling from Git</h3><br>
+	    <p><pre>$ git clone <a href="https://github.com/keithw/mosh">https://github.com/keithw/mosh</a>
+$ cd mosh
+$ ./autogen.sh
+$ ./configure
+$ make
+# make install</pre></p>
+	  </div>
+	</div>
       </section>
 
     </div> <!-- /container -->
