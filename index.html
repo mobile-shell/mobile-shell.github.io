@@ -85,7 +85,7 @@
               <li><a href="#techinfo">Technical Info</a></li>
               <li><a href="#faq">FAQ</a></li>
               <li><a href="#lists">Mailing Lists</a></li>
-              <li><a href="#contribute">Contribute</a></li>
+              <li><a href="https://github.com/keithw/mosh">Mosh on GitHub</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -197,14 +197,14 @@
 	    <p><pre>$ sudo apt-get install mosh</pre></p>
 	  </div>
 
-	  <div class="span4"><h3 class="callout"><a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png"></a>Ubuntu <small>10.04 LTS or later</small></h3>
+	  <div class="span5"><h3 class="callout"><a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png"></a>Ubuntu <small>10.04 LTS or later</small></h3>
 	    <p>Available in the <a href="https://help.ubuntu.com/community/UbuntuBackports">backports repository</a> as <tt>mosh</tt>, or:
 	      <pre>$ sudo add-apt-repository keithw:ppa/mosh
 $ sudo apt-get update
 $ sudo apt-get install mosh</pre></p>
 	  </div>
 
-	  <div class="span4"><h3 class="callout"><a href="http://www.fedoraproject.org"><img class="logo" src="fedora.png"></a>Fedora <small>15 or later</small></h3>
+	  <div class="span3"><h3 class="callout"><a href="http://www.fedoraproject.org"><img class="logo" src="fedora.png"></a>Fedora <small>15 or later</small></h3>
 	    <p><pre>$ sudo yum install mosh</pre></p>
 	  </div>
 	</div>
@@ -243,9 +243,9 @@ only. The vendors shown aren't affiliated with and haven't endorsed Mosh.</i></s
 	    </table>
 	  </div>
 
-	  <div class="span4">
+	  <div class="span3">
 	    <h3 class="callout">Latest release</h3><br>
-	    <p>Download and extract
+	    <p>Extract
               <a href="https://github.com/downloads/keithw/mosh/mosh-1.1.3.tar.gz">mosh-1.1.3.tar.gz</a>,
               then</p>
 <pre>$ cd mosh-1.1.3
@@ -254,7 +254,7 @@ $ make
 # make install</pre>
 	  </div>
 
-	  <div class="span4">
+	  <div class="span5">
 	    <h3 class="callout">Compiling from Git</h3><br>
 	    <p><pre>$ git clone <a href="https://github.com/keithw/mosh">https://github.com/keithw/mosh</a>
 $ cd mosh
@@ -271,21 +271,23 @@ $ make
 	  <h1>Usage</h1>
 	</div>
 
+	<p><h3 class="callout">A lot like SSH. Instant keystroke feedback and robust to roaming. <small>But you'll need working UDP.</small></h3></p>
+
 	<div class="row">
-	  <div class="span4 offset1">
-	    <h3 class="callout">Typical usage <small>with no options</small></h3>
+	  <div class="well span3 offset1">
+	    <h2 class="callout" style="color: darkblue;">Typical usage</h2>
 	    <p><pre>$ mosh <i>chewbacca.norad.mil</i></pre></p>
 	    <p>Mosh will log the user in via SSH, then start a connection on a UDP port between 60000 and 61000.</p>
 	  </div>
 
 	  <div class="span3 offset1">
 	    <h3 class="callout">Different username</h3>
-	    <p><pre>$ mosh <b>potus@</b><i>chewbacca.norad.mil</i></pre></p>
+	    <p><pre>$ mosh <b>potus@</b><i>ackbar.cia.gov</i></pre></p>
 	  </div>
 
 	  <div class="span3">
 	    <h3 class="callout">Particular port</h3>
-	    <p><pre>$ mosh <b>-p 1234</b> <i>chewbacca.norad.mil</i></pre></p>
+	    <p><pre>$ mosh <b>-p 1234</b> <i>darth</i></pre></p>
 	    <p>If the server is behind a port-forwarder or NAT, a particular UDP port can be requested.</p>
 	  </div>
 	</div>
@@ -295,7 +297,7 @@ $ make
 	<div class="row">
 	  <div class="span4">
 	    <h3 class="callout">Server binary outside path</h3>
-	    <p><pre>$ mosh <b>--server=/path/to/mosh-server</b> <i>r2d2</i></pre></p>
+	    <p><pre>$ mosh <b>--server=/tmp/mosh-server</b> <i>r2d2</i></pre></p>
 	    <p>The user can specify an alternate path for the <code>mosh-server</code> on the remote host. The server binary can even
 	      be installed in the user's home directory.</p>
 	  </div>
@@ -327,7 +329,7 @@ $ make
 
       </section>
 
-      <section id="usage">
+      <section id="techinfo">
 	<div class="page-header">
 	  <h1>Technical Info</h1>
 
