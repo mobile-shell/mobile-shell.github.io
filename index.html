@@ -336,8 +336,8 @@ $ make
 
 	<h3 class="callout">Mosh at USENIX ATC</h3>
 
-	<p>The <a href="mosh-paper-draft.pdf"><img class="logo"
-	    src="pdf.png"> Mosh research paper (draft)</a> describes
+	<p>The <a href="mosh-paper-draft.pdf"><img style="padding: 3px;"
+	    src="pdf.png"> Mosh research paper</a> describes
 	    the design and evaluation of Mosh in more detail than you
 	    may want. The paper will be presented at the
 	  <a href="http://static.usenix.org/event/atc12/">2012 USENIX
@@ -351,10 +351,9 @@ Mosh paper.</small></h4>
 
 <p></p>
 
-<p><i>Mosh: we worry about obscure details so you don't have to.
-	Unless you are a USENIX reviewer.</i></p>
-
-	</div>
+<p><i>(Why you should trust Mosh with your remote terminal needs: we
+worry about details so obscure, even USENIX reviewers don't want to
+hear about them.)</i></p></div>
 
 	<h3 class="callout">How Mosh works</h3>
 
@@ -418,11 +417,11 @@ Mosh paper.</small></h4>
 	  <p class="well">One benefit of working at the terminal layer
 	    was the opportunity to build a clean UTF-8 terminal
 	    emulator from scratch. Mosh fixes several Unicode bugs in
-	    existing terminals and in SSH, involving edge cases and
-	    pathological input. Mosh was designed as a fresh start to
-	    try to be robust and correct even for pathological
-	    inputs. Unlike other terminals that use ISO 2022 locking
-	    sequences, Mosh will never get stuck in hieroglyphs.</p>
+	    existing terminals and in SSH, and was designed as a fresh
+	    start to try to be robust and correct even for
+	    pathological inputs. Unlike other terminals that use ISO
+	    2022 locking sequences, Mosh will never get stuck in
+	    hieroglyphs.</p>
 
 	  <p>The other major benefit of working at the
 	    terminal-emulation layer is that the Mosh client is free
