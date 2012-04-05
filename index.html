@@ -330,6 +330,7 @@ $ make
 
 	<h3 class="callout">Not yet supported, but on the roadmap</h3>
 
+	<p>
 	<ul>
 	  <li>X11 forwarding
 
@@ -337,6 +338,7 @@ $ make
 
 	  <li>Android client
 	</ul>
+	</p>
 
 	<h3 class="callout">Manual</h3>
 
@@ -360,22 +362,25 @@ $ make
 	    may want. The paper will be presented at the
 	  <a href="http://static.usenix.org/event/atc12/">2012 USENIX
 	    Annual Technical Conference</a>, to be held June
-	    13&ndash;15 in sunny Boston, Mass.</p>
+	  13&ndash;15 in sunny Boston, Mass.</p>
 
-	<div class="well"><h4 callout">&#8220;ISO 2022 locking escape
+	<div class="well"><h4 class="callout">&#8220;ISO 2022 locking escape
 sequences oh flying spaghetti monster please kill me
 now.&#8221; <small>&mdash; actual USENIX peer review on reading the
-Mosh paper.</small></h4>
+	      Mosh paper.</small>
+	  </h4>
 
-<p></p>
+	  <p></p>
 
-<p><span class="label label-info">Why you should trust Mosh with your remote terminal needs:</span> <i>we
-worry about details so obscure, even USENIX reviewers don't want to
-hear about them.</i></p></div>
+	  <p>(Why you should trust Mosh with your remote terminal needs: we
+    worry about details so obscure, even USENIX reviewers don't want to
+	      hear about them.)</p>
+
+	</div>
 
 	<h3 class="callout">How Mosh works</h3>
 
-	  <p>Remote-shell protocols traditionally work by conveying a
+	<p>Remote-shell protocols traditionally work by conveying a
 	  byte-stream from the server to the client, to be interpreted
 	  by the client's terminal. (This includes TELNET, RLOGIN, and
 	  SSH.)</p>
