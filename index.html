@@ -331,8 +331,122 @@ $ make
       <section id="techinfo">
 	<div class="page-header">
 	  <h1>Technical Info</h1>
+	</div>
+	
+
+	<h3 class="callout">Mosh at USENIX ATC</h3>
+
+	<p>The <a href="mosh-paper-draft.pdf"><img class="logo"
+	    src="pdf.png"> Mosh research paper (draft)</a> describes
+	    the design and evaluation of Mosh in more detail than you
+	    may want. The paper will be presented at the
+	  <a href="http://static.usenix.org/event/atc12/">2012 USENIX
+	    Annual Technical Conference</a>, to be held June
+	    13&ndash;15 in sunny Boston, Mass.</p>
+
+	<div class="well"><h4 callout">&#8220;ISO 2022 locking escape
+sequences oh flying spaghetti monster please kill me
+now.&#8221; <small>&mdash; actual USENIX peer review on reading the
+Mosh paper.</small></h4>
+
+<p></p>
+
+<p><i>Mosh: we worry about obscure details so you don't have to.
+	Unless you are a USENIX reviewer.</i></p>
 
 	</div>
+
+	<h3 class="callout">How Mosh works</h3>
+
+	  <p>Remote-shell protocols traditionally work by conveying a
+	  byte-stream from the server to the client, to be interpreted
+	  by the client's terminal. (This includes TELNET, RLOGIN, and
+	  SSH.)</p>
+
+	  <p>Mosh works differently and at a different layer. With
+	    Mosh, the server and client both maintain a snapshot of
+	    the current screen state. The problem becomes one of
+	    <i>state-synchronization</i>: getting the client to the
+	    most recent server-side screen as efficiently as
+	    possible.</p>
+
+	  <p>This is accomplished using a new protocol called the
+	    State Synchronization Protocol, for which Mosh is the
+	    first application. SSP runs over UDP, synchronizing the
+	    state of any object from one host to another. Datagrams
+	    are encrypted and authenticated
+	    using <a href="http://www.cs.ucdavis.edu/~rogaway/ocb/">AES-128
+	    in OCB mode</a>. While SSP takes care of the networking
+	    protocol, it is the implementation of the object being
+	    synchronized that defines the ultimate semantics of the
+	    protocol.</p>
+
+	  <p>Roaming with SSP becomes easy: the client sends datagrams
+	    to the server with increasing sequence numbers, including
+	    a heartbeat at least once every three seconds. Every time
+	    the server receives an authentic packet from the client
+	    with a sequence number higher than any it has previously
+	    received, the IP source address of that packet becomes the
+	    server's new target for its outgoing packets. By doing
+	    roaming "statelessly" in this manner, roaming works in and
+	    out of NATs, even ones that may themselves be
+	    roaming. Roaming works even when the client is not aware
+	    that its Internet-visible IP address has changed. The
+	    heartbeats allow Mosh to inform the user when it hasn't
+	    heard from the server in a while (unlike SSH, where users
+	    may be unaware of a dropped connection until they try to
+	    type).</p>
+
+	  <p>Mosh runs two copies of SSP, one in each direction of the
+	    connection. The connection from client to server
+	    synchronizes an object that represents the keys typed by
+	    the user, and with TCP-like semantics. The connection from
+	    server to client synchronizes an object that represent the
+	    current screen state, and the goal is always to convey the
+	    client to the most recent server-side state, possibly
+	  skipping intermediate frames.</p>
+
+	  <p>Because SSP works at the object layer and can control the
+	    rate of synchronization (in other words, the frame rate),
+	    it does not need to send every byte it receives from the
+	    application. That means Mosh can regulate the frames so as
+	    not to fill up network buffers, retaining the
+	    responsiveness of the connection and making sure Control-C
+	    always works quickly. Protocols that must send every byte
+	    can't do this.</p>
+
+	  <p class="well">One benefit of working at the terminal layer
+	    was the opportunity to build a clean UTF-8 terminal
+	    emulator from scratch. Mosh fixes several Unicode bugs in
+	    existing terminals and in SSH, involving edge cases and
+	    pathological input. Mosh was designed as a fresh start to
+	    try to be robust and correct even for pathological
+	    inputs. Unlike other terminals that use ISO 2022 locking
+	    sequences, Mosh will never get stuck in hieroglyphs.</p>
+
+	  <p>The other major benefit of working at the
+	    terminal-emulation layer is that the Mosh client is free
+	    to scribble on the local screen without lasting
+	    consequence. We use this to implement intelligent local
+	    echo. The client runs a predictive model in the background
+	    of the server's behavior, hypothesizing that each
+	    keystroke will be echoed at the cursor location and that
+	    the backspace and left- and right-arrow keys will have
+	    their traditional effect. But only when a predition is
+	    confirmed by the server are these effects actually shown
+	    to the user. (In addition, by default predictions are only
+	    displayed on high-delay connections or during a network
+	    "glitch.") Predictions are done in "epochs," so when the
+	    user does something that might alter the echo behavior
+	    &mdash; like hit ESC or carriage return or an up- or
+	    down-arrow &mdash; Mosh goes back into making background
+	    predictions until a prediction from the new batch can be
+	    confirmed as correct.</p>
+
+	  <p>Thus, unlike previous attempts at local echo with TELNET
+	    and RLOGIN, Mosh's local echo can be used everywhere, even
+	    in full-screen programs like emacs and vi.</p>
+
       </section>
 
     </div> <!-- /container -->
