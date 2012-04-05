@@ -137,12 +137,13 @@
        </div>
         <div class="span4">
           <h2 class="callout">Get rid of network lag.</h2>
-          <p>Mosh's intelligent local echo gives lag-free typing,
-          deleting, and line editing. It predicts the effects of
-          keystrokes locally, with a technique that works at the
-          command line and in full-screen programs like emacs and
-          vim. On a bad connection, outstanding predictions are
-          underlined so you aren't misled.</p>
+          <p>Mosh gives instant feedback to typing, deleting, and line
+	    editing. It predicts the effects of keystrokes locally,
+	    even in full-screen programs like emacs and vim. On a bad
+	    connection, outstanding predictions are underlined so you
+	    won't be misled. Other protocols wait for the server's
+	    reply to show your typing, which produces an unpleasant
+	    user interface on "laggy" connections.</p>
         </div>
       </div>
 
@@ -180,7 +181,7 @@
 	  <p>Unlike SSH, mosh's UDP-based protocol handles packet loss
 	    gracefully, and sets the frame rate based on network conditions. Mosh
 	    doesn't fill up network buffers, so Control-C always works
-	    within an RTT to halt a runaway process.</p>
+	    to halt a runaway process.</p>
 	</div>
       </div>
       </section>
@@ -270,7 +271,7 @@ $ make
 	  <h1>Usage</h1>
 	</div>
 
-	<p><h3 class="callout">A lot like SSH. Instant keystroke feedback and robust to roaming. <small>But you'll need working UDP.</small></h3></p>
+	<p><h3 class="callout">Replaces interactive SSH. Instant keystroke response, robust to roaming. <small>But you'll need working UDP.</small></h3></p>
 
 	<div class="row">
 	  <div class="well span3 offset1">
@@ -281,7 +282,7 @@ $ make
 
 	  <div class="span3 offset1">
 	    <h3 class="callout">Different username</h3>
-	    <p><pre>$ mosh <b>potus@</b><i>ackbar.cia.gov</i></pre></p>
+	    <p><pre>$ mosh <b>potus@</b><i>ackbar.bls.gov</i></pre></p>
 	  </div>
 
 	  <div class="span3">
@@ -317,14 +318,29 @@ $ make
 	  </div>
 	</div>
 
-	To forcibly end the connection, Mosh accepts the escape
-	sequence <code>Ctrl-^ .</code> (typically typed with
-	Control-Shift-6, then a period). To send a literal <code>Ctrl-^</code>,
-	type <code>Ctrl-^ ^</code>.
+	<h3 class="callout">Ending the connection</h3>
 
-	More details can be found in
+	<p>Normally, <tt>logout</tt> or <tt>exit</tt> on the remote host will close
+	  the session. Mosh accepts the escape sequence <code>Ctrl-^
+	  .</code>  (typically typed with Control-Shift-6, then a
+	  period) to end the connection forcibly. To send a
+	  literal Ctrl-^, type <code>Ctrl-^ ^</code>.</p>
+
+	<h3 class="callout">Not yet supported, but on the roadmap</h3>
+
+	<ul>
+	  <li>X11 forwarding
+
+	  <li>IPv6-only hosts or networks
+
+	  <li>Android client
+	</ul>
+
+	<h3 class="callout">Manual</h3>
+
+	<p>More details can be found in
 	the <code>mosh(1)</code>, <code>mosh-client(1)</code>,
-	and <code>mosh-server(1)</code> manual pages.
+	and <code>mosh-server(1)</code> manual pages.</p>
 
       </section>
 
@@ -337,7 +353,7 @@ $ make
 	<h3 class="callout">Mosh at USENIX ATC</h3>
 
 	<p>The <a href="mosh-paper-draft.pdf"><img style="padding: 3px;"
-	    src="pdf.png"> Mosh research paper</a> describes
+	    src="pdf.png"> Mosh research paper</a> (draft, in press) describes
 	    the design and evaluation of Mosh in more detail than you
 	    may want. The paper will be presented at the
 	  <a href="http://static.usenix.org/event/atc12/">2012 USENIX
@@ -351,9 +367,9 @@ Mosh paper.</small></h4>
 
 <p></p>
 
-<p><i>(Why you should trust Mosh with your remote terminal needs: we
+<p><span class="label label-info">Why you should trust Mosh with your remote terminal needs:</span> <i>we
 worry about details so obscure, even USENIX reviewers don't want to
-hear about them.)</i></p></div>
+hear about them.</i></p></div>
 
 	<h3 class="callout">How Mosh works</h3>
 
