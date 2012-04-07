@@ -129,8 +129,8 @@
           <p>Mosh automatically roams as you move between Internet
           connections. Use Wi-Fi on the train, Ethernet in a hotel,
           and LTE on a beach: you'll stay logged in. Most network
-          programs lose their connections after roaming &mdash;
-          including SSH and AJAX apps like Gmail or Google Talk. Mosh
+          programs lose their connections after roaming,
+          including SSH and Web apps like Gmail. Mosh
           is different.</p>
         </div>
         <div class="span4">
@@ -143,13 +143,14 @@
        </div>
         <div class="span4">
           <h2 class="callout">Get rid of network lag.</h2>
-          <p>Mosh gives instant feedback to typing, deleting, and line
-	    editing. It predicts the effects of keystrokes locally,
-	    even in full-screen programs like emacs and vim. On a bad
-	    connection, outstanding predictions are underlined so you
-	    won't be misled. Other protocols wait for the server's
-	    reply to show your typing, which produces an unpleasant
-	    user interface on “laggy” connections.</p>
+          <p>SSH waits for the server's reply before showing you your
+	    own typing. That can make for a lousy user interface. Mosh
+	    is different: it gives an instant response to typing,
+	    deleting, and line editing. It does this adaptively and
+	    works even in full-screen programs like emacs and vim. On
+	    a bad connection, outstanding predictions are underlined
+	    so you won't be misled.
+	  </p>
         </div>
       </div>
 
@@ -165,11 +166,10 @@
         <div class="span3">
           <h2 class="callout">Same login method.</h2>
            <p>Mosh doesn't listen on network ports or authenticate
-	     users. Users start their sessions with SSH and present
-	     the same credentials (e.g. password, public key,
-	     keyfob). The <tt>mosh</tt> client logs in to the
-	     server via SSH and runs the <tt>mosh-server</tt>
-	     remotely.</p>
+	     users. The <tt>mosh</tt> client logs in to the server via
+	     SSH, and users present the same credentials (e.g.,
+	     password, public key) as before. Then Mosh runs the
+	     <tt>mosh-server</tt> remotely and connects to it over UDP.</p>
         </div>
 
 	<div class="span3">
