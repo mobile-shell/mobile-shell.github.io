@@ -251,7 +251,7 @@ $ sudo apt-get install mosh</pre></p>
 	    </td>
 
 	    <td>
-	      <p class="prelike">Please compile from source as described below.</p>
+	      <p class="prelike">Please compile from Git as described below.</p>
 	    </td>
 	  </tr>
 
@@ -414,7 +414,7 @@ $ make
 	<h3 class="callout">Mosh at USENIX ATC</h3>
 
 	<p>The <a href="mosh-paper-draft.pdf"><img style="padding: 3px;"
-	    src="pdf.png"> Mosh research paper</a> (draft, in press) describes
+	    src="pdf.png"> Mosh research paper</a> (draft in press) describes
 	    the design and evaluation of Mosh in more detail than you
 	    may want. The paper will be presented at the
 	  <a href="http://static.usenix.org/event/atc12/">2012 USENIX
@@ -494,14 +494,23 @@ now.&#8221; <small>&mdash; actual USENIX peer review on reading the
 	    always works quickly. Protocols that must send every byte
 	    can't do this.</p>
 
-	  <p class="well">One benefit of working at the terminal layer
+	<h3 class="callout">Terminal geekery</h3>
+
+	  <p>One benefit of working at the terminal layer
 	    was the opportunity to build a clean UTF-8 terminal
 	    emulator from scratch. Mosh fixes several Unicode bugs in
 	    existing terminals and in SSH, and was designed as a fresh
 	    start to try to be robust and correct even for
-	    pathological inputs. Unlike other terminals that use ISO
-	    2022 locking sequences, Mosh will never get stuck in
-	    hieroglyphs.</p>
+	    pathological inputs.</p>
+
+	  <p>
+	  <img src="xterm-screenshot.png">
+	  <img src="gnome-screenshot.png">
+	  <img src="Terminal-screenshot.png">
+	  <img src="mosh-screenshot.png">
+	  </p>
+
+	<h3 class="callout">Instant local echo and line editing</h3>
 
 	  <p>The other major benefit of working at the
 	    terminal-emulation layer is that the Mosh client is free
@@ -525,6 +534,8 @@ now.&#8221; <small>&mdash; actual USENIX peer review on reading the
 	  <p>Thus, unlike previous attempts at local echo with TELNET
 	    and RLOGIN, Mosh's local echo can be used everywhere, even
 	    in full-screen programs like emacs and vi.</p>
+
+	  <img src="cdfs.png">
 
       </section>
 
