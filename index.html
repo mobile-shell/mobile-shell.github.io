@@ -493,7 +493,7 @@ now.&#8221; <small>&mdash; actual USENIX peer review on reading the
 	    always works quickly. Protocols that must send every byte
 	    can't do this.</p>
 
-	<h3 class="callout">Terminal geekery</h3>
+	<h3 class="callout">Careful terminal emulation</h3>
 
 	  <p>One benefit of working at the terminal layer
 	    was the opportunity to build a clean UTF-8 terminal
@@ -502,12 +502,66 @@ now.&#8221; <small>&mdash; actual USENIX peer review on reading the
 	    start to try to be robust and correct even for
 	    pathological inputs.</p>
 
-	  <p>
-	  <img src="xterm-screenshot.png">
-	  <img src="gnome-screenshot.png">
-	  <img src="Terminal-screenshot.png">
-	  <img src="mosh-screenshot.png">
-	  </p>
+	<h4 class="callout">Tricky Unicode</h4>
+
+	<p>Only Mosh and the OS X Terminal correctly handle a Unicode combining character in the first column.</p>
+
+	  <div class="row">
+	    <div class="span5 well"><img src="terminal-shots/firstcol-xterm.png.2.png"><br>xterm</div>
+	    <div class="span5 well"><img src="terminal-shots/firstcol-gnome.png.2.png"><br>GNOME Terminal</div>
+	  </div>
+	  <div class="row">
+	    <div class="span5 well"><img src="terminal-shots/firstcol-osx.png.2.png"><br>OS X Terminal.app</div>
+	    <div class="span5 well"><img src="terminal-shots/firstcol-mosh.png.2.png"><br>Mosh</div>
+	  </div>
+
+	<h4 class="callout">ISO 2022 locking escapes</h4>
+
+	<p>Only Mosh will never get stuck in hieroglyphs when a nasty program writes to the terminal. (See Markus Kuhn's discussion of the relationship between
+<a href="http://www.cl.cam.ac.uk/~mgk25/unicode.html#term">ISO 2022 and UTF-8</a>.)</p>
+
+	  <div class="row">
+	    <div class="span5 well"><img src="terminal-shots/acs-xterm.png.2.png"><br>xterm</div>
+	    <div class="span5 well"><img src="terminal-shots/acs-gnome.png.2.png"><br>GNOME Terminal</div>
+	  </div>
+	  <div class="row">
+	    <div class="span5 well"><img src="terminal-shots/acs-osx.png.2.png"><br>OS X Terminal.app</div>
+	    <div class="span5 well"><img src="terminal-shots/acs-mosh.png.2.png"><br>Mosh</div>
+	  </div>
+
+	<h4 class="callout">Evil escape sequences</h4>
+
+<p>Only Mosh and GNOME Terminal have a defensible rendering when Unicode
+mixes with an ECMA-48/ANSI escape sequence. The OS X Terminal unwisely
+tries to normalize its input before the vt500 state machine, causing
+it to crash on the following input! (This also means the OS X
+Terminal's interpretation of the incoming octet
+stream <strong>varies</strong> depending on how the incoming octets
+are split across TCP segments, because the normalization only looks
+ahead to available bytes.)</p>
+
+	  <div class="row">
+	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-xterm.png.2.png"><br>xterm</div>
+	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-gnome.png.2.png"><br>GNOME Terminal</div>
+	  </div>
+	  <div class="row">
+	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-osx.png.2.png"><br>OS X Terminal.app</div>
+	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-mosh.png.2.png"><br>Mosh</div>
+	  </div>
+
+	  <h4 class="callout">Mosh sets IUTF8</h4>
+
+	  <p>In the POSIX framework, the kernel needs to know whether
+	  the user is typing in an 8-bit character set or in UTF-8,
+	  because in canonical mode (i.e. "cooked" mode), the kernel
+	  needs to be able to delete a typed multibyte character
+	  sequence from an input buffer.  On OS X and Linux, this is
+	  done with the "IUTF8" termios flag.)
+	  (See <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=665757">diagnostic
+	      explaining the need for this flag.</a>)</p>
+
+	  <p>Mosh sets the IUTF8 flag when possible and stubbornly refuses to start up unless the user has a
+	  UTF-8-clean environment. SSH does not set the IUTF8 flag, which can lead to garbage in input buffers.</p>
 
 	<h3 class="callout">Instant local echo and line editing</h3>
 
