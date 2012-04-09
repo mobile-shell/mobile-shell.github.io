@@ -507,12 +507,12 @@ now.&#8221; <small>&mdash; actual USENIX peer review on reading the
 	<p>Only Mosh and the OS X Terminal correctly handle a Unicode combining character in the first column.</p>
 
 	  <div class="row">
-	    <div class="span5 well"><img src="terminal-shots/firstcol-xterm.png.2.png"><br>xterm</div>
-	    <div class="span5 well"><img src="terminal-shots/firstcol-gnome.png.2.png"><br>GNOME Terminal</div>
+	    <div class="span5 well"><img src="terminal-shots/firstcol-xterm.png.2.png"><br>xterm: circumflex on wrong letter.</div>
+	    <div class="span5 well"><img src="terminal-shots/firstcol-gnome.png.2.png"><br>GNOME Terminal: no circumflex at all.</div>
 	  </div>
 	  <div class="row">
-	    <div class="span5 well"><img src="terminal-shots/firstcol-osx.png.2.png"><br>OS X Terminal.app</div>
-	    <div class="span5 well"><img src="terminal-shots/firstcol-mosh.png.2.png"><br>Mosh</div>
+	    <div class="span5 well"><img src="terminal-shots/firstcol-osx.png.2.png"><br>OS X Terminal.app gets it right.</div>
+	    <div class="span5 well"><img src="terminal-shots/firstcol-mosh.png.2.png"><br>Mosh gets it right too.</div>
 	  </div>
 
 	<h4 class="callout">ISO 2022 locking escapes</h4>
@@ -541,12 +541,12 @@ are split across TCP segments, because the normalization only looks
 ahead to available bytes.)</p>
 
 	  <div class="row">
-	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-xterm.png.2.png"><br>xterm</div>
-	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-gnome.png.2.png"><br>GNOME Terminal</div>
+	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-xterm.png.2.png"><br>xterm: circumflex on wrong letter.</div>
+	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-gnome.png.2.png"><br>GNOME Terminal's circumflex placement is defensible.</div>
 	  </div>
 	  <div class="row">
-	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-osx.png.2.png"><br>OS X Terminal.app</div>
-	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-mosh.png.2.png"><br>Mosh</div>
+	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-osx.png.2.png"><br>OS X Terminal.app applies circumflex to part of escape sequence, then crashes.</div>
+	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-mosh.png.2.png"><br>Mosh gets this one right.</div>
 	  </div>
 
 	  <h4 class="callout">Mosh sets IUTF8</h4>
