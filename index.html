@@ -588,7 +588,43 @@ ahead to available bytes.)</p>
 	    and RLOGIN, Mosh's local echo can be used everywhere, even
 	    in full-screen programs like emacs and vi.</p>
 
-	  <img src="cdfs.png">
+	<h4 class="callout">Real-world benefits</h3>
+
+<p>We evaluated Mosh using traces contributed by six users, covering
+about 40 hours of real-world usage and including 9,986 total
+keystrokes. These traces included the timing and contents of all
+writes from the user to the host and vice versa. The users were asked
+to contribute "typical, real-world sessions." In practice, the traces
+include use of popular programs such as the bash shell and zsh shells,
+the alpine and mutt e-mail clients, the emacs and vim text editors,
+the irssi and barnowl chat clients, the links text-mode Web browser,
+and several programs unique to each user.</p>
+
+<p>To evaluate typical usage of a "mobile'' terminal, we replayed the
+traces over an otherwise unloaded Sprint commercial EV-DO (3G)
+cellular Internet connection in Cambridge, Mass. A client-side process
+played the user portion of the traces, and a server-side process
+waited for the expected user input and then replied (in time) with the
+prerecorded server output. We speeded up long periods with no
+activity.  The average round-trip time on the link was about half a
+second.</p>
+
+<p>We replayed the traces over two different transports, SSH and Mosh,
+and recorded the user interface response latency to each simulated
+user keystroke. The Mosh predictive algorithm was frozen prior to
+collecting the traces and was not adjusted in response to their
+contents or results.</p>
+
+<p><strong>The results:</strong> Mosh reduced the median keystroke response
+time from 503 ms to nearly instant (because more than 70% of the
+keystrokes could be immediately displayed), and reduced the mean
+keystroke response time from 515 ms to 173 ms. Qualitatively, Mosh makes
+remote servers "feel" more like the local machine!</p>
+
+<div class="well">
+<h4 class="callout">Cumulative distribution of keystroke response times with Sprint EV-DO (3G) Internet service</h4><br>
+<img src="cdfs.png">
+</div>
 
       </section>
 
