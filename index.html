@@ -635,8 +635,7 @@ remote servers "feel" more like the local machine!</p>
 
 	<h4 class="callout">Q: Who wrote Mosh?</h4>
 
-	<p>Mosh was written by Keith Winstein and advised by Hari
-	  Balakrishnan at MIT, along with Quentin Smith, Richard
+	<p>Mosh was written by Keith Winstein, along with Quentin Smith, Richard
 	  Tibbetts and Keegan McAllister.</p>
 
 	<h4 class="callout">Q: Why another remote-terminal protocol?</h4>
@@ -708,6 +707,11 @@ remote servers "feel" more like the local machine!</p>
 	  then run <pre>mosh <b>remotehost</b> --server="LANG=$LANG mosh-server"</pre> to pass the environment variable
 	  yourself.</p>
 
+	<h4 class="callout">Q: How do I use a different SSH port (not 22)?</h4>
+
+	<p>We are <a href="https://github.com/keithw/mosh/issues/53">working on this issue</a>. For now, please
+	  configure an alternate port in your <code>~/.ssh/config</code> file, and mosh will respect it.</p>
+
 	<h4 class="callout">Q: How do I get 256 colors?</h4>
 
 	<p>Make sure you are running mosh in a terminal that
@@ -732,10 +736,88 @@ remote servers "feel" more like the local machine!</p>
 	been wrong. We don't doubt it will (properly!) take time for
 	the crypto community to get comfortable with mosh.</p>
 
+	<h4 class="callout">Q: How do I run the mosh client and server separately?</h4>
+
+	<p>If the <code>mosh</code> wrapper script isn't working for you, you can try running
+	  the <code>mosh-client</code> and <code>mosh-server</code> programs separately to
+	  form a connection. This can be a useful debugging technique.</p>
+
+	<p>1. Log in to the remote host, and run <code>mosh-server</code>.</p>
+
+	<p>It will give output like:
+<pre>$ mosh-server 
+
+MOSH CONNECT <b>60004</b> <b>4NeCCgvZFe2RnPgrcU1PQw</b>
+
+mosh-server (mosh 1.1.3)
+Copyright 2012 Keith Winstein <mosh-devel@mit.edu>
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+[mosh-server detached, pid = 30261]
+</pre></p>
+
+	<p>2. On the local host, run:
+<pre>$ MOSH_KEY=<b>key</b> mosh-client <b>remote-IP</b> <b>remote-PORT</b></pre>
+
+where "key" is the 22-byte string printed by mosh-server (in this
+example, "4NeCCgvZFe2RnPgrcU1PQw"), "remote-PORT" is the port number
+given by the server (60004 in this case), and "remote-IP" is the IP address of the server. You can look up the
+server's IP address with "host remotehost".</p>
+
+<p>3. If all goes well, you should have a working Mosh connection. Information about where the process fails can
+help us debug why Mosh isn't working for you.</p>
+
 	<h4 class="callout">Q: How do I contribute to mosh?</h4>
 
 	<p>We welcome your contribution! Please <a href="https://github.com/keithw/mosh">visit us on GitHub</a>
 	or email <code>mosh-devel@mit.edu</code>.</p>
+
+	<h4 class="callout">Q: Who helped with mosh?</h4>
+
+	<p>We're very grateful for assistance and support from:
+
+	  <ul>
+
+<li>Hari Balakrishnan, who advised this work and came up with the name.
+
+<li><a href="http://www.vt100.net">Paul Williams</a>, whose reverse-engineered vt500 state diagram is the basis for the Mosh parser.
+
+<li>The anonymous users who contributed session logs for tuning and measuring Mosh's predictive echo.
+
+<li>Nickolai Zeldovich for helpful comments on the Mosh research paper.
+
+<li>Richard Stallman for helpful discussion about the capabilities of the SUPDUP Local Editing Protocol.
+
+<li>Nelson Elhage
+
+<li>Christine Spang
+
+<li>Stefie Tellex
+
+<li>Joseph Sokol-Margolis
+
+<li>Waseem Daher
+
+<li>Bill McCloskey
+
+<li>Austin Roach
+
+<li>Greg Hudson
+
+<li>Karl Ramm
+
+<li>Evan Broder
+
+<li>Neha Narula
+
+<li>Katrina LaCurts
+
+<li>Ramesh Chandra
+
+</ul>
+
       </section>
 
       <section id="lists">
