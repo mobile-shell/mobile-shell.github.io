@@ -753,8 +753,8 @@ remote servers "feel" more like the local machine!</p>
 MOSH CONNECT <b>60004</b> <b>4NeCCgvZFe2RnPgrcU1PQw</b>
 
 mosh-server (mosh 1.1.3)
-Copyright 2012 Keith Winstein <mosh-devel@mit.edu>
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+Copyright 2012 Keith Winstein &lt;mosh-devel@mit.edu&gt;
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 
@@ -769,8 +769,12 @@ example, "4NeCCgvZFe2RnPgrcU1PQw"), "remote-PORT" is the port number
 given by the server (60004 in this case), and "remote-IP" is the IP address of the server. You can look up the
 server's IP address with "host remotehost".</p>
 
-<p>3. If all goes well, you should have a working Mosh connection. Information about where the process fails can
-help us debug why Mosh isn't working for you.</p>
+	<p>3. If all goes well, you should have a working Mosh connection. Information about where the process fails can help us debug why Mosh isn't working for you.</p>
+
+	<h4 class="callout">Q: With the mosh-server on FreeBSD or OS X, I sometimes get weird color problems. What's wrong?</h4>
+
+	<p>This is a <a href="https://github.com/keithw/mosh/pull/129">known bug</a> in mosh 1.1.3 that we will fix in the next release. Unfortunately we were relying on
+some <a href="http://austingroupbugs.net/view.php?id=453&nbn=3">controversial POSIX behavior</a> that GNU and BSD interpret differently. Thanks to Ed Schouten and Peter Jeremy for tracking this down.</p>
 
 	<h4 class="callout">Q: How do I contribute to mosh?</h4>
 
