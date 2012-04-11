@@ -649,12 +649,8 @@ remote servers "feel" more like the local machine!</p>
 
 	<p>Moreover, TELNET had some good things going for it &mdash; a
 	  local-echo mode and a well-defined network virtual
-	  terminal. Then SSH came along and added minor enhancements
-	  like confidentiality and authentication, at the cost of
-	  losing the local-echo mode and the well-defined terminal
-	  semantics. Even today, SSH doesn't properly support UTF-8
+	  terminal. Even today, SSH doesn't properly support UTF-8
 	  end-to-end on a POSIX system.</p>
-
 
 	<h4 class="callout">Q: Are the mosh principles relevant to other network applications?</h4>
 
@@ -728,12 +724,16 @@ remote servers "feel" more like the local machine!</p>
 
 	<h4 class="callout">Q: Has your secure datagram protocol been audited by experts?</h4>
 
-	<p>No. We certainly welcome your eyes on the code. Any novel
-	datagram protocol is going to have to prove itself, and SSP is
-	no exception. Of course we think the radical simplicity of the
-	design is an advantage, but others have thought that and have
-	been wrong. We don't doubt it will (properly!) take time for
-	the crypto community to get comfortable with mosh.</p>
+	<p>No. Mosh is actively used and has been read over by
+	  security-minded crypto nerds who think its design is
+	  reasonable, but any novel datagram protocol is going to have
+	  to prove itself, and SSP is no exception. We use the
+	  reference implementations of AES-128 and OCB, and we welcome
+	  your eyes on the code. We think the radical simplicity of
+	  the design is an advantage, but of course others have
+	  thought that and have been wrong. We don't doubt it will
+	  (properly!) take time for the security community to get
+	  comfortable with mosh.</p>
 
 	<h4 class="callout">Q: Does mosh work with Amazon EC2?</h4>
 
