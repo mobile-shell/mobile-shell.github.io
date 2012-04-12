@@ -322,6 +322,15 @@ $ ./configure
 $ make
 # make install</pre></p>
 	  </div>
+          <div class="span3">
+            <h3 class=="callout">Security on new operating systems</h3></br>
+            <p>
+              Note that <code>mosh-client</code> receives an AES session key as an environment
+              variable.  If you are porting Mosh to a new operating system, please make sure that a
+              running process's environment variables are not readable by other users.  We have
+              confirmed that this is the case on GNU/Linux, OS X, and FreeBSD.
+            </p>
+          </div>
 	</div>
       </section>
 
