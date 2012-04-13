@@ -197,89 +197,67 @@
 	  <h1>Getting Mosh</h1>
 	</div>
 
-	<table width="1000px" style="border-spacing: 20px 0px; border-collapse: separate;">
-	  <tr class="os">
-	    <td><h3 class="callout"><a href="http://www.debian.org"><img class="logo" src="debian.png"></a>Debian GNU/Linux <small>testing, unstable</small><br />
-	      <a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png"></a>Ubuntu <small>12.04 LTS (Precise)</small></h3>
-	    </td>
-	    <td>
-	      <h3 class="callout"><a href="http://www.fedoraproject.org"><img class="logo" src="fedora.png"></a>Fedora <small>15 or later</small></h3>
-	    </td>
+	<div class="row">
+	  <div class="span4" style="vertical-align: top;">
+	    <h3 class="callout"><a href="http://www.debian.org"><img class="logo" src="debian.png"></a>Debian GNU/Linux <small>testing, unstable</small><br />
+	    <a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png"></a>Ubuntu <small>12.04 LTS (Precise)</small></h3>
+            <p><pre>$ sudo apt-get install mosh</pre></p>
+	  </div>
 
-	    <td>
-	      <h3 class="callout"><a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png"></a>Ubuntu <small>10.04 LTS or later</small></h3>
-	    </td>
-	  </tr>
+          <div class="span4" style="vertical-align: top;">
+	    <h3 class="callout"><a href="http://www.fedoraproject.org"><img class="logo" src="fedora.png"></a>Fedora <small>15 or later</small></h3>
+            <p><pre>$ sudo yum install mosh</pre></p>
+	  </div>
 
-	  <tr class="inst">
-	    <td>
-	      <p><pre>$ sudo apt-get install mosh</pre></p>
-	    </td>
-	    <td>
-	      <p><pre>$ sudo yum install mosh</pre></p>
-	    </td>
-	    <td>
-	      <p>Available in the <a href="https://help.ubuntu.com/community/UbuntuBackports">backports repository</a> as <tt>mosh</tt>, or:
-	      <pre>$ sudo add-apt-repository ppa:keithw/mosh
+          <div class="span4" style="vertical-align: top;">
+	    <h3 class="callout"><a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png"></a>Ubuntu <small>10.04 LTS or later</small></h3>
+            <p>Available in the <a href="https://help.ubuntu.com/community/UbuntuBackports">backports repository</a> as <tt>mosh</tt>, or:
+            <pre>$ sudo add-apt-repository ppa:keithw/mosh
 $ sudo apt-get update
 $ sudo apt-get install mosh</pre></p>
-	    </td>
-	  </tr>
+            <br />
+	  </div>
+	</div>
 
-	  <tr class="os">
-	    <td>
-	      <h3 class="callout"><a href="http://www.gentoo.org"><img class="logo" src="gentoo.png"></a> Gentoo</h3>
-	    </td>
+	<div class="row">
+          <div class="span4" style="vertical-align: top;">
+	    <h3 class="callout"><a href="http://www.gentoo.org"><img class="logo" src="gentoo.png"></a> Gentoo</h3>
+            <p><pre># emerge net-misc/mosh</pre></p>
+	    <br />
+	  </div>
 
-	    <td>
-	      <h3 class="callout"><a href="http://www.archlinux.org"><img class="logo" src="arch.png"></a> Arch Linux</h3>
-	    </td>
+          <div class="span4" style="vertical-align: top;">
+	    <h3 class="callout"><a href="http://www.archlinux.org"><img class="logo" src="arch.png"></a> Arch Linux</h3>
+            <p><pre># packer -S mobile-shell-git</pre></p>
+            <br />
+	  </div>
 
-	    <td>
-	      <h3 class="callout"><a href="http://www.freebsd.org"><img class="logo" src="freebsd.png"></a> FreeBSD</h3>
-	    </td>
-	  </tr>
+          <div class="span4" style="vertical-align: top;">
+	    <h3 class="callout"><a href="http://www.freebsd.org"><img class="logo" src="freebsd.png"></a> FreeBSD</h3>
+            <p><pre># portmaster net/mosh</pre></p>
+            <br />
+	  </div>
+	</div>
 
-	  <tr class="inst">
-	    <td>
-	      <p><pre># emerge net-misc/mosh</pre></p>
-	    </td>
+	<div class="row">
+          <div class="span4" style="vertical-align: top;">
+	    <h3 class="callout"><a href="http://www.apple.com"><img class="logo" src="macosx.png"></a>OS X <small>10.5 or later</small></h3>
+            <p><div class="prelike">Install <a href="https://github.com/downloads/keithw/mosh/mosh-1.1.3-2.pkg"><img src="dmg.png"> mosh-1.1.3-2.pkg</a>.</div></p>
+            <br />
+	  </div>
 
-	    <td>
-	      <p><pre># packer -S mobile-shell-git</pre></p>
-	    </td>
+          <div class="span4" style="vertical-align: top;">
+	    <h3 class="callout"><a href="http://mxcl.github.com/homebrew/">Homebrew </a> <small>OS X 10.6 or later</small></h3>
+            <p><pre>$ brew install mobile-shell</pre></p>
+            <br />
+	  </div>
 
-	    <td>
-	      <p><pre># portmaster net/mosh</pre></p>
-	    </td>
-	  </tr>
-
-	  <tr class="os">
-	    <td>
-	      <h3 class="callout"><a href="http://www.apple.com"><img class="logo" src="macosx.png"></a>OS X <small>10.5 or later</small></h3>
-	    </td>
-
-	    <td>
-	      <h3 class="callout"><a href="http://mxcl.github.com/homebrew/">Homebrew </a> <small>OS X 10.6 or later</small></h3>
-	    </td>
-
-	    <td>
-	      <h3 class="callout"><a href="http://www.macports.org"><img class="logo" src="macports.png"></a>MacPorts <small>OS X 10.5 or later</small></h3>
-	      </td>
-	  </tr>
-
-	  <tr class="inst">
-	    <td>
-	      <p><div class="prelike">Install <a href="https://github.com/downloads/keithw/mosh/mosh-1.1.3-2.pkg"><img src="dmg.png"> mosh-1.1.3-2.pkg</a>.</div></p>
-	    </td>
-	    <td>
-	      <p><pre>$ brew install mobile-shell</pre></p>
-	    </td>
-	    <td>
-	      <p><pre>$ sudo port install mosh</pre></p>
-	    </td>
-	  </tr>
-	</table>
+          <div class="span4" style="vertical-align: top;">
+	    <h3 class="callout"><a href="http://www.macports.org"><img class="logo" src="macports.png"></a>MacPorts <small>OS X 10.5 or later</small></h3>
+            <p><pre>$ sudo port install mosh</pre></p>
+            <br />
+	  </div>
+	</div>
 
 	<p><small>Operating system logos are trademarks or registered trademarks and are displayed for identification
 only. The vendors shown aren't affiliated with and haven't endorsed Mosh.</small></p>
