@@ -90,7 +90,7 @@
               <li><a href="#usage">Usage</a></li>
               <li><a href="#techinfo">Technical Info</a></li>
               <li><a href="#faq">FAQ</a></li>
-              <li><a href="#lists">Mailing Lists</a></li>
+              <li><a href="#contact">Contact</a></li>
               <li><a href="https://github.com/keithw/mosh">Mosh on GitHub</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -301,6 +301,15 @@ $ ./configure
 $ make
 # make install</pre></p>
 	  </div>
+          <div class="span3">
+            <h3 class=="callout">Security on new operating systems</h3></br>
+            <p>
+              Note that <code>mosh-client</code> receives an AES session key as an environment
+              variable.  If you are porting Mosh to a new operating system, please make sure that a
+              running process's environment variables are not readable by other users.  We have
+              confirmed that this is the case on GNU/Linux, OS X, and FreeBSD.
+            </p>
+          </div>
 	</div>
       </section>
 
@@ -811,9 +820,9 @@ some <a href="http://austingroupbugs.net/view.php?id=453&nbn=3">controversial PO
 
       </section>
 
-      <section id="lists">
+      <section id="contact">
 	<div class="page-header">
-	  <h1>Mailing Lists</h1>
+	  <h1>Contact</h1>
 	</div>
 	
 	<p><ul>
@@ -826,6 +835,14 @@ some <a href="http://austingroupbugs.net/view.php?id=453&nbn=3">controversial PO
 	      Mosh user discussion and site best practices.
 
 	      Sign up or view archives at <a href="http://mailman.mit.edu/mailman/listinfo/mosh-users">http://mailman.mit.edu/mailman/listinfo/mosh-users</a>.</li>
+	    <li><code>#mosh</code> channel on <a href="http://freenode.net/">Freenode</a> IRC<br>
+
+              You can <a
+              href="http://webchat.freenode.net/?channels=mosh">connect with a
+              Web client</a>, try an <a
+              href="irc://irc.freenode.net/mosh"><tt>irc://</tt> URL</a>,
+              or manually configure your client for <code>irc.freenode.net</code>.</li>
+
 	    </ul></p>
 
 
