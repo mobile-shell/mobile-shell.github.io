@@ -703,6 +703,14 @@ remote servers "feel" more like the local machine!</p>
 	<p>We are <a href="https://github.com/keithw/mosh/issues/53">working on this issue</a>. For now, please
 	  configure an alternate port in your <code>~/.ssh/config</code> file, and mosh will respect it.</p>
 
+	<h4 class="callout">Q: I'm getting 'mosh-server not found'.</h4>
+
+	<p>Please make sure that mosh is installed on the client, and
+	mosh (or at least mosh-server) is installed on the server you
+	are trying to connect to. If you install mosh-server in your
+	home directory, please see the "Server binary outside path"
+	instructions in the Usage section, above.</p>
+
 	<h4 class="callout">Q: How do I get 256 colors?</h4>
 
 	<p>Make sure you are running mosh in a terminal that
