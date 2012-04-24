@@ -520,21 +520,28 @@ now.&#8221; <small>&mdash; actual USENIX peer review on reading the
 
 	<h4 class="callout">Evil escape sequences</h4>
 
-<p>Only Mosh and GNOME Terminal have a defensible rendering when Unicode
-mixes with an ECMA-48/ANSI escape sequence. The OS X Terminal unwisely
-tries to normalize its input before the vt500 state machine, causing
-it to crash on the following input! (This also means the OS X
-Terminal's interpretation of the incoming octet
-stream <strong>varies</strong> depending on how the incoming octets
-are split across TCP segments, because the normalization only looks
-ahead to available bytes.)</p>
+<p>Only Mosh and GNOME Terminal have a defensible rendering when
+Unicode mixes with an ECMA-48/ANSI escape sequence. The OS X Terminal
+unwisely tries to normalize its input before the vt500 state machine,
+causing it to misinterpret and become unusable after receiving the
+following input!* (This also means the OS X Terminal's interpretation
+of the incoming octet stream <strong>varies</strong> depending on how
+the incoming octets are split across TCP segments, because the
+normalization only looks ahead to available bytes.)</p>
+
+<p><small>* We earlier wrote that this misbehaving sequence "crashes"
+the OS X Terminal.app. This was mistaken&mdash;instead, Terminal.app
+interprets the escape sequence as shutting off keyboard input, and
+because of an unrelated bug in Terminal.app, it is not possible for
+the user to restore keyboard input by resetting the terminal from the
+menu.</small></p>
 
 	  <div class="row">
 	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-xterm.png.2.png"><br>xterm: circumflex on wrong letter.</div>
 	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-gnome.png.2.png"><br>GNOME Terminal's circumflex placement is defensible.</div>
 	  </div>
 	  <div class="row">
-	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-osx.png.2.png"><br>OS X Terminal.app applies circumflex to part of escape sequence, then crashes.</div>
+	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-osx.png.2.png"><br>OS X Terminal.app applies circumflex to part of escape sequence, then irretrievably shuts off keyboard input.</div>
 	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-mosh.png.2.png"><br>Mosh gets this one right.</div>
 	  </div>
 
