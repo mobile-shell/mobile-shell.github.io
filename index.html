@@ -694,22 +694,25 @@ remote servers "feel" more like the local machine!</p>
 	in <strong>underneath</strong> the vt220 state machine.)</p>
 
 	<p>To debug this, run <code>locale</code> on the local
-	terminal, and <code>ssh <b>remotehost</b> locale</code>. To
-	use mosh, both sides of the connection will need to say
-	something like <code>LC_CTYPE="en_US.UTF-8"</code> (or another
-	language).</p>
+	terminal, and <code>ssh <i>remotehost</i> locale</code>. To
+	use Mosh, both sides of the connection will need to show
+        a UTF-8 locale, like <code>LC_CTYPE="en_US.UTF-8"</code>.
 
-	<p>If the locale calls for UTF-8 locally but that is not being
-	passed over SSH, please see
-	  <a href="https://github.com/keithw/mosh/issues/98">this
-	  GitHub ticket</a>. Most major SSH distributors (including OS
-	  X and Red Hat, Fedora, Debian, and Ubuntu) configure SSH to
-	  pass the locale-related environment variables over the
-	  connection, but some smaller distributors don't set this up.
-	  If you cannot fix the client and server configurations, as a
-	  fallback you can set LANG locally (e.g. to en_US.UTF-8) and
-	  then run <pre>mosh <b>remotehost</b> --server="LANG=$LANG mosh-server"</pre> to pass the environment variable
-	  yourself.</p>
+        <p>On many systems, SSH will transfer the locale-related
+        environment variables, which are then inherited by
+        <code>mosh-server</code>.  If this mechanism fails, Mosh (as of
+        version 1.2) will pass the variables itself.  If neither
+        mechanism is successful, you can do something like
+
+        <pre>mosh <i>remotehost</i> <b>--server="LANG=en_US.UTF-8 mosh-server"</b></pre>
+
+        If <code>en_US.UTF-8</code> does not exist on the remote server,
+        you can replace this with a UTF-8 locale that does exist.  You
+        may also need to set LANG locally for the benefit of
+        <code>mosh-client</code>.  It is possible that the local and
+        remote machines will need different locale names. See also <a
+        href="https://github.com/keithw/mosh/issues/98">this GitHub
+        ticket</a>.</p>
 
 	<h4 class="callout">Q: How do I use a different SSH port (not 22)?</h4>
 
