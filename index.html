@@ -698,8 +698,12 @@ remote servers "feel" more like the local machine!</p>
 
 	<h4 class="callout">Q: How do I use a different SSH port (not 22)?</h4>
 
-	<p>We are <a href="https://github.com/keithw/mosh/issues/53">working on this issue</a>. For now, please
-	  configure an alternate port in your <code>~/.ssh/config</code> file, and mosh will respect it.</p>
+        <p>As of Mosh 1.2, you can pass arguments to <code>ssh</code> like so:
+
+        <pre>mosh <i>remotehost</i> <b>--ssh="ssh -p 2222"</b></pre>
+
+        Or configure a host alias in <code>~/.ssh/config</code> with a
+        <code>Port</code> directive.  Mosh will respect that too.</p>
 
 	<h4 class="callout">Q: I'm getting 'mosh-server not found'.</h4>
 
