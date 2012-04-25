@@ -679,24 +679,13 @@ remote servers "feel" more like the local machine!</p>
 	room for improvement in many network user interfaces from the
 	application of these values.</p>
 
-	<h4 class="callout">Q: Why do you insist on UTF-8 everywhere? (I'm getting "mosh requires a UTF-8 locale.")</h4>
+	<h4 class="callout">Q: I'm getting "mosh requires a UTF-8 locale."
+        How can I fix this?</h4>
 
-	<p>We're really not UTF-8 zealots. But it's a lot easier to
-	correctly implement <strong>one</strong> terminal emulator
-	than to try to do the right thing in a variety of difficult
-	edge cases. (This is what GNU screen tries to do, and in our
-	experience it leads to some very tricky-to-debug situations.)
-	So mosh just won't start up until the user has everything
-	configured for a UTF-8-clean pathway. It may be annoying, but
-	it also probably reduces frustration down the
-	road. (Unfortunately an 8-bit vt220 and a UTF-8 vt220 are
-	different and incompatible terminal types; the UTF-8 goes
-	in <strong>underneath</strong> the vt220 state machine.)</p>
-
-	<p>To debug this, run <code>locale</code> on the local
-	terminal, and <code>ssh <i>remotehost</i> locale</code>. To
-	use Mosh, both sides of the connection will need to show
-        a UTF-8 locale, like <code>LC_CTYPE="en_US.UTF-8"</code>.
+        <p>To diagnose the problem, run <code>locale</code> on the local
+        terminal, and <code>ssh <i>remotehost</i> locale</code>. To use Mosh,
+        both sides of the connection will need to show a UTF-8 locale, like
+        <code>LC_CTYPE="en_US.UTF-8"</code>.
 
         <p>On many systems, SSH will transfer the locale-related
         environment variables, which are then inherited by
@@ -713,6 +702,20 @@ remote servers "feel" more like the local machine!</p>
         remote machines will need different locale names. See also <a
         href="https://github.com/keithw/mosh/issues/98">this GitHub
         ticket</a>.</p>
+
+        <h4 class="callout">Q: Why do you insist on UTF-8 everywhere?</h4>
+
+	<p>We're really not UTF-8 zealots. But it's a lot easier to
+	correctly implement <strong>one</strong> terminal emulator
+	than to try to do the right thing in a variety of difficult
+	edge cases. (This is what GNU screen tries to do, and in our
+	experience it leads to some very tricky-to-debug situations.)
+	So mosh just won't start up until the user has everything
+	configured for a UTF-8-clean pathway. It may be annoying, but
+	it also probably reduces frustration down the
+	road. (Unfortunately an 8-bit vt220 and a UTF-8 vt220 are
+	different and incompatible terminal types; the UTF-8 goes
+	in <strong>underneath</strong> the vt220 state machine.)</p>
 
 	<h4 class="callout">Q: How do I use a different SSH port (not 22)?</h4>
 
