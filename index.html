@@ -272,11 +272,9 @@ only. The vendors shown aren't affiliated with and haven't endorsed Mosh.</small
 	    <table class="table table-striped" style="width: 100%;">
               <thead><tr><th>Name</th><th>Typical package</th></tr></thead>
               <tr class="deps"><td><a href="http://code.google.com/p/protobuf/">Protocol Buffers</a></td><td>protobuf-compiler, libprotobuf-dev</td></tr>
-              <tr><td><a href="http://www.boost.org">Boost</a></td>
-                <td>libboost-dev</td></tr>
-              <tr><td>utempter</td><td>libutempter-dev</td></tr>
               <tr><td>ncurses</td><td>libncurses5-dev</td></tr>
               <tr><td>zlib</td><td>zlib1g-dev</td></tr>
+              <tr><td>utempter (optional)</td><td>libutempter-dev</td></tr>
 	      <tr><td>IO::Pty Perl module</td><td>libio-pty-perl</td></tr>
 	    </table>
 	  </div>
@@ -284,9 +282,9 @@ only. The vendors shown aren't affiliated with and haven't endorsed Mosh.</small
 	  <div class="span3">
 	    <h3 class="callout">Latest release</h3><br>
 	    <p>Extract
-              <a href="https://github.com/downloads/keithw/mosh/mosh-1.1.3.tar.gz">mosh-1.1.3.tar.gz</a>,
+              <a href="https://github.com/downloads/keithw/mosh/mosh-1.2.tar.gz">mosh-1.2.tar.gz</a>,
               then</p>
-<pre>$ cd mosh-1.1.3
+<pre>$ cd mosh-1.2
 $ ./configure
 $ make
 # make install</pre>
@@ -321,33 +319,48 @@ $ make
 	<p><h3 class="callout">Replaces interactive SSH. Instant keystroke response, robust to roaming. <small>But you'll need working UDP.</small></h3></p>
 
 	<div class="row">
-	  <div class="well span3 offset1">
+	  <div class="well span3 offset2">
 	    <h2 class="callout" style="color: darkblue;">Typical usage</h2>
 	    <p><pre>$ mosh <i>chewbacca.norad.mil</i></pre></p>
 	    <p>Mosh will log the user in via SSH, then start a connection on a UDP port between 60000 and 61000.</p>
 	  </div>
 
-	  <div class="span3 offset1">
+	  <div class="span4">
 	    <h3 class="callout">Different username</h3>
 	    <p><pre>$ mosh <b>potus@</b><i>ackbar.bls.gov</i></pre></p>
 	  </div>
 
-	  <div class="span3">
-	    <h3 class="callout">Particular port</h3>
-	    <p><pre>$ mosh <b>-p 1234</b> <i>darth</i></pre></p>
-	    <p>If the server is behind a port-forwarder or NAT, a particular UDP port can be requested.</p>
-	  </div>
-	</div>
-
-	<p></p>
-
-	<div class="row">
 	  <div class="span4">
 	    <h3 class="callout">Server binary outside path</h3>
 	    <p><pre>$ mosh <b>--server=/tmp/mosh-server</b> <i>r2d2</i></pre></p>
 	    <p>The user can specify an alternate path for the <code>mosh-server</code> on the remote host. The server binary can even
 	      be installed in the user's home directory.</p>
 	  </div>
+	</div>
+
+	<p></p>
+
+	<div class="row">
+
+	  <div class="span4">
+	    <h3 class="callout">Selecting Mosh UDP port</h3>
+	    <p><pre>$ mosh <b>-p 1234</b> <i>darth</i></pre></p>
+	    <p>Useful when the server is behind a port-forwarder or NAT.</p>
+	  </div>
+
+          <div class="span4">
+            <h3 class="callout">Selecting SSH port</h3>
+            <p><pre>$ mosh <b>--ssh="ssh -p 2222"</b> <i>figrindan</i></pre></p>
+          </div>
+
+          <div class="span4">
+            <h3 class="callout">Other SSH options</h3>
+            <p><pre>$ mosh <b>--ssh="~/bin/ssh -i ./identity"</b> <i>fett</i></pre></p>
+          </div>
+
+        </div>
+
+	<div class="row">
 
 	  <div class="span4">
 	    <h3 class="callout">Disable instant echo</h3>
@@ -377,11 +390,11 @@ $ make
 
 	<p>
 	<ul>
-	  <li>X11 forwarding
+	  <li>Forwarding of <a href="https://github.com/keithw/mosh/issues/41">X11</a>, <a href="https://github.com/keithw/mosh/issues/120">SSH agent</a>, etc.</li>
 
-	  <li>IPv6-only hosts or networks
+	  <li><a href="https://github.com/keithw/mosh/issues/81">IPv6</a>, with roaming between v4 and v6</li>
 
-	  <li>Android client
+	  <li><a href="https://github.com/keithw/mosh/issues/32">Android client</a></li>
 	</ul>
 	</p>
 
@@ -666,7 +679,31 @@ remote servers "feel" more like the local machine!</p>
 	room for improvement in many network user interfaces from the
 	application of these values.</p>
 
-	<h4 class="callout">Q: Why do you insist on UTF-8 everywhere? (I'm getting "mosh requires a UTF-8 locale.")</h4>
+	<h4 class="callout">Q: I'm getting "mosh requires a UTF-8 locale."
+        How can I fix this?</h4>
+
+        <p>To diagnose the problem, run <code>locale</code> on the local
+        terminal, and <code>ssh <i>remotehost</i> locale</code>. To use Mosh,
+        both sides of the connection will need to show a UTF-8 locale, like
+        <code>LC_CTYPE="en_US.UTF-8"</code>.
+
+        <p>On many systems, SSH will transfer the locale-related
+        environment variables, which are then inherited by
+        <code>mosh-server</code>.  If this mechanism fails, Mosh (as of
+        version 1.2) will pass the variables itself.  If neither
+        mechanism is successful, you can do something like
+
+        <pre>mosh <i>remotehost</i> <b>--server="LANG=en_US.UTF-8 mosh-server"</b></pre>
+
+        If <code>en_US.UTF-8</code> does not exist on the remote server,
+        you can replace this with a UTF-8 locale that does exist.  You
+        may also need to set LANG locally for the benefit of
+        <code>mosh-client</code>.  It is possible that the local and
+        remote machines will need different locale names. See also <a
+        href="https://github.com/keithw/mosh/issues/98">this GitHub
+        ticket</a>.</p>
+
+        <h4 class="callout">Q: Why do you insist on UTF-8 everywhere?</h4>
 
 	<p>We're really not UTF-8 zealots. But it's a lot easier to
 	correctly implement <strong>one</strong> terminal emulator
@@ -680,28 +717,14 @@ remote servers "feel" more like the local machine!</p>
 	different and incompatible terminal types; the UTF-8 goes
 	in <strong>underneath</strong> the vt220 state machine.)</p>
 
-	<p>To debug this, run <code>locale</code> on the local
-	terminal, and <code>ssh <b>remotehost</b> locale</code>. To
-	use mosh, both sides of the connection will need to say
-	something like <code>LC_CTYPE="en_US.UTF-8"</code> (or another
-	language).</p>
-
-	<p>If the locale calls for UTF-8 locally but that is not being
-	passed over SSH, please see
-	  <a href="https://github.com/keithw/mosh/issues/98">this
-	  GitHub ticket</a>. Most major SSH distributors (including OS
-	  X and Red Hat, Fedora, Debian, and Ubuntu) configure SSH to
-	  pass the locale-related environment variables over the
-	  connection, but some smaller distributors don't set this up.
-	  If you cannot fix the client and server configurations, as a
-	  fallback you can set LANG locally (e.g. to en_US.UTF-8) and
-	  then run <pre>mosh <b>remotehost</b> --server="LANG=$LANG mosh-server"</pre> to pass the environment variable
-	  yourself.</p>
-
 	<h4 class="callout">Q: How do I use a different SSH port (not 22)?</h4>
 
-	<p>We are <a href="https://github.com/keithw/mosh/issues/53">working on this issue</a>. For now, please
-	  configure an alternate port in your <code>~/.ssh/config</code> file, and mosh will respect it.</p>
+        <p>As of Mosh 1.2, you can pass arguments to <code>ssh</code> like so:
+
+        <pre>mosh <i>remotehost</i> <b>--ssh="ssh -p 2222"</b></pre>
+
+        Or configure a host alias in <code>~/.ssh/config</code> with a
+        <code>Port</code> directive.  Mosh will respect that too.</p>
 
 	<h4 class="callout">Q: I'm getting 'mosh-server not found'.</h4>
 
@@ -777,8 +800,7 @@ server's IP address with "host remotehost".</p>
 
 	<h4 class="callout">Q: With the mosh-server on FreeBSD or OS X, I sometimes get weird color problems. What's wrong?</h4>
 
-	<p>This is a <a href="https://github.com/keithw/mosh/pull/129">known bug</a> in mosh 1.1.3 that we will fix in the next release. Unfortunately we were relying on
-some <a href="http://austingroupbugs.net/view.php?id=453&nbn=3">controversial POSIX behavior</a> that GNU and BSD interpret differently. Thanks to Ed Schouten and Peter Jeremy for tracking this down.</p>
+	<p>This <a href="https://github.com/keithw/mosh/pull/129">bug</a> is fixed in Mosh 1.2. Thanks to Ed Schouten and Peter Jeremy for tracking this down.</p>
 
 	<h4 class="callout">Q: How do I contribute to mosh?</h4>
 
