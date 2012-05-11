@@ -734,6 +734,18 @@ remote servers "feel" more like the local machine!</p>
 	home directory, please see the "Server binary outside path"
 	instructions in the Usage section, above.</p>
 
+        <h4 class="callout">Q: SSH authenticates using Kerberos tickets, but Mosh asks me for a password.</h4>
+        <p>In some configurations, SSH canonicalizes the hostname
+        before passing it to the Kerberos GSSAPI plugin.  This breaks
+        for Mosh, because the initial forward DNS lookup is done by
+        the Mosh wrapper script.  To work around this, invoke Mosh as
+
+        <pre>mosh <i>remotehost</i> <b>--ssh="ssh -o GSSAPITrustDns=no"</b></pre>
+
+        This <a href="https://bugzilla.mindrot.org/show_bug.cgi?id=1008">will
+        often fail</a> on a round-robin DNS setup.  In that case it is probably
+        best to pick a specific host from the round-robin pool.</p>
+
 	<h4 class="callout">Q: How do I get 256 colors?</h4>
 
 	<p>Make sure you are running mosh in a terminal that
