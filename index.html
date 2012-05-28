@@ -746,6 +746,15 @@ remote servers "feel" more like the local machine!</p>
         often fail</a> on a round-robin DNS setup.  In that case it is probably
         best to pick a specific host from the round-robin pool.</p>
 
+	<h4 class="callout">Q: Why is my terminal's scrollback buffer incomplete?</h4>
+
+        <p>Mosh 1.2 synchronizes only the visible state of the terminal.  Mosh
+        1.3 will have complete scrollback support; see <a
+        href="https://github.com/keithw/mosh/issues/2">this issue</a> and the
+        others which are linked from there.  For now, the workaround is to use
+        <a href="http://www.gnu.org/software/screen/">screen</a> or <a
+        href="http://tmux.sourceforge.net/">tmux</a> on the remote side.</p>
+
 	<h4 class="callout">Q: How do I get 256 colors?</h4>
 
 	<p>Make sure you are running mosh in a terminal that
