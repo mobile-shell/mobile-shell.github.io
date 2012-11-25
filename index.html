@@ -102,11 +102,11 @@
 
       <section id="about">
       <div class="hero-unit">
-	<p>
+	<p></p>
 	<div class="row">
 	<div class="span5">
-        <p><h1>Mosh</h1>
-	<h2>(mobile shell)</h2></p>
+         <p></p><h1>Mosh</h1>
+	<h2>(mobile shell)</h2><p></p>
           <p>Remote terminal application that
         allows <strong class="callout">roaming</strong>, supports <strong class="callout">intermittent
         connectivity</strong>, and provides intelligent
@@ -115,9 +115,9 @@
 	    responsive, especially over Wi-Fi, cellular, and
 	    long-distance links.</p>
 	  <p>Mosh is free software, available for GNU/Linux, FreeBSD, Solaris, Mac OS X, and Android.</p>
-	</div><div class="span5"><img src="mosh.png" style="max-width:120%;"></div>
+	</div><div class="span5"><img src="mosh.png" style="max-width:120%;" alt=""></div>
 	</div>
-	</p>
+	<p></p>
 
         <p><a class="btn btn-primary btn-large" href="#getting">Getting Mosh &raquo;</a>
         <a class="btn btn-primary btn-large" href="#techinfo">Tech Video &raquo;</a></p>
@@ -140,7 +140,7 @@
 	     up later, keeping your connection intact. If your
 	     Internet connection drops, Mosh will warn you &mdash; but
 	     the connection resumes when network service
-	     comes back.
+	     comes back.</p>
        </div>
         <div class="span4">
           <h2 class="callout">Get rid of network lag.</h2>
@@ -167,10 +167,10 @@
         <div class="span3">
           <h2 class="callout">Same login method.</h2>
            <p>Mosh doesn't listen on network ports or authenticate
-	     users. The <tt>mosh</tt> client logs in to the server via
+	     users. The <span style="font-family: monospace">mosh</span> client logs in to the server via
 	     SSH, and users present the same credentials (e.g.,
 	     password, public key) as before. Then Mosh runs the
-	     <tt>mosh-server</tt> remotely and connects to it over UDP.</p>
+	     <span style="font-family: monospace">mosh-server</span> remotely and connects to it over UDP.</p>
         </div>
 
 	<div class="span3">
@@ -179,7 +179,7 @@
 	  inside xterm, gnome-terminal, urxvt, Terminal.app, iTerm,
 	  emacs, screen, or tmux. But mosh was designed from scratch
 	  and supports just one character set: UTF-8. It fixes Unicode
-	  bugs in other terminals and in SSH.
+	  bugs in other terminals and in SSH.</p>
 	</div>
 
 	<div class="span3">
@@ -200,21 +200,21 @@
 
 	<div class="row">
 	  <div class="span4" style="vertical-align: top;">
-	    <h3 class="callout"><a href="http://www.debian.org"><img class="logo" src="debian.png"></a>Debian <small>squeeze-backports and later</small><br /></h3>
-            <p><pre>$ sudo apt-get install mosh</pre></p>
+	    <h3 class="callout"><a href="http://www.debian.org"><img class="logo" src="debian.png" alt=""></a>Debian <small>squeeze-backports and later</small><br /></h3>
+            <p></p><pre>$ sudo apt-get install mosh</pre><p></p>
 	  </div>
 
           <div class="span4" style="vertical-align: top;">
-	    <h3 class="callout"><a href="http://www.fedoraproject.org"><img class="logo" src="fedora.png"></a>Fedora <small>15 or later</small></h3>
-            <p><pre>$ sudo yum install mosh</pre></p>
+	    <h3 class="callout"><a href="http://www.fedoraproject.org"><img class="logo" src="fedora.png" alt=""></a>Fedora <small>15 or later</small></h3>
+            <p></p><pre>$ sudo yum install mosh</pre><p></p>
 	  </div>
 
-          <div class="span4" sytle="vertical-align: top;">
-	    <h3 class="callout"><a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png"></a>Ubuntu <small>10.04 and later</small></h3>
-            <p><pre>$ sudo apt-get install python-software-properties
+          <div class="span4" style="vertical-align: top;">
+	    <h3 class="callout"><a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png" alt=""></a>Ubuntu <small>10.04 and later</small></h3>
+            <p></p><pre>$ sudo apt-get install python-software-properties
 $ sudo add-apt-repository ppa:keithw/mosh
 $ sudo apt-get update
-$ sudo apt-get install mosh</pre></p>
+$ sudo apt-get install mosh</pre><p></p>
 <p><small>Ubuntu also includes older versions of mosh in the universe repository (12.04 and later) and backports repository (10.04&ndash;11.10).</small></p>
             <br />
 	  </div>
@@ -222,60 +222,60 @@ $ sudo apt-get install mosh</pre></p>
 
 	<div class="row">
           <div class="span4" style="vertical-align: top;">
-	    <h3 class="callout"><a href="http://www.gentoo.org"><img class="logo" src="gentoo.png"></a> Gentoo</h3>
-            <p><pre># emerge net-misc/mosh</pre></p>
+	    <h3 class="callout"><a href="http://www.gentoo.org"><img class="logo" src="gentoo.png" alt=""></a> Gentoo</h3>
+            <p></p><pre># emerge net-misc/mosh</pre><p></p>
 	    <br />
 	  </div>
 
           <div class="span4" style="vertical-align: top;">
-	    <h3 class="callout"><a href="http://www.archlinux.org"><img class="logo" src="arch.png"></a> Arch Linux</h3>
-            <p><pre># pacman -S mosh</pre></p>
+	    <h3 class="callout"><a href="http://www.archlinux.org"><img class="logo" src="arch.png" alt=""></a> Arch Linux</h3>
+            <p></p><pre># pacman -S mosh</pre><p></p>
             <br />
 	  </div>
 
           <div class="span4" style="vertical-align: top;">
-	    <h3 class="callout"><a href="http://www.freebsd.org"><img class="logo" src="freebsd.png"></a> FreeBSD</h3>
-            <p><pre># portmaster net/mosh</pre></p>
-            <br />
-	  </div>
-	</div>
-
-	<div class="row">
-          <div class="span4" style="vertical-align: top;">
-	    <h3 class="callout"><a href="http://www.netbsd.org"><img class="logo" src="NetBSD-smaller-tb.png" width="50" height="50"></a>NetBSD <small>(pkgsrc)</small></h3>
-	    <p><pre># cd net/mosh; make install clean</pre></p>
-            <br />
-	  </div>
-
-          <div class="span4" style="vertical-align: top;">
-	    <h3 class="callout"><a href="http://www.android.com/"><img class="logo" src="Android_Robot_100.png" width="50" height="50"></a>Android <small>(experimental port)</small></h3>
-	    <p><div class="prelike">Install the <a href="http://dan.drown.org/android/mosh/">port by Daniel Drown</a>, built on Irssi ConnectBot.</div></p>
-            <br />
-	  </div>
-
-          <div class="span4" style="vertical-align: top;">
-	    <h3 class="callout"><a href="http://www.cygwin.com"><img class="logo" src="Cygwin_logo.svg" width="50" height="50"></a>Cygwin <small>(experimental port)</small></h3>
-	    <p><div class="prelike">Install the <a href="http://cygwin.com/setup.exe">experimental package</a> from the Cygwin setup.exe.</div></p>
+	    <h3 class="callout"><a href="http://www.freebsd.org"><img class="logo" src="freebsd.png" alt=""></a> FreeBSD</h3>
+            <p></p><pre># portmaster net/mosh</pre><p></p>
             <br />
 	  </div>
 	</div>
 
 	<div class="row">
           <div class="span4" style="vertical-align: top;">
-	    <h3 class="callout"><a href="http://www.apple.com"><img class="logo" src="macosx.png"></a>OS X <small>10.6 or later</small></h3>
-            <p><div class="prelike">Install <a href="https://github.com/downloads/keithw/mosh/mosh-1.2.1.pkg"><img src="dmg.png"> mosh-1.2.1.pkg</a>.</div></p>
+	    <h3 class="callout"><a href="http://www.netbsd.org"><img class="logo" src="NetBSD-smaller-tb.png" width="50" height="50" alt=""></a>NetBSD <small>(pkgsrc)</small></h3>
+	    <p></p><pre># cd net/mosh; make install clean</pre><p></p>
+            <br />
+	  </div>
+
+          <div class="span4" style="vertical-align: top;">
+	    <h3 class="callout"><a href="http://www.android.com/"><img class="logo" src="Android_Robot_100.png" width="50" height="50" alt=""></a>Android <small>(experimental port)</small></h3>
+	    <p></p><div class="prelike">Install the <a href="http://dan.drown.org/android/mosh/">port by Daniel Drown</a>, built on Irssi ConnectBot.</div><p></p>
+            <br />
+	  </div>
+
+          <div class="span4" style="vertical-align: top;">
+	    <h3 class="callout"><a href="http://www.cygwin.com"><img class="logo" src="Cygwin_logo.svg" width="50" height="50" alt=""></a>Cygwin <small>(experimental port)</small></h3>
+	    <p></p><div class="prelike">Install the <a href="http://cygwin.com/setup.exe">experimental package</a> from the Cygwin setup.exe.</div><p></p>
+            <br />
+	  </div>
+	</div>
+
+	<div class="row">
+          <div class="span4" style="vertical-align: top;">
+	    <h3 class="callout"><a href="http://www.apple.com"><img class="logo" src="macosx.png" alt=""></a>OS X <small>10.6 or later</small></h3>
+            <p></p><div class="prelike">Install <a href="https://github.com/downloads/keithw/mosh/mosh-1.2.1.pkg"><img src="dmg.png" alt=""> mosh-1.2.1.pkg</a>.</div><p></p>
             <br />
 	  </div>
 
           <div class="span4" style="vertical-align: top;">
 	    <h3 class="callout"><a href="http://mxcl.github.com/homebrew/">Homebrew </a> <small>OS X 10.5 or later</small></h3>
-            <p><pre>$ brew install mobile-shell</pre></p>
+            <p></p><pre>$ brew install mobile-shell</pre><p></p>
             <br />
 	  </div>
 
           <div class="span4" style="vertical-align: top;">
-	    <h3 class="callout"><a href="http://www.macports.org"><img class="logo" src="macports.png"></a>MacPorts <small>OS X 10.5 or later</small></h3>
-            <p><pre>$ sudo port install mosh</pre></p>
+	    <h3 class="callout"><a href="http://www.macports.org"><img class="logo" src="macports.png" alt=""></a>MacPorts <small>OS X 10.5 or later</small></h3>
+            <p></p><pre>$ sudo port install mosh</pre><p></p>
             <br />
 	  </div>
 	</div>
@@ -283,7 +283,7 @@ $ sudo apt-get install mosh</pre></p>
 	<p><small>Operating system logos are trademarks or registered trademarks and are displayed for identification
 only. The vendors shown aren't affiliated with and haven't endorsed Mosh.</small></p>
 
-	<p><h2>Building from source</h2></p>
+	<p></p><h2>Building from source</h2><p></p>
 
         <div class="row">
 
@@ -313,15 +313,15 @@ $ make
 
 	  <div class="span5">
 	    <h3 class="callout">Compiling from Git</h3><br>
-	    <p><pre>$ git clone <a href="https://github.com/keithw/mosh">https://github.com/keithw/mosh</a>
+	    <p></p><pre>$ git clone <a href="https://github.com/keithw/mosh">https://github.com/keithw/mosh</a>
 $ cd mosh
 $ ./autogen.sh
 $ ./configure
 $ make
-# make install</pre></p>
+# make install</pre><p></p>
 	  </div>
           <div class="span3">
-            <h3 class=="callout">Security on new operating systems</h3></br>
+            <h3 class="callout">Security on new operating systems</h3><br>
             <p>
               Note that <code>mosh-client</code> receives an AES session key as an environment
               variable.  If you are porting Mosh to a new operating system, please make sure that a
@@ -337,23 +337,23 @@ $ make
 	  <h1>Usage</h1>
 	</div>
 
-	<p><h3 class="callout">Replaces interactive SSH. Instant keystroke response, robust to roaming. <small>But you'll need working UDP.</small></h3></p>
+	<p></p><h3 class="callout">Replaces interactive SSH. Instant keystroke response, robust to roaming. <small>But you'll need working UDP.</small></h3><p></p>
 
 	<div class="row">
 	  <div class="well span3 offset2">
 	    <h2 class="callout" style="color: darkblue;">Typical usage</h2>
-	    <p><pre>$ mosh <i>chewbacca.norad.mil</i></pre></p>
+	    <p></p><pre>$ mosh <i>chewbacca.norad.mil</i></pre><p></p>
 	    <p>Mosh will log the user in via SSH, then start a connection on a UDP port between 60000 and 61000.</p>
 	  </div>
 
 	  <div class="span4">
 	    <h3 class="callout">Different username</h3>
-	    <p><pre>$ mosh <b>potus@</b><i>ackbar.bls.gov</i></pre></p>
+	    <p></p><pre>$ mosh <b>potus@</b><i>ackbar.bls.gov</i></pre><p></p>
 	  </div>
 
 	  <div class="span4">
 	    <h3 class="callout">Server binary outside path</h3>
-	    <p><pre>$ mosh <b>--server=/tmp/mosh-server</b> <i>r2d2</i></pre></p>
+	    <p></p><pre>$ mosh <b>--server=/tmp/mosh-server</b> <i>r2d2</i></pre><p></p>
 	    <p>The user can specify an alternate path for the <code>mosh-server</code> on the remote host. The server binary can even
 	      be installed in the user's home directory.</p>
 	  </div>
@@ -365,18 +365,18 @@ $ make
 
 	  <div class="span4">
 	    <h3 class="callout">Selecting Mosh UDP port</h3>
-	    <p><pre>$ mosh <b>-p 1234</b> <i>darth</i></pre></p>
+	    <p></p><pre>$ mosh <b>-p 1234</b> <i>darth</i></pre><p></p>
 	    <p>Useful when the server is behind a port-forwarder or NAT.</p>
 	  </div>
 
           <div class="span4">
             <h3 class="callout">Selecting SSH port</h3>
-            <p><pre>$ mosh <b>--ssh="ssh -p 2222"</b> <i>figrindan</i></pre></p>
+            <p></p><pre>$ mosh <b>--ssh="ssh -p 2222"</b> <i>figrindan</i></pre><p></p>
           </div>
 
           <div class="span4">
             <h3 class="callout">Other SSH options</h3>
-            <p><pre>$ mosh <b>--ssh="~/bin/ssh -i ./identity"</b> <i>fett</i></pre></p>
+            <p></p><pre>$ mosh <b>--ssh="~/bin/ssh -i ./identity"</b> <i>fett</i></pre><p></p>
           </div>
 
         </div>
@@ -385,7 +385,7 @@ $ make
 
 	  <div class="span4">
 	    <h3 class="callout">Disable instant echo</h3>
-	    <p><pre>$ mosh <b>--predict=never</b> <i>niennunb</i></pre></p>
+	    <p></p><pre>$ mosh <b>--predict=never</b> <i>niennunb</i></pre><p></p>
 	    <p>The <code>-n</code> switch is a synonym. By contrast,
 	    passing <code style="white-space: nowrap;">--predict=always</code> or <code>-a</code>
 	    will enable instant local echo even on low-delay
@@ -394,14 +394,14 @@ $ make
 
 	  <div class="span4">
 	    <h3 class="callout">With a command</h3>
-	    <p><pre>$ mosh <i>pello</i> <b>-- screen -dr</b></pre></p>
+	    <p></p><pre>$ mosh <i>pello</i> <b>-- screen -dr</b></pre><p></p>
 	    <p>This reattaches to a long-running screen session.</p>
 	  </div>
 	</div>
 
 	<h3 class="callout">Ending the connection</h3>
 
-	<p>Normally, <tt>logout</tt> or <tt>exit</tt> on the remote host will close
+	<p>Normally, <span style="font-family: monospace">logout</span> or <span style="font-family: monospace">exit</span> on the remote host will close
 	  the session. Mosh accepts the escape sequence <code>Ctrl-^
 	  .</code>  (typically typed with Control-Shift-6, then a
 	  period) to end the connection forcibly. To send a
@@ -409,7 +409,7 @@ $ make
 
 	<h3 class="callout">Not yet supported, but on the roadmap</h3>
 
-	<p>
+	<p></p>
 	<ul>
 	  <li>Forwarding of <a href="https://github.com/keithw/mosh/issues/41">X11</a>, <a href="https://github.com/keithw/mosh/issues/120">SSH agent</a>, etc.</li>
 
@@ -417,7 +417,7 @@ $ make
 
 	  <li><a href="https://github.com/keithw/mosh/issues/32">Android client</a></li>
 	</ul>
-	</p>
+	<p></p>
 
 	<h3 class="callout">Manual</h3>
 
@@ -436,14 +436,14 @@ $ make
 	<h3 class="callout">Mosh at USENIX ATC</h3>
 
 	<p>The <a href="mosh-paper.pdf"><img style="padding: 3px;"
-	    src="pdf.png"> Mosh research paper</a> describes the
+	    src="pdf.png" alt=""> Mosh research paper</a> describes the
 	    design and evaluation of Mosh in more detail than you may
 	    want. The paper was presented at the
 	  <a href="https://www.usenix.org/conference/atc12/tech-schedule/usenix-atc-12-technical-sessions">2012 USENIX
 	    Annual Technical Conference</a>, held June 13&ndash;15, 2012, in
 	    sunny Boston, Mass.</p>
 
-<div align="center"><iframe width="560" height="315" src="http://www.youtube.com/embed/XsIxNYl0oyU?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<div style="text-align: center"><iframe width="560" height="315" src="http://www.youtube.com/embed/XsIxNYl0oyU?rel=0" style="border: none" allowfullscreen></iframe></div>
 
 <p></p>
 
@@ -534,12 +534,12 @@ now.&#8221; <small>&mdash; actual USENIX peer review on reading the
 	<p>Only Mosh and the OS X Terminal correctly handle a Unicode combining character in the first column.</p>
 
 	  <div class="row">
-	    <div class="span5 well"><img src="terminal-shots/firstcol-xterm.png.2.png"><br>xterm: circumflex on wrong letter.</div>
-	    <div class="span5 well"><img src="terminal-shots/firstcol-gnome.png.2.png"><br>GNOME Terminal: no circumflex at all.</div>
+	    <div class="span5 well"><img src="terminal-shots/firstcol-xterm.png.2.png" alt=""><br>xterm: circumflex on wrong letter.</div>
+	    <div class="span5 well"><img src="terminal-shots/firstcol-gnome.png.2.png" alt=""><br>GNOME Terminal: no circumflex at all.</div>
 	  </div>
 	  <div class="row">
-	    <div class="span5 well"><img src="terminal-shots/firstcol-osx.png.2.png"><br>OS X Terminal.app gets it right.</div>
-	    <div class="span5 well"><img src="terminal-shots/firstcol-mosh.png.2.png"><br>Mosh gets it right too.</div>
+	    <div class="span5 well"><img src="terminal-shots/firstcol-osx.png.2.png" alt=""><br>OS X Terminal.app gets it right.</div>
+	    <div class="span5 well"><img src="terminal-shots/firstcol-mosh.png.2.png" alt=""><br>Mosh gets it right too.</div>
 	  </div>
 
 	<h4 class="callout">ISO 2022 locking escapes</h4>
@@ -548,12 +548,12 @@ now.&#8221; <small>&mdash; actual USENIX peer review on reading the
 <a href="http://www.cl.cam.ac.uk/~mgk25/unicode.html#term">ISO 2022 and UTF-8</a>.)</p>
 
 	  <div class="row">
-	    <div class="span5 well"><img src="terminal-shots/acs-xterm.png.2.png"><br>xterm</div>
-	    <div class="span5 well"><img src="terminal-shots/acs-gnome.png.2.png"><br>GNOME Terminal</div>
+	    <div class="span5 well"><img src="terminal-shots/acs-xterm.png.2.png" alt=""><br>xterm</div>
+	    <div class="span5 well"><img src="terminal-shots/acs-gnome.png.2.png" alt=""><br>GNOME Terminal</div>
 	  </div>
 	  <div class="row">
-	    <div class="span5 well"><img src="terminal-shots/acs-osx.png.2.png"><br>OS X Terminal.app</div>
-	    <div class="span5 well"><img src="terminal-shots/acs-mosh.png.2.png"><br>Mosh</div>
+	    <div class="span5 well"><img src="terminal-shots/acs-osx.png.2.png" alt=""><br>OS X Terminal.app</div>
+	    <div class="span5 well"><img src="terminal-shots/acs-mosh.png.2.png" alt=""><br>Mosh</div>
 	  </div>
 
 	<h4 class="callout">Evil escape sequences</h4>
@@ -575,12 +575,12 @@ the user to restore keyboard input by resetting the terminal from the
 menu.</small></p>
 
 	  <div class="row">
-	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-xterm.png.2.png"><br>xterm: circumflex on wrong letter.</div>
-	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-gnome.png.2.png"><br>GNOME Terminal's circumflex placement is defensible.</div>
+	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-xterm.png.2.png" alt=""><br>xterm: circumflex on wrong letter.</div>
+	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-gnome.png.2.png" alt=""><br>GNOME Terminal's circumflex placement is defensible.</div>
 	  </div>
 	  <div class="row">
-	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-osx.png.2.png"><br>OS X Terminal.app applies circumflex to part of escape sequence, then irretrievably shuts off keyboard input.</div>
-	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-mosh.png.2.png"><br>Mosh gets this one right.</div>
+	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-osx.png.2.png" alt=""><br>OS X Terminal.app applies circumflex to part of escape sequence, then irretrievably shuts off keyboard input.</div>
+	    <div class="span5 well"><img src="terminal-shots/unicode-and-escape-mosh.png.2.png" alt=""><br>Mosh gets this one right.</div>
 	  </div>
 
 	  <h4 class="callout">Mosh sets IUTF8</h4>
@@ -622,7 +622,7 @@ menu.</small></p>
 	    and RLOGIN, Mosh's local echo can be used everywhere, even
 	    in full-screen programs like emacs and vi.</p>
 
-	<h4 class="callout">Real-world benefits</h3>
+	<h4 class="callout">Real-world benefits</h4>
 
 <p>We evaluated Mosh using traces contributed by six users, covering
 about 40 hours of real-world usage and including 9,986 total
@@ -657,7 +657,7 @@ remote servers "feel" more like the local machine!</p>
 
 <div class="well">
 <h4 class="callout">Cumulative distribution of keystroke response times with Sprint EV-DO (3G) Internet service</h4><br>
-<img src="cdfs.png">
+<img src="cdfs.png" alt="">
 </div>
 
       </section>
@@ -710,17 +710,17 @@ remote servers "feel" more like the local machine!</p>
         <p>To diagnose the problem, run <code>locale</code> on the local
         terminal, and <code>ssh <i>remotehost</i> locale</code>. To use Mosh,
         both sides of the connection will need to show a UTF-8 locale, like
-        <code>LC_CTYPE="en_US.UTF-8"</code>.
+        <code>LC_CTYPE="en_US.UTF-8"</code>.</p>
 
         <p>On many systems, SSH will transfer the locale-related
         environment variables, which are then inherited by
         <code>mosh-server</code>.  If this mechanism fails, Mosh (as of
         version 1.2) will pass the variables itself.  If neither
-        mechanism is successful, you can do something like
+        mechanism is successful, you can do something like</p>
 
         <pre>mosh <i>remotehost</i> <b>--server="LANG=en_US.UTF-8 mosh-server"</b></pre>
 
-        If <code>en_US.UTF-8</code> does not exist on the remote server,
+        <p>If <code>en_US.UTF-8</code> does not exist on the remote server,
         you can replace this with a UTF-8 locale that does exist.  You
         may also need to set LANG locally for the benefit of
         <code>mosh-client</code>.  It is possible that the local and
@@ -744,11 +744,11 @@ remote servers "feel" more like the local machine!</p>
 
 	<h4 class="callout">Q: How do I use a different SSH port (not 22)?</h4>
 
-        <p>As of Mosh 1.2, you can pass arguments to <code>ssh</code> like so:
+        <p>As of Mosh 1.2, you can pass arguments to <code>ssh</code> like so:</p>
 
         <pre>mosh <i>remotehost</i> <b>--ssh="ssh -p 2222"</b></pre>
 
-        Or configure a host alias in <code>~/.ssh/config</code> with a
+        <p>Or configure a host alias in <code>~/.ssh/config</code> with a
         <code>Port</code> directive.  Mosh will respect that too.</p>
 
 	<h4 class="callout">Q: I'm getting 'mosh-server not found'.</h4>
@@ -763,11 +763,11 @@ remote servers "feel" more like the local machine!</p>
         <p>In some configurations, SSH canonicalizes the hostname
         before passing it to the Kerberos GSSAPI plugin.  This breaks
         for Mosh, because the initial forward DNS lookup is done by
-        the Mosh wrapper script.  To work around this, invoke Mosh as
+        the Mosh wrapper script.  To work around this, invoke Mosh as</p>
 
         <pre>mosh <i>remotehost</i> <b>--ssh="ssh -o GSSAPITrustDns=no"</b></pre>
 
-        This <a href="https://bugzilla.mindrot.org/show_bug.cgi?id=1008">will
+        <p>This <a href="https://bugzilla.mindrot.org/show_bug.cgi?id=1008">will
         often fail</a> on a round-robin DNS setup.  In that case it is probably
         best to pick a specific host from the round-robin pool.</p>
 
@@ -811,7 +811,7 @@ remote servers "feel" more like the local machine!</p>
 
 	<p>1. Log in to the remote host, and run <code>mosh-server</code>.</p>
 
-	<p>It will give output like:
+	<p>It will give output like:</p>
 <pre>$ mosh-server 
 
 MOSH CONNECT <b>60004</b> <b>4NeCCgvZFe2RnPgrcU1PQw</b>
@@ -823,12 +823,12 @@ This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 
 [mosh-server detached, pid = 30261]
-</pre></p>
+</pre><p></p>
 
-	<p>2. On the local host, run:
+	<p>2. On the local host, run:</p>
 <pre>$ MOSH_KEY=<b>key</b> mosh-client <b>remote-IP</b> <b>remote-PORT</b></pre>
 
-where "key" is the 22-byte string printed by mosh-server (in this
+<p>where "key" is the 22-byte string printed by mosh-server (in this
 example, "4NeCCgvZFe2RnPgrcU1PQw"), "remote-PORT" is the port number
 given by the server (60004 in this case), and "remote-IP" is the IP address of the server. You can look up the
 server's IP address with "host remotehost".</p>
@@ -846,7 +846,7 @@ server's IP address with "host remotehost".</p>
 
 	<h4 class="callout">Q: Who helped with mosh?</h4>
 
-	<p>We're very grateful for assistance and support from:
+	<p>We're very grateful for assistance and support from:</p>
 
 	  <ul>
 
@@ -899,7 +899,7 @@ server's IP address with "host remotehost".</p>
 	  <h1>Contact</h1>
 	</div>
 	
-	<p><ul>
+	<p></p><ul>
 	    <li><p><code>mosh-devel@mit.edu</code><br>
 	      Mosh development and discussion.
 
@@ -915,19 +915,19 @@ server's IP address with "host remotehost".</p>
               You can <a
               href="http://webchat.freenode.net/?channels=mosh">connect with a
               Web client</a>, try an <a
-              href="irc://irc.freenode.net/mosh"><tt>irc://</tt> URL</a>,
+              href="irc://irc.freenode.net/mosh"><span style="font-family: monospace">irc://</span> URL</a>,
               or manually configure your client for <code>irc.freenode.net</code>.</p></li>
 
-	    <li><p>At the recommendation of the security community, <b>confidential security-related matters</b> may be sent to: <code>mosh-security@mit.edu</code><br>
+	    <li><p>At the recommendation of the security community, <b>confidential security-related matters</b> may be sent to: <code>mosh-security@mit.edu</code><br></p>
 
 	      <div class="callout">
 		Messages may optionally be encrypted with <a href="keithw-gpg.txt">Keith Winstein's public key</a>:
 
 <pre>pub   4096R/FE254C69 2012-02-05 [expires: 2015-02-04]
       Key fingerprint = B1A4 7069 121F 6642 BB3D  7F3E 20B7 283A FE25 4C69</pre>
-	      </div></p></li>
+	      </div><p></p></li>
 
-	    </ul></p>
+	    </ul><p></p>
 
 
       </section>
