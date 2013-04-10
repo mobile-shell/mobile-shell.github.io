@@ -684,13 +684,16 @@ remote servers "feel" more like the local machine!</p>
     <h1>Frequently Asked Questions</h1>
   </div>
 
-  <h4 class="callout">Q: Who wrote Mosh?</h4>
+  <div class="row">
+  <div class="span8">
+  <dl>
+  <dt>Q: Who wrote Mosh?</dt>
 
-  <p>Mosh was written by Keith Winstein, along with Anders Kaseorg, Quentin Smith, Richard Tibbetts and Keegan McAllister.</p>
+  <dd><p>Mosh was written by Keith Winstein, along with Anders Kaseorg, Quentin Smith, Richard Tibbetts and Keegan McAllister.</p></dd>
 
-  <h4 class="callout">Q: Why another remote-terminal protocol?</h4>
+  <dt>Q: Why another remote-terminal protocol?</dt>
 
-  <p>Practical latency on the Internet is on the increase, with
+  <dd><p>Practical latency on the Internet is on the increase, with
     the rise of bufferbloat and sophisticated wireless links
     that optimize for throughput over delay. And roaming is more
     common than ever, now that laptops and handheld devices have
@@ -701,11 +704,11 @@ remote servers "feel" more like the local machine!</p>
   <p>Moreover, TELNET had some good things going for it &mdash; a
     local-echo mode and a well-defined network virtual
     terminal. Even today, SSH doesn't properly support UTF-8
-    end-to-end on a POSIX system.</p>
+    end-to-end on a POSIX system.</p></dd>
 
-  <h4 class="callout">Q: Are the mosh principles relevant to other network applications?</h4>
+  <dt>Q: Are the mosh principles relevant to other network applications?</dt>
 
-  <p>We think so. The design principles that Mosh stands for are
+  <dd><p>We think so. The design principles that Mosh stands for are
     conservative: warning the user if the state being displayed
     is out of date, serializing and checkpointing all
     transactions so that if there are no warnings, the user
@@ -719,12 +722,11 @@ remote servers "feel" more like the local machine!</p>
   hours while merrily retrieving new mail and not indicating any
   kind of error? Us too.) We think there may be considerable
   room for improvement in many network user interfaces from the
-  application of these values.</p>
+  application of these values.</p></dd>
 
-  <h4 class="callout">Q: I'm getting "mosh requires a UTF-8 locale."
-        How can I fix this?</h4>
+  <dt>Q: I'm getting "mosh requires a UTF-8 locale." How can I fix this?</dt>
 
-        <p>To diagnose the problem, run <code>locale</code> on the local
+        <dd><p>To diagnose the problem, run <code>locale</code> on the local
         terminal, and <code>ssh <i>remotehost</i> locale</code>. To use Mosh,
         both sides of the connection will need to show a UTF-8 locale, like
         <code>LC_CTYPE="en_US.UTF-8"</code>.</p>
@@ -743,11 +745,11 @@ remote servers "feel" more like the local machine!</p>
         <code>mosh-client</code>.  It is possible that the local and
         remote machines will need different locale names. See also <a
         href="https://github.com/keithw/mosh/issues/98">this GitHub
-        ticket</a>.</p>
+        ticket</a>.</p></dd>
 
-        <h4 class="callout">Q: Why do you insist on UTF-8 everywhere?</h4>
+  <dt>Q: Why do you insist on UTF-8 everywhere?</dt>
 
-  <p>We're really not UTF-8 zealots. But it's a lot easier to
+  <dd><p>We're really not UTF-8 zealots. But it's a lot easier to
   correctly implement <strong>one</strong> terminal emulator
   than to try to do the right thing in a variety of difficult
   edge cases. (This is what GNU screen tries to do, and in our
@@ -757,27 +759,27 @@ remote servers "feel" more like the local machine!</p>
   it also probably reduces frustration down the
   road. (Unfortunately an 8-bit vt220 and a UTF-8 vt220 are
   different and incompatible terminal types; the UTF-8 goes
-  in <strong>underneath</strong> the vt220 state machine.)</p>
+  in <strong>underneath</strong> the vt220 state machine.)</p></dd>
 
-  <h4 class="callout">Q: How do I use a different SSH port (not 22)?</h4>
+  <dt>Q: How do I use a different SSH port (not 22)?</dt>
 
-        <p>As of Mosh 1.2, you can pass arguments to <code>ssh</code> like so:</p>
+        <dd><p>As of Mosh 1.2, you can pass arguments to <code>ssh</code> like so:</p>
 
         <pre>mosh <i>remotehost</i> <b>--ssh="ssh -p 2222"</b></pre>
 
         <p>Or configure a host alias in <code>~/.ssh/config</code> with a
-        <code>Port</code> directive.  Mosh will respect that too.</p>
+        <code>Port</code> directive.  Mosh will respect that too.</p></dd>
 
-  <h4 class="callout">Q: I'm getting 'mosh-server not found'.</h4>
+  <dt>Q: I'm getting 'mosh-server not found'.</dt>
 
-  <p>Please make sure that mosh is installed on the client, and
+  <dd><p>Please make sure that mosh is installed on the client, and
   mosh (or at least mosh-server) is installed on the server you
   are trying to connect to. If you install mosh-server in your
   home directory, please see the "Server binary outside path"
-  instructions in the Usage section, above.</p>
+  instructions in the Usage section, above.</p></dd>
 
-        <h4 class="callout">Q: SSH authenticates using Kerberos tickets, but Mosh asks me for a password.</h4>
-        <p>In some configurations, SSH canonicalizes the hostname
+  <dt>Q: SSH authenticates using Kerberos tickets, but Mosh asks me for a password.</dt>
+        <dd><p>In some configurations, SSH canonicalizes the hostname
         before passing it to the Kerberos GSSAPI plugin.  This breaks
         for Mosh, because the initial forward DNS lookup is done by
         the Mosh wrapper script.  To work around this, invoke Mosh as</p>
@@ -786,26 +788,26 @@ remote servers "feel" more like the local machine!</p>
 
         <p>This <a href="https://bugzilla.mindrot.org/show_bug.cgi?id=1008">will
         often fail</a> on a round-robin DNS setup.  In that case it is probably
-        best to pick a specific host from the round-robin pool.</p>
+        best to pick a specific host from the round-robin pool.</p></dd>
 
-  <h4 class="callout">Q: Why is my terminal's scrollback buffer incomplete?</h4>
+  <dt>Q: Why is my terminal's scrollback buffer incomplete?</dt>
 
-        <p>Mosh 1.2 synchronizes only the visible state of the terminal.  Mosh
+        <dd><p>Mosh 1.2 synchronizes only the visible state of the terminal.  Mosh
         1.3 will have complete scrollback support; see <a
         href="https://github.com/keithw/mosh/issues/2">this issue</a> and the
         others which are linked from there.  For now, the workaround is to use
         <a href="http://www.gnu.org/software/screen/">screen</a> or <a
-        href="http://tmux.sourceforge.net/">tmux</a> on the remote side.</p>
+        href="http://tmux.sourceforge.net/">tmux</a> on the remote side.</p></dd>
 
-  <h4 class="callout">Q: How do I get 256 colors?</h4>
+  <dt>Q: How do I get 256 colors?</dt>
 
-  <p>Make sure you are running mosh in a terminal that
+  <dd><p>Make sure you are running mosh in a terminal that
   advertises itself as 256-color capable. (This generally means
-  TERM will be xterm-256color or screen-256color-bce.)</p>
+  TERM will be xterm-256color or screen-256color-bce.)</p></dd>
 
-  <h4 class="callout">Q: Has your secure datagram protocol been audited by experts?</h4>
+  <dt>Q: Has your secure datagram protocol been audited by experts?</dt>
 
-  <p>No. Mosh is actively used and has been read over by
+  <dd><p>No. Mosh is actively used and has been read over by
     security-minded crypto nerds who think its design is
     reasonable, but any novel datagram protocol is going to have
     to prove itself, and SSP is no exception. We use the
@@ -814,15 +816,15 @@ remote servers "feel" more like the local machine!</p>
     the design is an advantage, but of course others have
     thought that and have been wrong. We don't doubt it will
     (properly!) take time for the security community to get
-    comfortable with mosh.</p>
+    comfortable with mosh.</p></dd>
 
-  <h4 class="callout">Q: Does mosh work with Amazon EC2?</h4>
+  <dt>Q: Does mosh work with Amazon EC2?</dt>
 
-  <p>Yes, it works great, but please remember to open up UDP ports 60000&ndash;61000 on the EC2 firewall.</p>
+  <dd><p>Yes, it works great, but please remember to open up UDP ports 60000&ndash;61000 on the EC2 firewall.</p></dd>
 
-  <h4 class="callout">Q: How do I run the mosh client and server separately?</h4>
+  <dt>Q: How do I run the mosh client and server separately?</dt>
 
-  <p>If the <code>mosh</code> wrapper script isn't working for you, you can try running
+  <dd><p>If the <code>mosh</code> wrapper script isn't working for you, you can try running
     the <code>mosh-client</code> and <code>mosh-server</code> programs separately to
     form a connection. This can be a useful debugging technique.</p>
 
@@ -852,18 +854,18 @@ server's IP address with "host remotehost".</p>
 
   <p>3. If all goes well, you should have a working Mosh connection. Information about where the process fails can help us debug why Mosh isn't working for you.</p>
 
-  <h4 class="callout">Q: With the mosh-server on FreeBSD or OS X, I sometimes get weird color problems. What's wrong?</h4>
+  <dt>Q: With the mosh-server on FreeBSD or OS X, I sometimes get weird color problems. What's wrong?</dt>
 
-  <p>This <a href="https://github.com/keithw/mosh/pull/129">bug</a> is fixed in Mosh 1.2. Thanks to Ed Schouten and Peter Jeremy for tracking this down.</p>
+  <p>This <a href="https://github.com/keithw/mosh/pull/129">bug</a> is fixed in Mosh 1.2. Thanks to Ed Schouten and Peter Jeremy for tracking this down.</p></dd>
 
-  <h4 class="callout">Q: How do I contribute to mosh?</h4>
+  <dt>Q: How do I contribute to mosh?</dt>
 
-  <p>We welcome your contribution! Please <a href="https://github.com/keithw/mosh">visit us on GitHub</a>
-  or email <code>mosh-devel@mit.edu</code>.</p>
+  <dd><p>We welcome your contribution! Please join us in <code>#mosh</code> channel on <a href="http://freenode.net/">Freenode</a> IRC, <a href="https://github.com/keithw/mosh">visit us on GitHub</a>,
+  or email <code>mosh-devel@mit.edu</code>.</p></dd>
 
-  <h4 class="callout">Q: Who helped with mosh?</h4>
+  <dt>Q: Who helped with mosh?</dt>
 
-  <p>We're very grateful for assistance and support from:</p>
+  <dd><p>We're very grateful for assistance and support from:</p>
 
     <ul>
 
@@ -907,15 +909,19 @@ server's IP address with "host remotehost".</p>
 
 <li>Ramesh Chandra
 
-</ul>
+</ul></dd>
+</dl>
+</div>
+</div>
+</section>
 
-      </section>
-
-      <section id="contact">
+<section id="contact">
   <div class="page-header">
     <h1>Contact</h1>
   </div>
   
+  <div class="row">
+  <div class="span8">
   <ul>
       <li><p><code>mosh-devel@mit.edu</code><br>
         Mosh development and discussion.
@@ -945,9 +951,11 @@ server's IP address with "host remotehost".</p>
         </div></li>
 
       </ul>
+    </div>
+  </div>
 
 
-      </section>
+</section>
 
     </div> <!-- /container -->
 
