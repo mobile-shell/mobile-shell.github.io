@@ -1,6 +1,6 @@
 body {
-        padding-top: 60px;
-        padding-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
 
 .hero-titles {
@@ -31,4 +31,8 @@ tr.os td {
 }
 tr.inst td {
   vertical-align: top;
+}
+
+#news #news-list li{
+  padding-bottom: 8px;
 }
