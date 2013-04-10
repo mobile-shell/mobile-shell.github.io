@@ -277,48 +277,53 @@ $ sudo apt-get install mosh</pre>
             <br />
     </div>
   </div>
+  </div>
 
   <p><small>Operating system logos are trademarks or registered trademarks and are displayed for identification
 only. The vendors shown aren't affiliated with and haven't endorsed Mosh.</small></p>
 
-  <h2>Building from source</h2>
+  <div id="build-instructions" class="page-header">
+    <h2>Building from source</h2>
+  </div>
 
-        <div class="row">
-
-    <div class="span4">
-      <h3 class="callout">Dependencies</h3><br>
-      <table class="table table-striped" style="width: 100%;">
-              <thead><tr><th>Name</th><th>Typical package</th></tr></thead>
-              <tr class="deps"><td><a href="http://code.google.com/p/protobuf/">Protocol Buffers</a></td><td>protobuf-compiler, libprotobuf-dev</td></tr>
-              <tr><td>ncurses</td><td>libncurses5-dev</td></tr>
-              <tr><td>zlib</td><td>zlib1g-dev</td></tr>
-              <tr><td>utempter (optional)</td><td>libutempter-dev</td></tr>
-        <tr><td>IO::Pty Perl module</td><td>libio-pty-perl</td></tr>
-        <tr><td>OpenSSL</td><td>libssl-dev</td></tr>
-      </table>
-    </div>
-
-    <div class="span3">
-      <h3 class="callout">Latest release</h3><br>
-      <p>Extract
-              <a href="//mosh.mit.edu/mosh-1.2.4.tar.gz">mosh-1.2.4.tar.gz</a>,
-              then</p>
-<pre>$ cd mosh-1.2.4
+  <div class="row-fluid">
+    <div class="span8">
+      <div class="row-fluid">
+        <div class="span6">
+          <h3 class="callout">Latest release</h3><br>
+            <p>Extract <a href="//mosh.mit.edu/mosh-1.2.4.tar.gz">mosh-1.2.4.tar.gz</a>, then</p>
+    <pre>$ cd mosh-1.2.4
 $ ./configure
 $ make
 # make install</pre>
-    </div>
-
-    <div class="span5">
-      <h3 class="callout">Compiling from Git</h3><br>
-      <pre>$ git clone <a href="https://github.com/keithw/mosh">https://github.com/keithw/mosh</a>
+        </div>
+        <div class="span6">
+          <h3 class="callout">Compiling from Git</h3><br>
+          <pre>$ git clone <a href="https://github.com/keithw/mosh">https://github.com/keithw/mosh</a>
 $ cd mosh
 $ ./autogen.sh
 $ ./configure
 $ make
 # make install</pre>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span12">
+          <h3 class="callout">Dependencies</h3><br>
+          <table class="table table-striped" style="width: 100%;">
+                  <thead><tr><th>Name</th><th>Typical package</th></tr></thead>
+                  <tr class="deps"><td><a href="http://code.google.com/p/protobuf/">Protocol Buffers</a></td><td>protobuf-compiler, libprotobuf-dev</td></tr>
+                  <tr><td>ncurses</td><td>libncurses5-dev</td></tr>
+                  <tr><td>zlib</td><td>zlib1g-dev</td></tr>
+                  <tr><td>utempter (optional)</td><td>libutempter-dev</td></tr>
+            <tr><td>IO::Pty Perl module</td><td>libio-pty-perl</td></tr>
+            <tr><td>OpenSSL</td><td>libssl-dev</td></tr>
+          </table>
+        </div>
+      </div>
     </div>
-          <div class="span3">
+    <div class="span4">
+      <div class="well well-large">
             <h3 class="callout">Security on new operating systems</h3><br>
             <p>
               Note that <code>mosh-client</code> receives an AES session key as an environment
@@ -326,7 +331,8 @@ $ make
               running process's environment variables are not readable by other users.  We have
               confirmed that this is the case on GNU/Linux, OS X, and FreeBSD.
             </p>
-          </div>
+      </div>
+    </div>
   </div>
 </section>
 
