@@ -11,8 +11,13 @@ section {
   padding-bottom: 5%;
 }
 
+#getting h3 {
+  height: 62px;
+}
+
 .logo {
   padding: 8px;
+  max-height: 50px;
 }
 
 .prelike {
