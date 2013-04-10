@@ -532,36 +532,42 @@ $ make
       start to try to be robust and correct even for
       pathological inputs.</p>
 
-  <h4 class="callout">Tricky unicode</h4>
+<dl>
+  <dt>Tricky unicode</dt>
 
-  <p>Only Mosh and the OS X Terminal correctly handle a Unicode combining character in the first column.</p>
-
-    <div class="row">
-      <div class="span5 well"><img src="terminal-shots/firstcol-xterm.png.2.png" alt=""><br>xterm: circumflex on wrong letter.</div>
-      <div class="span5 well"><img src="terminal-shots/firstcol-gnome.png.2.png" alt=""><br>GNOME Terminal: no circumflex at all.</div>
+  <dd><p>Only Mosh and the OS X Terminal correctly handle a Unicode combining character in the first column.</p>
+    <div class="thumbs">
+      <div class="row">
+        <div class="span4"><img src="terminal-shots/firstcol-xterm.png.2.png" alt=""><br>xterm: circumflex on wrong letter.</div>
+        <div class="span4"><img src="terminal-shots/firstcol-gnome.png.2.png" alt=""><br>GNOME Terminal: no circumflex at all.</div>
+      </div>
+      <div class="row">
+        <div class="span4"><img src="terminal-shots/firstcol-osx.png.2.png" alt=""><br>OS X Terminal.app gets it right.</div>
+        <div class="span4"><img src="terminal-shots/firstcol-mosh.png.2.png" alt=""><br>Mosh gets it right too.</div>
+      </div>
     </div>
-    <div class="row">
-      <div class="span5 well"><img src="terminal-shots/firstcol-osx.png.2.png" alt=""><br>OS X Terminal.app gets it right.</div>
-      <div class="span5 well"><img src="terminal-shots/firstcol-mosh.png.2.png" alt=""><br>Mosh gets it right too.</div>
-    </div>
+  </dd>
 
-  <h4 class="callout">ISO 2022 locking escapes</h4>
+  <dt>ISO 2022 locking escapes</dt>
 
-  <p>Only Mosh will never get stuck in hieroglyphs when a nasty program writes to the terminal. (See Markus Kuhn's discussion of the relationship between
+  <dd><p>Only Mosh will never get stuck in hieroglyphs when a nasty program writes to the terminal. (See Markus Kuhn's discussion of the relationship between
 <a href="http://www.cl.cam.ac.uk/~mgk25/unicode.html#term">ISO 2022 and UTF-8</a>.)</p>
 
-    <div class="row">
-      <div class="span5 well"><img src="terminal-shots/acs-xterm.png.2.png" alt=""><br>xterm</div>
-      <div class="span5 well"><img src="terminal-shots/acs-gnome.png.2.png" alt=""><br>GNOME Terminal</div>
+    <div class="thumbs">
+      <div class="row">
+        <div class="span4"><img src="terminal-shots/acs-xterm.png.2.png" alt=""><br>xterm</div>
+        <div class="span4"><img src="terminal-shots/acs-gnome.png.2.png" alt=""><br>GNOME Terminal</div>
+      </div>
+      <div class="row">
+        <div class="span4"><img src="terminal-shots/acs-osx.png.2.png" alt=""><br>OS X Terminal.app</div>
+        <div class="span4"><img src="terminal-shots/acs-mosh.png.2.png" alt=""><br>Mosh</div>
+      </div>
     </div>
-    <div class="row">
-      <div class="span5 well"><img src="terminal-shots/acs-osx.png.2.png" alt=""><br>OS X Terminal.app</div>
-      <div class="span5 well"><img src="terminal-shots/acs-mosh.png.2.png" alt=""><br>Mosh</div>
-    </div>
+  </dd>
 
-  <h4 class="callout">Evil escape sequences</h4>
+  <dt>Evil escape sequences</dt>
 
-<p>Only Mosh and GNOME Terminal have a defensible rendering when
+  <dd><p>Only Mosh and GNOME Terminal have a defensible rendering when
 Unicode mixes with an ECMA-48/ANSI escape sequence. The OS X Terminal
 unwisely tries to normalize its input before the vt500 state machine,
 causing it to misinterpret and become unusable after receiving the
@@ -577,18 +583,21 @@ because of an unrelated bug in Terminal.app, it is not possible for
 the user to restore keyboard input by resetting the terminal from the
 menu.</small></p>
 
-    <div class="row">
-      <div class="span5 well"><img src="terminal-shots/unicode-and-escape-xterm.png.2.png" alt=""><br>xterm: circumflex on wrong letter.</div>
-      <div class="span5 well"><img src="terminal-shots/unicode-and-escape-gnome.png.2.png" alt=""><br>GNOME Terminal's circumflex placement is defensible.</div>
+    <div class="thumbs">
+      <div class="row">
+        <div class="span4"><img src="terminal-shots/unicode-and-escape-xterm.png.2.png" alt=""><br>xterm: circumflex on wrong letter.</div>
+        <div class="span4"><img src="terminal-shots/unicode-and-escape-gnome.png.2.png" alt=""><br>GNOME Terminal's circumflex placement is defensible.</div>
+      </div>
+      <div class="row">
+        <div class="span4"><img src="terminal-shots/unicode-and-escape-osx.png.2.png" alt=""><br>OS X Terminal.app applies circumflex to part of escape sequence, then irretrievably shuts off keyboard input.</div>
+        <div class="span4"><img src="terminal-shots/unicode-and-escape-mosh.png.2.png" alt=""><br>Mosh gets this one right.</div>
+      </div>
     </div>
-    <div class="row">
-      <div class="span5 well"><img src="terminal-shots/unicode-and-escape-osx.png.2.png" alt=""><br>OS X Terminal.app applies circumflex to part of escape sequence, then irretrievably shuts off keyboard input.</div>
-      <div class="span5 well"><img src="terminal-shots/unicode-and-escape-mosh.png.2.png" alt=""><br>Mosh gets this one right.</div>
-    </div>
+  </dd>
 
-    <h4 class="callout">Mosh sets IUTF8</h4>
+  <dt>Mosh sets IUTF8</dt>
 
-    <p>In the POSIX framework, the kernel needs to know whether
+  <dd><p>In the POSIX framework, the kernel needs to know whether
     the user is typing in an 8-bit character set or in UTF-8,
     because in canonical mode (i.e. "cooked" mode), the kernel
     needs to be able to delete a typed multibyte character
@@ -599,6 +608,8 @@ menu.</small></p>
 
     <p>Mosh sets the IUTF8 flag when possible and stubbornly refuses to start up unless the user has a
     UTF-8-clean environment. SSH does not set the IUTF8 flag, which can lead to garbage in input buffers.</p>
+  </dd>
+</dl>
 
   <h3 class="callout">Instant local echo and line editing</h3>
 
@@ -653,16 +664,17 @@ collecting the traces and was not adjusted in response to their
 contents or results.</p>
 
 <h4>The results</h4>
+<div>
+  <img src="cdfs.png" alt="">
+  <h4 class="callout">Cumulative distribution of keystroke response times with Sprint EV-DO (3G) Internet service</h4>
+</div>
+<br/>
 <p>Mosh reduced the median keystroke response
 time from 503 ms to nearly instant (because more than 70% of the
 keystrokes could be immediately displayed), and reduced the mean
 keystroke response time from 515 ms to 173 ms. Qualitatively, Mosh makes
 remote servers "feel" more like the local machine!</p>
 
-      <div class="well">
-      <h4 class="callout">Cumulative distribution of keystroke response times with Sprint EV-DO (3G) Internet service</h4><br>
-      <img src="cdfs.png" alt="">
-      </div>
     </div>
   </div>
 </section>

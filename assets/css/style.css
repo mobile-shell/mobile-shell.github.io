@@ -49,3 +49,15 @@ tr.inst td {
 #news #news-list li{
   padding-bottom: 8px;
 }
+
+dd {
+  padding-bottom: 9px;
+}
+
+#techinfo dl {
+  margin-bottom: 0;
+}
+
+#techinfo dd {
+  margin-left: 0;
+}
