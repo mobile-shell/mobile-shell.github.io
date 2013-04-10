@@ -433,48 +433,53 @@ $ make
   </div>
   
 
-  <h3 class="callout">Mosh at USENIX ATC</h3>
+  <h2 class="callout">Mosh at USENIX ATC</h2>
 
-  <p>The <a href="mosh-paper.pdf"><img style="padding: 3px;"
-      src="pdf.png" alt=""> Mosh research paper</a> describes the
-      design and evaluation of Mosh in more detail than you may
-      want. The paper was presented at the
-    <a href="https://www.usenix.org/conference/atc12/tech-schedule/usenix-atc-12-technical-sessions">2012 USENIX
-      Annual Technical Conference</a>, held June 13&ndash;15, 2012, in
-      sunny Boston, Mass.</p>
+  <div class="row">
+    <div class="span4">
+      <p>The <a href="mosh-paper.pdf"><img style="padding: 3px;"
+        src="pdf.png" alt=""> Mosh research paper</a> describes the
+        design and evaluation of Mosh in more detail than you may
+        want.
+        The paper was presented at the
+      <a href="https://www.usenix.org/conference/atc12/tech-schedule/usenix-atc-12-technical-sessions">2012 USENIX
+        Annual Technical Conference</a>, held June 13&ndash;15, 2012, in
+        sunny Boston, Mass.</p>
 
-<div style="text-align: center"><iframe width="560" height="315" src="https://www.youtube.com/embed/XsIxNYl0oyU?rel=0" style="border: none" allowfullscreen></iframe></div>
+      <div class="well"><h3 class="lead">&#8220;ISO 2022 locking escape
+    sequences oh flying spaghetti monster please kill me
+    now.&#8221; <br/><small>&mdash; actual USENIX peer review from the
+            Mosh paper.</small>
+        </h3>
 
+        <p>(Why you should trust Mosh with your remote terminal needs: we
+        worry about details so obscure, even USENIX reviewers don't want to
+            hear about them.)</p>
 
+      </div>
+    </div>
 
-  <div class="well"><h4 class="callout">&#8220;ISO 2022 locking escape
-sequences oh flying spaghetti monster please kill me
-now.&#8221; <small>&mdash; actual USENIX peer review on reading the
-        Mosh paper.</small>
-    </h4>
-
-    <p>(Why you should trust Mosh with your remote terminal needs: we
-    worry about details so obscure, even USENIX reviewers don't want to
-        hear about them.)</p>
-
+    <div class="span8">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/XsIxNYl0oyU?rel=0" style="border: none" allowfullscreen></iframe>
+    </div>
   </div>
 
-  <h3 class="callout">How Mosh works</h3>
+  <h2 class="callout">How Mosh works</h2>
 
+  <div class="row">
+    <div class="span8">
   <p>Remote-shell protocols traditionally work by conveying a
     byte-stream from the server to the client, to be interpreted
     by the client's terminal. (This includes TELNET, RLOGIN, and
-    SSH.)</p>
-
-    <p>Mosh works differently and at a different layer. With
+    SSH.) Mosh works differently and at a different layer. With
       Mosh, the server and client both maintain a snapshot of
       the current screen state. The problem becomes one of
-      <i>state-synchronization</i>: getting the client to the
+      state-synchronization: getting the client to the
       most recent server-side screen as efficiently as
       possible.</p>
 
     <p>This is accomplished using a new protocol called the
-      State Synchronization Protocol, for which Mosh is the
+      <strong>State Synchronization Protocol</strong>, for which Mosh is the
       first application. SSP runs over UDP, synchronizing the
       state of any object from one host to another. Datagrams
       are encrypted and authenticated
@@ -486,7 +491,7 @@ now.&#8221; <small>&mdash; actual USENIX peer review on reading the
 
     <p>Roaming with SSP becomes easy: the client sends datagrams
       to the server with increasing sequence numbers, including
-      a heartbeat at least once every three seconds. Every time
+      a "heartbeat" at least once every three seconds. Every time
       the server receives an authentic packet from the client
       with a sequence number higher than any it has previously
       received, the IP source address of that packet becomes the
@@ -527,7 +532,7 @@ now.&#8221; <small>&mdash; actual USENIX peer review on reading the
       start to try to be robust and correct even for
       pathological inputs.</p>
 
-  <h4 class="callout">Tricky Unicode</h4>
+  <h4 class="callout">Tricky unicode</h4>
 
   <p>Only Mosh and the OS X Terminal correctly handle a Unicode combining character in the first column.</p>
 
@@ -620,7 +625,7 @@ menu.</small></p>
       and RLOGIN, Mosh's local echo can be used everywhere, even
       in full-screen programs like emacs and vi.</p>
 
-  <h4 class="callout">Real-world benefits</h4>
+  <h3 class="callout">Real-world benefits</h3>
 
 <p>We evaluated Mosh using traces contributed by six users, covering
 about 40 hours of real-world usage and including 9,986 total
@@ -647,18 +652,20 @@ user keystroke. The Mosh predictive algorithm was frozen prior to
 collecting the traces and was not adjusted in response to their
 contents or results.</p>
 
-<p><strong>The results:</strong> Mosh reduced the median keystroke response
+<h4>The results</h4>
+<p>Mosh reduced the median keystroke response
 time from 503 ms to nearly instant (because more than 70% of the
 keystrokes could be immediately displayed), and reduced the mean
 keystroke response time from 515 ms to 173 ms. Qualitatively, Mosh makes
 remote servers "feel" more like the local machine!</p>
 
-<div class="well">
-<h4 class="callout">Cumulative distribution of keystroke response times with Sprint EV-DO (3G) Internet service</h4><br>
-<img src="cdfs.png" alt="">
-</div>
-
-      </section>
+      <div class="well">
+      <h4 class="callout">Cumulative distribution of keystroke response times with Sprint EV-DO (3G) Internet service</h4><br>
+      <img src="cdfs.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
 
       <section id="faq">
   <div class="page-header">
