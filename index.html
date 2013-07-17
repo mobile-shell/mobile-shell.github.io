@@ -765,6 +765,27 @@ remote servers "feel" more like the local machine!</p>
         href="https://github.com/keithw/mosh/issues/98">this GitHub
         ticket</a>.</p></dd>
 
+  <dt>Q: What does the message "Nothing received from the server on UDP port 60003" mean?</dt>
+
+  <dd>
+    <p>This means that <code>mosh</code> was able to successfully start
+    <code>mosh-server</code> on the remote machine, but the client is
+    not able to communicate with the server.  This generally means that
+    some type of firewall is
+    blocking the UDP packets between the client and the server.  If you
+    had to forward TCP port 22 on a NAT for SSH, then you will also have to
+    forward UDP ports as well.  Mosh will use the first available
+    UDP port, starting at 60000 and stopping at 61000.  If you are only
+    going to have a small handful of concurrent sessions, then you can
+    forward a smaller range of ports (like 60000 to 60010).
+    </p>
+
+    <p>
+    Tools like netstat, netcat, socat, and tcpdump can be useful for debugging
+    networking and firewall problems.
+    </p>
+  </dd>
+
   <dt>Q: Why do you insist on UTF-8 everywhere?</dt>
 
   <dd><p>We're really not UTF-8 zealots. But it's a lot easier to
@@ -839,6 +860,38 @@ remote servers "feel" more like the local machine!</p>
   <dt>Q: Does mosh work with Amazon EC2?</dt>
 
   <dd><p>Yes, it works great, but please remember to open up UDP ports 60000&ndash;61000 on the EC2 firewall.</p></dd>
+
+  <dt>Q: How do I tell if mosh is working correctly?</dt>
+
+  <dd>
+      <p>After you run <code>mosh user@server</code>, you should be dropped into your favorite
+      shell on the remote machine.  Despite being called a "Mobile Shell", using mosh
+      isn't a shell like bash or zsh (it's a replacement for things like SSH).  If you want
+      to check that mosh is being used instead of ssh, check the process listings on the remote
+      machine to confirm that <code>mosh-server</code> is running instead of <code>sshd</code>.
+      You could also disconnect the client machine from the network (e.g. unplug its
+      network cable) and verify that you see a message from mosh like <code>No route to host
+      (50s without contact.)</code>.  After reconnecting to the network, your mosh connection
+      will be automatically re-established.
+      </p>
+  </dd>
+
+  <dt>Q: What's the difference between mosh, mosh-client, and mosh-server?   What one do I use?</dt>
+
+  <dd>
+      <p>The <code>mosh</code> command is a wrapper script that is designed to be the primary way that
+      you use mosh.  In most cases, you can simply just replace "ssh" with "mosh" in your command line.
+      Behind the scenes, the <code>mosh</code> wrapper script will SSH to the server, start up
+      <code>mosh-server</code>, and then close the SSH connection.  Then it will start up the
+      <code>mosh-client</code> executable on the client, passing it the necessary information for
+      it to connect to the newly spawned <code>mosh-server</code> instance.  If everything was
+      successfull, you will now have a shell on your remote machine.
+      </p>
+
+      <p>In the vast majority of the cases, you should never need to run <code>mosh-client</code> or
+      <code>mosh-server</code> manually.  If you need to do this, see the next FAQ question.
+      </p>
+  </dd>
 
   <dt>Q: How do I run the mosh client and server separately?</dt>
 
