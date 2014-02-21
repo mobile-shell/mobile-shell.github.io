@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Mosh: the mobile shell</title>
+    <title>Mahimahi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mobile shell that supports roaming and intelligent local echo. Like SSH secure shell, but allows mobility and more responsive and robust.">
-    <meta name="author" content="Keith Winstein <mosh-devel@mit.edu>">
+    <meta name="description" content="A set of lightweight tools aimed at browser developers, website authors, and Web server developers to produce a usable benchmark for Web transport protocols and browser behaviors.">
+    <meta name="author" content="Ravi Netravali <mahimahi@mit.edu>">
 
     <!-- Le styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -48,17 +48,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Mosh</a>
+          <a class="brand" href="#">Mahimahi</a>
           <div class="nav-collapse">
             <ul class="nav">
               <li><a href="#about">About</a></li>
-        <li><a href="#news">News</a></li>
-              <li><a href="#getting">Getting Mosh</a></li>
-              <li><a href="#usage">Usage</a></li>
-              <li><a href="#techinfo">Technical Info</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#getting">Getting Mahimahi</a></li>
+              <li><a href="#usage">Examples</a></li>
+              <li><a href="#techinfo">Details</a></li>
               <li><a href="#contact">Contact</a></li>
-              <li><a href="https://github.com/keithw/mosh">Mosh on GitHub</a></li>
+              <li><a href="https://github.com/ravinet/mahimahi">Mahimahi on GitHub</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -71,82 +69,67 @@
   <div class="hero-unit span10">
     <div class="row">
       <div class="span5">
-        <h1>Mosh</h1>
-        <h2>(mobile shell)</h2>
-        <p>Remote terminal application that
-        allows <strong class="callout">roaming</strong>, supports <strong class="callout">intermittent connectivity</strong>, and provides intelligent <strong class="callout">local echo</strong> and line editing of user keystrokes.</p>
-        <p>Mosh is a replacement for SSH. It's more robust and responsive, especially over Wi-Fi, cellular, and long-distance links.</p>
-        <p>Mosh is free software, available for GNU/Linux, FreeBSD, Solaris, Mac OS X, and Android.</p>
-      </div>
-      <div class="span5"><img src="mosh.png" style="max-width:120%;" alt="">
+        <h1>Mahimahi</h1>
+        <p>A set of lightweight tools aimed at browser developers, website authors, and Web server developers to produce a usable benchmark for Web transport protocols and browser behaviors.</p>
+        <p> Mahimahi contains four different tools which can be used to record actual websites and replay them over various emulated link conditions. </p>
+        <p>Mahimahi is free software and is available on Ubuntu (version 13.10 or higher). </p>
       </div>
     </div>
 
-    <p><a class="btn btn-primary btn-large" href="#getting">Getting Mosh &raquo;</a>
-    <a class="btn btn-primary btn-large" href="#techinfo">Tech Video &raquo;</a></p>
+    <p><a class="btn btn-primary btn-large" href="#getting">Getting Mahimahi &raquo;</a>
   </div>
 
   <div id="features">
   <div class="row-fluid">
       <div class="feature span3">
-        <h2 class="callout">Change IP. Stay connected.</h2>
-        <p>Mosh automatically roams as you move between Internet
-        connections. Use Wi-Fi on the train, Ethernet in a hotel,
-        and LTE on a beach: you'll stay logged in. Most network
-        programs lose their connections after roaming,
-        including SSH and Web apps like Gmail. Mosh
-        is different.</p>
+        <h2 class="callout">Record and replay actual websites</h2>
+        <p>Using Mahimahi's recordshell, you can completely record
+        and store real websites. Recordshell captures all objects required
+        to load a given Web page. Recorded sites can then be repeatably replayed using
+        replayshell. Replayshell accurately models a Web page's structure by
+        mirroring the page's server sharding.</p>
       </div>
       <div class="feature span3">
-        <h2 class="callout">Makes for sweet dreams.</h2>
-        <p>With Mosh, you can put your laptop to sleep and wake it
-        up later, keeping your connection intact. If your
-        Internet connection drops, Mosh will warn you &mdash; but
-        the connection resumes when network service
-        comes back.</p>
+        <h2 class="callout">Use actual browsers</h2>
+        <p>Recording and replaying sites can be done using commercial
+        browsers such as Google Chrome, Mozilla Firefox, and Safari.
+        It is recommended to use the same browser for recording and
+        replaying. Using actual browsers more accurately represents
+        user experience when loading Web pages.</p>
       </div>
       <div class="feature span3">
-        <h2 class="callout">Get rid of network lag.</h2>
-        <p>SSH waits for the server's reply before showing you your
-        own typing. That can make for a lousy user interface. Mosh
-        is different: it gives an instant response to typing,
-        deleting, and line editing. It does this adaptively and
-        works even in full-screen programs like emacs and vim. On
-        a bad connection, outstanding predictions are underlined
-        so you won't be misled.
-        </p>
+        <h2 class="callout">Directly compare transport protocols</h2>
+        <p>A recorded site can be used to directly compare different
+        transport protocols since the content and structure of each
+        replayed Web page is identical. Replayshell's servers can be
+        configured to handle different transport protocols using
+        available Apache modules.</p>
       </div>
       <div class="feature span3">
-        <h2 class="callout">No privileged code. No daemon.</h2>
-        <p>You don't need to be the superuser to install or run
-        Mosh. The client and server are executables run by an
-        ordinary user and last only for the life of the
-        connection.</p>
+        <h2 class="callout">Emulate numerous link conditions</h2>
+        <p>Mahimahi can be used to emulate many different link conditions
+        for replaying page loads or for a given program's traffic. Delayshell
+        imposes a fixed minimum RTT on each incoming and outgoing packet.
+        Cellshell is trace-based and can emulate time-varying links or
+        fixed-rate links. Delayshell and Cellshell can be nested infinitely
+        inside one another which enables many potential link emulations!</p>
       </div>
   </div>
   <div class="row-fluid">
       <div class="feature span3">
-        <h2 class="callout">Same login method.</h2>
-        <p>Mosh doesn't listen on network ports or authenticate
-         users. The <span style="font-family: monospace">mosh</span> client logs in to the server via
-         SSH, and users present the same credentials (e.g.,
-         password, public key) as before. Then Mosh runs the
-         <span style="font-family: monospace">mosh-server</span> remotely and connects to it over UDP.</p>
+        <h2 class="callout">Lightweight (no effect on host)</h2>
+        <p>Each of Mahimahi's tools is lightweight. It's network emulation
+        tools (delayshell, cellshell) only add user-specified amounts of
+        delay to traffic. Computation overhead is negligible. Fetching a
+        Web object in replayshell represents the time to retrieve
+        object of the infinitely-fast local interface.</p>
       </div>
       <div class="feature span3">
-        <h2 class="callout">Runs inside your terminal, but better.</h2>
-        <p>Mosh is a command-line program, like ssh. You can use it
-        inside xterm, gnome-terminal, urxvt, Terminal.app, iTerm,
-        emacs, screen, or tmux. But mosh was designed from scratch
-        and supports just one character set: UTF-8. It fixes Unicode
-        bugs in other terminals and in SSH.</p>
-      </div>
-      <div class="feature span3">
-        <h2 class="callout">Control-C works great.</h2>
-        <p>Unlike SSH, mosh's UDP-based protocol handles packet loss
-          gracefully, and sets the frame rate based on network conditions. Mosh
-          doesn't fill up network buffers, so Control-C always works
-          to halt a runaway process.</p>
+        <h2 class="callout">Quickly see effect of browser, Web page changes</h2>
+        <p>A browser modification can be directly evaluated in replayshell
+        by comparing page loads with and without the change, for the same recorded site.
+        Similarly, modifications to a recorded Web page (eg. layout) can be evaluated
+        by comparing page loads using the original and modified Web page.</p>
       </div>
   </div>
   </div>
@@ -154,169 +137,22 @@
       
 <section id="news">
   <div class="page-header">
-    <h1>Recent News</h1>
-  </div>
-
-  <ul id="news-list">
-    <li><b>January 20, 2014</b>: <a href="https://github.com/rpwoodbu/mosh-chrome/wiki">Mosh for Chrome</a>, which brings Mosh to the Chrome browser and Chrome OS, is released. It can be installed <a href="https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj">here</a>.</li>
-    <li><b>August 9, 2013</b>: <a href="https://play.google.com/store/apps/details?id=com.sonelli.juicessh">JuiceSSH</a> (SSH client for Android) adds official Mosh support &mdash; available on the <a href="https://play.google.com/store/apps/details?id=com.sonelli.juicessh">Play Store</a></li>
-    <li><b>April 14, 2013</b>: Mosh has posted an <a href="https://docs.google.com/document/d/10o-TLA03bY4cZzEIZR-5wKmBecvYKpOEFRqSJFbIm3M/edit?usp=sharing">Ideas List</a> for interested contributors!</li>
-    <li><b>March 27,
-    2013</b>: <a href="http://mailman.mit.edu/pipermail/mosh-users/2013-March/000167.html">Mosh
-    1.2.4 has been released</a>. Changes largely include bug
-    fixes, improved robustness, and added platform support (now
-    on AIX and stock Solaris!). This version will be in Ubuntu
-    13.04 (raring).</li>
-    <li><b>March 24, 2013</b>: The <a href="https://twitter.com/zacchiro/status/315893796695064576">Debian Project Leader switches to Mosh</a>. Welcome, Stefano! We're proud to have you.</li>
-    <li><b>March 14, 2013</b>: Two teams of Stanford students have
-    reproduced parts of the <a href="http://mosh.mit.edu/mosh-paper.pdf">Mosh research paper</a> on Stanford's
-    <a href="http://reproducingnetworkresearch.wordpress.com">Reproducing Network Research blog</a>. Kanthi Nagaraj and Emily McMilin <a href="http://reproducingnetworkresearch.wordpress.com/2013/03/14/mosh-cs244-13/">tested SSP's resilience to packet loss</a>, and Ahmed Aljunied and Anand Atreya <a href="http://reproducingnetworkresearch.wordpress.com/2013/03/13/cs244-2013-evaluation-of-mosh-mobile-shell-performance-results/">evaluated Mosh's predictive local echo</a>.
-    <li><b>March 12, 2013</b>: Mosh celebrates its first anniversary of
-1.0. Hard to believe it's already been a year. We could not have done
-it without the hard work of many of you, especially Hari Balakrishnan,
-Keegan McAllister, Anders Kaseorg, Quentin Smith, Richard Tibbetts,
-Nelson Elhage, Christine Spang, Stefie Tellex, Joseph Sokol-Margolis,
-Waseem Daher, Bill McCloskey, Austin Roach, Greg Hudson, Karl Ramm,
-Alexander Chernyakhovsky, Peter Iannucci, Evan Broder, Neha Narula,
-Katrina LaCurts, Ramesh Chandra, Peter Jeremy, Ed Schouten, Ryan
-Steinmetz, Jay Freeman, Dave Täht, Larry Doolittle, Daniel Drown, Timo
-Juhani Lindfors, Timo Sirainen, Ira Cooper, Felix Gröbert, Luke
-Mewburn, Anton Lundin, Kevin Ballard, and Axel Beckert!</li>
-    <li><b>November 2012</b>: Mosh on the cover of <a href="http://www.linux-magazine.com/Issues/2012/144/Mosh-and-AutoSSH">Linux Magazine</a>.
-    <li><b>Oct. 19,
-    2012</b>: <a href="http://mailman.mit.edu/pipermail/mosh-users/2012-October/000152.html">Mosh
-    1.2.3 has been released</a>. Changes include more resilience to
-evil NATs, power savings for mobile clients, switching to OpenSSL's AES
-implementation, and a licensing exception to allow Mosh on Apple's app store.
-This version will be in Debian 7.0 (wheezy).
-    <li><b>Aug. 22, 2012</b>: Mosh (and its tolerance for high
-packet loss) helps Iain Learmonth <a href="http://gopher.floodgap.com/gopher/gw.lite?gopher://sdf.org:70/0/users/irl/blog/2012-08-22-mosh-in-a-lift.md">escape from an elevator</a>.
-  </ul>
-</section>
-
 <section id="getting">
   <div class="page-header">
-    <h1>Getting Mosh</h1>
-    <small>The Mosh package should be installed on both the client and server. Please find your platform below for installation instructions.</small>
+    <h1>Getting Mahimahi</h1>
   </div>
 
   <div id="binaries" class="row-fluid">
     <div class="span4" style="vertical-align: top;">
       <h3 class="callout"><a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png" alt=""></a>Ubuntu <small>10.04 and later</small></h3>
-            <pre>$ sudo apt-get install python-software-properties
-$ sudo add-apt-repository ppa:keithw/mosh
+            <pre>$ sudo add-apt-repository ppa:keithw/mahimahi
 $ sudo apt-get update
-$ sudo apt-get install mosh</pre>
-            <p><small>Ubuntu also includes older versions of mosh in the universe repository (12.04 and later) and backports repository (10.04&ndash;11.10).</small></p>
+$ sudo apt-get install mahimahi</pre>
             <br />
     </div>
-
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.debian.org"><img class="logo" src="debian.png" alt=""></a>Debian <small>squeeze-backports and later</small><br /></h3>
-            <pre>$ sudo apt-get install mosh</pre>
-    </div>
-
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.fedoraproject.org"><img class="logo" src="fedora.png" alt=""></a>Fedora <small>15 or later</small></h3>
-            <pre>$ sudo yum install mosh</pre>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.gentoo.org"><img class="logo" src="gentoo.png" alt=""></a> Gentoo</h3>
-            <pre># emerge net-misc/mosh</pre>
-      <br />
-    </div>
-
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.archlinux.org"><img class="logo" src="arch.png" alt=""></a> Arch Linux</h3>
-            <pre># pacman -S mosh</pre>
-      <br />
-    </div>
-
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.freebsd.org"><img class="logo" src="freebsd.png" alt=""></a> FreeBSD</h3>
-            <pre># portmaster net/mosh</pre>
-      <br />
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.opensuse.org"><img class="logo" src="openSUSE.png" alt=""></a> openSUSE <small>12.3 or later</small></h3>
-            <pre>$ sudo zypper in mosh</pre>
-      <br />
-    </div>
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.netbsd.org"><img class="logo" src="NetBSD-smaller-tb.png" alt=""></a>NetBSD <small>(pkgsrc)</small></h3>
-      <pre># cd net/mosh; make install clean</pre>
-      <br />
-    </div>
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.android.com/"><img class="logo" src="Android_Robot_100.png" alt=""></a>Android</small></h3>
-      <div class="prelike">
-        <img src="JuiceSSH.png" style="height: 24px; width: 24px; display:inline-block; vertical-align:middle">
-        &nbsp;
-        <a href="https://play.google.com/store/apps/details?id=com.sonelli.juicessh">Install JuiceSSH from the Play Store</a>
-        <br /><br />
-        or...<br />
-        <br />
-        Install the <a href="http://dan.drown.org/android/mosh/">port by Daniel Drown</a>, built on Irssi ConnectBot.</div>
-      <br />
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.cygwin.com"><img class="logo" src="Cygwin_logo.svg" width="50" height="50" alt=""></a>Cygwin <small>(experimental port)</small></h3>
-      <div class="prelike">Install the <a href="http://cygwin.com/setup.exe">experimental package</a> from the Cygwin setup.exe.</div>
-      <br />
-    </div>
-
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.apple.com"><img class="logo" src="macosx.png" alt=""></a>OS X <small>10.6 or later</small></h3>
-      <div class="prelike">Install <a href="https://mosh.mit.edu/mosh-1.2.4-3.pkg"><img src="dmg.png" alt=""> mosh-1.2.4-3.pkg</a>.</div>
-      <br />
-    </div>
-
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://mxcl.github.com/homebrew/"><img class="logo" src="homebrew2.png" alt=""></a>Homebrew <small>OS X 10.5 or later</small></h3>
-            <pre>$ brew install mobile-shell</pre>
-      <br />
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.macports.org"><img class="logo" src="macports.png" alt=""></a>MacPorts <small>OS X 10.5 or later</small></h3>
-            <pre>$ sudo port install mosh</pre>
-      <br />
-    </div>
-
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.opencsw.org"><img class="logo" src="opencsw.png" alt=""></a>OpenCSW <small>Solaris 10 Update 8 or later</small></h3>
-      <pre># pkgutil -i mosh</pre>
-      <br />
-    </div>
-
-    <div class="span4" style="vertical-align: top;">
-        <h3 class="callout"><a href="http://www.openbsd.org"><img class="logo" src="ppuf100X91.gif" alt=""></a>OpenBSD</h3>
-      <pre># pkg_add mosh</pre>
-        <br />
-    </div>
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.google.com/chrome"><img class="logo" src="chrome.png" alt=""></a>Chrome / Chrome OS</h3>
-      <div class="prelike">
-        <img src="mosh-chrome.png" style="height: 24px; width: 24px; display:inline-block; vertical-align:middle">
-        &nbsp;
-        Install <a href="https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj">Mosh for Chrome.</a>
-      </div>
-    </div>
-  </div>
-
+</div>
   <p><small>Operating system logos are trademarks or registered trademarks and are displayed for identification
-only. The vendors shown aren't affiliated with and haven't endorsed Mosh.</small></p>
+only. The vendors shown aren't affiliated with and haven't endorsed Mahimahi.</small></p>
 
   <div id="build-instructions" class="page-header">
     <h2>Building from source</h2>
@@ -326,714 +162,234 @@ only. The vendors shown aren't affiliated with and haven't endorsed Mosh.</small
     <div class="span8">
       <div class="row-fluid">
         <div class="span6">
-          <h3 class="callout">Latest release</h3><br>
-            <p>Extract <a href="//mosh.mit.edu/mosh-1.2.4.tar.gz">mosh-1.2.4.tar.gz</a>, then</p>
-    <pre>$ cd mosh-1.2.4
-$ ./configure
-$ make
-# make install</pre>
-        </div>
-        <div class="span6">
-          <h3 class="callout">Compiling from Git</h3><br>
-          <pre>$ git clone <a href="https://github.com/keithw/mosh">https://github.com/keithw/mosh</a>
-$ cd mosh
+          <!--<h3 class="callout">Compiling from Git</h3><br>-->
+          <pre>$ git clone <a href="https://github.com/ravinet/mahimahi">https://github.com/ravinet/mahimahi</a>
+$ cd mahimahi
 $ ./autogen.sh
 $ ./configure
 $ make
-# make install</pre>
+# sudo make install</pre>
         </div>
       </div>
       <div class="row-fluid">
-        <div class="span12">
+        <div class="span10">
           <h3 class="callout">Dependencies</h3><br>
           <table class="table table-striped" style="width: 100%;">
                   <thead><tr><th>Name</th><th>Typical package</th></tr></thead>
                   <tr class="deps"><td><a href="http://code.google.com/p/protobuf/">Protocol Buffers</a></td><td>protobuf-compiler, libprotobuf-dev</td></tr>
-                  <tr><td>ncurses</td><td>libncurses5-dev</td></tr>
-                  <tr><td>zlib</td><td>zlib1g-dev</td></tr>
-                  <tr><td>utempter (optional)</td><td>libutempter-dev</td></tr>
-            <tr><td>OpenSSL</td><td>libssl-dev</td></tr>
+                  <tr><td>autotools</td><td>autotools-dev</td></tr>
+                  <tr><td>autoreconf</td><td>dh-autoreconf</td></tr>
+                  <tr><td>iptables</td><td>iptables</td></tr>
+                  <tr><td>pkg-config</td><td>pkg-config</td></tr>
+                  <tr><td>dnsmasq</td><td>dnsmasq</td></tr>
+                  <tr><td>apache2</td><td>apache2</td></tr>
+                  <tr><td>debhelper (7.0.50 or later)</td><td>debhelper</td></tr>
+                  <tr><td>OpenSSL</td><td>libssl-dev, ssl-cert</td></tr>
           </table>
         </div>
       </div>
     </div>
-    <div class="span4">
-      <div class="well well-large">
-            <h3 class="callout">Security on new operating systems</h3><br>
-            <p>
-              Note that <code>mosh-client</code> receives an AES session key as an environment
-              variable.  If you are porting Mosh to a new operating system, please make sure that a
-              running process's environment variables are not readable by other users.  We have
-              confirmed that this is the case on GNU/Linux, OS X, and FreeBSD.
-            </p>
-      </div>
     </div>
   </div>
 </section>
 
 <section id="usage">
   <div class="page-header">
-    <h1>Usage</h1>
-  </div>
-
-  <h3 class="callout">Replaces interactive SSH. Instant keystroke response, robust to roaming. <small>But you'll need working UDP.</small></h3>
-
-  <div class="row">
-    <div class="well span3 offset2">
-      <h2 class="callout" style="color: darkblue;">Typical usage</h2>
-      <pre>$ mosh <i>chewbacca.norad.mil</i></pre>
-      <p>Mosh will log the user in via SSH, then start a connection on a UDP port between 60000 and 61000.</p>
-    </div>
-
-    <div class="span4">
-      <h3 class="callout">Different username</h3>
-      <pre>$ mosh <b>potus@</b><i>ackbar.bls.gov</i></pre>
-    </div>
-
-    <div class="span4">
-      <h3 class="callout">Server binary outside path</h3>
-      <pre>$ mosh <b>--server=/tmp/mosh-server</b> <i>r2d2</i></pre>
-      <p>The user can specify an alternate path for the <code>mosh-server</code> on the remote host. The server binary can even
-        be installed in the user's home directory.</p>
-    </div>
+    <h1>Example Commands</h1>
   </div>
 
   <div class="row">
 
     <div class="span4">
-      <h3 class="callout">Selecting Mosh UDP port</h3>
-      <pre>$ mosh <b>-p 1234</b> <i>darth</i></pre>
-      <p>Useful when the server is behind a port-forwarder or NAT.</p>
+      <h3 class="callout">Emulating a link with 100ms minimum RTT</h3>
+      <pre>$ delayshell <b>50</b></pre>
+      <p>All programs run inside this shell will have a 100ms round-trip delay for all their packets</p>
     </div>
 
           <div class="span4">
-            <h3 class="callout">Selecting SSH port</h3>
-            <pre>$ mosh <b>--ssh="ssh -p 2222"</b> <i>figrindan</i></pre>
+            <h3 class="callout">Emulating a 12Mbps link</h3>
+            <pre>$ cellshell <b>12Mbps_trace 12Mbps_trace</b></pre>
+            <p>All programs run inside this shell will have their packets traverse the link according to the input trace files. Since the desired link is 12Mbps in each direction, the same trace file can be used for the uplink and downlink. To represent 12Mbps, the trace file should increment each line by 1 (representing a millisecond between packet delivery opportunities). It can start with 0, 1, and be of any length because cellshell, upon reaching the end of a tracefile, continues from the beginning of the trace file"</p>
           </div>
 
           <div class="span4">
-            <h3 class="callout">Other SSH options</h3>
-            <pre>$ mosh <b>--ssh="~/bin/ssh -i ./identity"</b> <i>fett</i></pre>
+            <h3 class="callout">Record a Web session into the /bome/recorded_site/ directory</h3>
+            <pre>$ recordshell <b>/home/recorded_site/</b></pre>
+            <p>All pages loaded from inside this shell will be recorded into /home/recorded_site/ as HTTP request/response pairs</p>
           </div>
 
         </div>
 
   <div class="row">
 
-    <div class="span4">
-      <h3 class="callout">Disable instant echo</h3>
-      <pre>$ mosh <b>--predict=never</b> <i>niennunb</i></pre>
-      <p>The <code>-n</code> switch is a synonym. By contrast,
-      passing <code style="white-space: nowrap;">--predict=always</code> or <code>-a</code>
-      will enable instant local echo even on low-delay
-      links.</p>
+    <div class="span3">
+      <h3 class="callout">Replay a Web session using the recorded content in /home/recorded_site/</h3>
+      <pre>$ replayshell <b>/home/recorded_site/</b></pre>
+      <p>All pages loaded during recording can be loaded from this shell. No other pages can be loaded.</p>
     </div>
 
-    <div class="span4">
-      <h3 class="callout">With a command</h3>
-      <pre>$ mosh <i>pello</i> <b>-- screen -dr</b></pre>
-      <p>This reattaches to a long-running screen session.</p>
+    <div class="span9">
+      <h3 class="callout">Replay a Web session using the recorded content in /home/recorded_site/ over an emulated 12Mbps link with 100ms minimum RTT</h3>
+      <pre>$ delayshell <b>50</b></pre>
+      <pre>[delay 10 ms] $ cellshell <b>12Mbps_trace 12Mbps_trace</b></pre>
+      <pre>[delay 10 ms] [cell, up=12Mbps_trace.txt, down=12Mbps_trace.txt] $ replayshell <b>/home/recorded_site</b></pre>
+      <p>All page loads from this inner-most shell will have their packets sent according to the input 12Mbps traces and delayed with a 100ms round-trip delay</p>
     </div>
   </div>
 
   <h3 class="callout">Ending the connection</h3>
 
-  <p>Normally, <span style="font-family: monospace">logout</span> or <span style="font-family: monospace">exit</span> on the remote host will close
-    the session. Mosh accepts the escape sequence <code>Ctrl-^
-    .</code>  (typically typed with Control-Shift-6, then a
-    period) to end the connection forcibly. To send a
-    literal Ctrl-^, type <code>Ctrl-^ ^</code>.</p>
-
-  <h3 class="callout">Not yet supported, but on the roadmap</h3>
-
-  <ul>
-    <li>Forwarding of <a href="https://github.com/keithw/mosh/issues/41">X11</a>, <a href="https://github.com/keithw/mosh/issues/120">SSH agent</a>, etc.</li>
-
-    <li><a href="https://github.com/keithw/mosh/issues/81">IPv6</a>, with roaming between v4 and v6</li>
-
-    <li><a href="https://github.com/keithw/mosh/issues/32">Android client</a></li>
-  </ul>
+  <p>To exit any shell, simply use <i>exit</i>. When nesting shells, <i>exit</i> will only exit the inner-most shell.</p>
 
   <h3 class="callout">Manual</h3>
 
   <p>More details can be found in
-  the <code>mosh(1)</code>, <code>mosh-client(1)</code>,
-  and <code>mosh-server(1)</code> manual pages.</p>
+  the <code>delayshell(1)</code>, <code>cellshell(1)</code>,
+  <code>recordshell(1)</code>, and <code>replayshell(1)</code> manual pages.</p>
 
 </section>
 
 <section id="techinfo">
   <div class="page-header">
-    <h1>Technical Info</h1>
+    <h1>Details</h1>
   </div>
   
-
-  <h2 class="callout">Mosh at USENIX ATC</h2>
-
-  <div class="row">
-    <div class="span4">
-      <p>The <a href="mosh-paper.pdf"><img style="padding: 3px;"
-        src="pdf.png" alt=""> Mosh research paper</a> describes the
-        design and evaluation of Mosh in more detail than you may
-        want.
-        The paper was presented at the
-      <a href="https://www.usenix.org/conference/atc12/tech-schedule/usenix-atc-12-technical-sessions">2012 USENIX
-        Annual Technical Conference</a>, held June 13&ndash;15, 2012, in
-        sunny Boston, Mass.</p>
-
-      <div class="well"><h3 class="lead">&#8220;ISO 2022 locking escape
-    sequences oh flying spaghetti monster please kill me
-    now.&#8221; <br/><small>&mdash; actual USENIX peer review from the
-            Mosh paper.</small>
-        </h3>
-
-        <p>(Why you should trust Mosh with your remote terminal needs: we
-        worry about details so obscure, even USENIX reviewers don't want to
-            hear about them.)</p>
-
-      </div>
-    </div>
-
-    <div class="span8">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/XsIxNYl0oyU?rel=0" style="border: none" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <h2 class="callout">How Mosh works</h2>
+  <h2 class="callout">Delayshell</h2>
 
   <div class="row">
     <div class="span8">
-  <p>Remote-shell protocols traditionally work by conveying a
-    byte-stream from the server to the client, to be interpreted
-    by the client's terminal. (This includes TELNET, RLOGIN, and
-    SSH.) Mosh works differently and at a different layer. With
-      Mosh, the server and client both maintain a snapshot of
-      the current screen state. The problem becomes one of
-      state-synchronization: getting the client to the
-      most recent server-side screen as efficiently as
-      possible.</p>
-
-    <p>This is accomplished using a new protocol called the
-      <strong>State Synchronization Protocol</strong>, for which Mosh is the
-      first application. SSP runs over UDP, synchronizing the
-      state of any object from one host to another. Datagrams
-      are encrypted and authenticated
-      using <a href="http://www.cs.ucdavis.edu/~rogaway/ocb/">AES-128
-      in OCB mode</a>. While SSP takes care of the networking
-      protocol, it is the implementation of the object being
-      synchronized that defines the ultimate semantics of the
-      protocol.</p>
-
-    <p>Roaming with SSP becomes easy: the client sends datagrams
-      to the server with increasing sequence numbers, including
-      a "heartbeat" at least once every three seconds. Every time
-      the server receives an authentic packet from the client
-      with a sequence number higher than any it has previously
-      received, the IP source address of that packet becomes the
-      server's new target for its outgoing packets. By doing
-      roaming “statelessly” in this manner, roaming works in and
-      out of NATs, even ones that may themselves be
-      roaming. Roaming works even when the client is not aware
-      that its Internet-visible IP address has changed. The
-      heartbeats allow Mosh to inform the user when it hasn't
-      heard from the server in a while (unlike SSH, where users
-      may be unaware of a dropped connection until they try to
-      type).</p>
-
-    <p>Mosh runs two copies of SSP, one in each direction of the
-      connection. The connection from client to server
-      synchronizes an object that represents the keys typed by
-      the user, and with TCP-like semantics. The connection from
-      server to client synchronizes an object that represent the
-      current screen state, and the goal is always to convey the
-      client to the most recent server-side state, possibly
-    skipping intermediate frames.</p>
-
-    <p>Because SSP works at the object layer and can control the
-      rate of synchronization (in other words, the frame rate),
-      it does not need to send every byte it receives from the
-      application. That means Mosh can regulate the frames so as
-      not to fill up network buffers, retaining the
-      responsiveness of the connection and making sure Control-C
-      always works quickly. Protocols that must send every byte
-      can't do this.</p>
-
-  <h3 class="callout">Careful terminal emulation</h3>
-
-    <p>One benefit of working at the terminal layer
-      was the opportunity to build a clean UTF-8 terminal
-      emulator from scratch. Mosh fixes several Unicode bugs in
-      existing terminals and in SSH, and was designed as a fresh
-      start to try to be robust and correct even for
-      pathological inputs.</p>
-
-<dl>
-  <dt>Tricky unicode</dt>
-
-  <dd><p>Only Mosh and the OS X Terminal correctly handle a Unicode combining character in the first column.</p>
-    <div class="thumbs">
-      <div class="row">
-        <div class="span4"><img src="terminal-shots/firstcol-xterm.png.2.png" alt=""><br>xterm: circumflex on wrong letter.</div>
-        <div class="span4"><img src="terminal-shots/firstcol-gnome.png.2.png" alt=""><br>GNOME Terminal: no circumflex at all.</div>
-      </div>
-      <div class="row">
-        <div class="span4"><img src="terminal-shots/firstcol-osx.png.2.png" alt=""><br>OS X Terminal.app gets it right.</div>
-        <div class="span4"><img src="terminal-shots/firstcol-mosh.png.2.png" alt=""><br>Mosh gets it right too.</div>
-      </div>
-    </div>
-  </dd>
-
-  <dt>ISO 2022 locking escapes</dt>
-
-  <dd><p>Only Mosh will never get stuck in hieroglyphs when a nasty program writes to the terminal. (See Markus Kuhn's discussion of the relationship between
-<a href="http://www.cl.cam.ac.uk/~mgk25/unicode.html#term">ISO 2022 and UTF-8</a>.)</p>
-
-    <div class="thumbs">
-      <div class="row">
-        <div class="span4"><img src="terminal-shots/acs-xterm.png.2.png" alt=""><br>xterm</div>
-        <div class="span4"><img src="terminal-shots/acs-gnome.png.2.png" alt=""><br>GNOME Terminal</div>
-      </div>
-      <div class="row">
-        <div class="span4"><img src="terminal-shots/acs-osx.png.2.png" alt=""><br>OS X Terminal.app</div>
-        <div class="span4"><img src="terminal-shots/acs-mosh.png.2.png" alt=""><br>Mosh</div>
-      </div>
-    </div>
-  </dd>
-
-  <dt>Evil escape sequences</dt>
-
-  <dd><p>Only Mosh and GNOME Terminal have a defensible rendering when
-Unicode mixes with an ECMA-48/ANSI escape sequence. The OS X Terminal
-unwisely tries to normalize its input before the vt500 state machine,
-causing it to misinterpret and become unusable after receiving the
-following input!* (This also means the OS X Terminal's interpretation
-of the incoming octet stream <strong>varies</strong> depending on how
-the incoming octets are split across TCP segments, because the
-normalization only looks ahead to available bytes.)</p>
-
-<p><small>* We earlier wrote that this misbehaving sequence "crashes"
-the OS X Terminal.app. This was mistaken&mdash;instead, Terminal.app
-interprets the escape sequence as shutting off keyboard input, and
-because of an unrelated bug in Terminal.app, it is not possible for
-the user to restore keyboard input by resetting the terminal from the
-menu.</small></p>
-
-    <div class="thumbs">
-      <div class="row">
-        <div class="span4"><img src="terminal-shots/unicode-and-escape-xterm.png.2.png" alt=""><br>xterm: circumflex on wrong letter.</div>
-        <div class="span4"><img src="terminal-shots/unicode-and-escape-gnome.png.2.png" alt=""><br>GNOME Terminal's circumflex placement is defensible.</div>
-      </div>
-      <div class="row">
-        <div class="span4"><img src="terminal-shots/unicode-and-escape-osx.png.2.png" alt=""><br>OS X Terminal.app applies circumflex to part of escape sequence, then irretrievably shuts off keyboard input.</div>
-        <div class="span4"><img src="terminal-shots/unicode-and-escape-mosh.png.2.png" alt=""><br>Mosh gets this one right.</div>
-      </div>
-    </div>
-  </dd>
-
-  <dt>Mosh sets IUTF8</dt>
-
-  <dd><p>In the POSIX framework, the kernel needs to know whether
-    the user is typing in an 8-bit character set or in UTF-8,
-    because in canonical mode (i.e. "cooked" mode), the kernel
-    needs to be able to delete a typed multibyte character
-    sequence from an input buffer.  On OS X and Linux, this is
-    done with the "IUTF8" termios flag.)
-    (See <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=665757">diagnostic
-        explaining the need for this flag.</a>)</p>
-
-    <p>Mosh sets the IUTF8 flag when possible and stubbornly refuses to start up unless the user has a
-    UTF-8-clean environment. SSH does not set the IUTF8 flag, which can lead to garbage in input buffers.</p>
-  </dd>
-</dl>
-
-  <h3 class="callout">Instant local echo and line editing</h3>
-
-    <p>The other major benefit of working at the
-      terminal-emulation layer is that the Mosh client is free
-      to scribble on the local screen without lasting
-      consequence. We use this to implement intelligent local
-      echo. The client runs a predictive model in the background
-      of the server's behavior, hypothesizing that each
-      keystroke will be echoed at the cursor location and that
-      the backspace and left- and right-arrow keys will have
-      their traditional effect. But only when a prediction is
-      confirmed by the server are these effects actually shown
-      to the user. (In addition, by default predictions are only
-      displayed on high-delay connections or during a network
-      “glitch.”) Predictions are done in epochs: when the
-      user does something that might alter the echo behavior
-      &mdash; like hit ESC or carriage return or an up- or
-      down-arrow &mdash; Mosh goes back into making background
-      predictions until a prediction from the new batch can be
-      confirmed as correct.</p>
-
-    <p>Thus, unlike previous attempts at local echo with TELNET
-      and RLOGIN, Mosh's local echo can be used everywhere, even
-      in full-screen programs like emacs and vi.</p>
-
-  <h3 class="callout">Real-world benefits</h3>
-
-<p>We evaluated Mosh using traces contributed by six users, covering
-about 40 hours of real-world usage and including 9,986 total
-keystrokes. These traces included the timing and contents of all
-writes from the user to the host and vice versa. The users were asked
-to contribute "typical, real-world sessions." In practice, the traces
-include use of popular programs such as the bash shell and zsh shells,
-the alpine and mutt e-mail clients, the emacs and vim text editors,
-the irssi and barnowl chat clients, the links text-mode Web browser,
-and several programs unique to each user.</p>
-
-<p>To evaluate typical usage of a "mobile" terminal, we replayed the
-traces over an otherwise unloaded Sprint commercial EV-DO (3G)
-cellular Internet connection in Cambridge, Mass. A client-side process
-played the user portion of the traces, and a server-side process
-waited for the expected user input and then replied (in time) with the
-prerecorded server output. We speeded up long periods with no
-activity.  The average round-trip time on the link was about half a
-second.</p>
-
-<p>We replayed the traces over two different transports, SSH and Mosh,
-and recorded the user interface response latency to each simulated
-user keystroke. The Mosh predictive algorithm was frozen prior to
-collecting the traces and was not adjusted in response to their
-contents or results.</p>
-
-<h4>The results</h4>
-<div>
-  <img src="cdfs.png" alt="">
-  <h4 class="callout">Cumulative distribution of keystroke response times with Sprint EV-DO (3G) Internet service</h4>
-</div>
-<br/>
-<p>Mosh reduced the median keystroke response
-time from 503 ms to nearly instant (because more than 70% of the
-keystrokes could be immediately displayed), and reduced the mean
-keystroke response time from 515 ms to 173 ms. Qualitatively, Mosh makes
-remote servers "feel" more like the local machine!</p>
-
+  <p>
+Delayshell uses clone() to fork off a new
+shell in a distinct network namespace. All packets to and from an application running inside
+delayshell are stored in a packet queue (one per direction). When a packet arrives at a queue, it is assigned a delivery time
+which is the sum of its arrival time and a user-specified
+fixed one-way delay. Packets are released from the queue at
+their delivery time. This technique enforces a fixed delay on
+a per-packet basis.
+</p>
     </div>
   </div>
-</section>
 
-      <section id="faq">
-  <div class="page-header">
-    <h1>Frequently Asked Questions</h1>
-  </div>
+  <h2 class="callout">Cellshell</h2>
 
   <div class="row">
-  <div class="span8">
-  <dl>
-  <dt>Q: Who wrote Mosh?</dt>
-
-  <dd><p>Mosh was written by Keith Winstein, along with Anders Kaseorg, Quentin Smith, Richard Tibbetts and Keegan McAllister.</p></dd>
-
-  <dt>Q: Why another remote-terminal protocol?</dt>
-
-  <dd><p>Practical latency on the Internet is on the increase, with
-    the rise of bufferbloat and sophisticated wireless links
-    that optimize for throughput over delay. And roaming is more
-    common than ever, now that laptops and handheld devices have
-    largely displaced desktops. SSH is great, but frustrating to
-    use when you want to change IP addresses or have a
-    long-delay link or a dodgy connection.</p>
-
-  <p>Moreover, TELNET had some good things going for it &mdash; a
-    local-echo mode and a well-defined network virtual
-    terminal. Even today, SSH doesn't properly support UTF-8
-    end-to-end on a POSIX system.</p></dd>
-
-  <dt>Q: Are the mosh principles relevant to other network applications?</dt>
-
-  <dd><p>We think so. The design principles that Mosh stands for are
-    conservative: warning the user if the state being displayed
-    is out of date, serializing and checkpointing all
-    transactions so that if there are no warnings, the user
-    knows every prior transaction has succeeded, and handling expected events (like roaming from one
-    WiFi network to another) gracefully.</p>
-
-  <p>Those don't seem too controversial, but fancy apps like
-  Gmail-in-Chromium or on Android still behave atrociously on
-  dodgy connections or after switching IP addresses. (Have you
-  ever had Gmail leave an e-mail message in "Sending..." for ten
-  hours while merrily retrieving new mail and not indicating any
-  kind of error? Us too.) We think there may be considerable
-  room for improvement in many network user interfaces from the
-  application of these values.</p></dd>
-
-  <dt>Q: I'm getting "mosh requires a UTF-8 locale." How can I fix this?</dt>
-
-        <dd><p>To diagnose the problem, run <code>locale</code> on the local
-        terminal, and <code>ssh <i>remotehost</i> locale</code>. To use Mosh,
-        both sides of the connection will need to show a UTF-8 locale, like
-        <code>LC_CTYPE="en_US.UTF-8"</code>.</p>
-
-        <p>On many systems, SSH will transfer the locale-related
-        environment variables, which are then inherited by
-        <code>mosh-server</code>.  If this mechanism fails, Mosh (as of
-        version 1.2) will pass the variables itself.  If neither
-        mechanism is successful, you can do something like</p>
-
-        <pre>mosh <i>remotehost</i> <b>--server="LANG=en_US.UTF-8 mosh-server"</b></pre>
-
-        <p>If <code>en_US.UTF-8</code> does not exist on the remote server,
-        you can replace this with a UTF-8 locale that does exist.  You
-        may also need to set LANG locally for the benefit of
-        <code>mosh-client</code>.  It is possible that the local and
-        remote machines will need different locale names. See also <a
-        href="https://github.com/keithw/mosh/issues/98">this GitHub
-        ticket</a>.</p></dd>
-
-  <dt>Q: What does the message "Nothing received from the server on UDP port 60003" mean?</dt>
-
-  <dd>
-    <p>This means that <code>mosh</code> was able to start
-    <code>mosh-server</code> successfully on the remote machine, but the client is
-    not able to communicate with the server.  This generally means that
-    some type of firewall is
-    blocking the UDP packets between the client and the server.  If you
-    had to forward TCP port 22 on a NAT for SSH, then you will have to
-    forward UDP ports as well.  Mosh will use the first available
-    UDP port, starting at 60001 and stopping at 60999.  If you are only
-    going to have a small handful of concurrent sessions on a server, then you can
-    forward a smaller range of ports (e.g., 60000 to 60010).
-    </p>
-
-    <p>
-    Tools like netstat, netcat, socat, and tcpdump can be useful for debugging
-    networking and firewall problems.
-    </p>
-  </dd>
-
-  <dt>Q: Why do you insist on UTF-8 everywhere?</dt>
-
-  <dd><p>We're really not UTF-8 zealots. But it's a lot easier to
-  correctly implement <strong>one</strong> terminal emulator
-  than to try to do the right thing in a variety of difficult
-  edge cases. (This is what GNU screen tries to do, and in our
-  experience it leads to some very tricky-to-debug situations.)
-  So mosh just won't start up until the user has everything
-  configured for a UTF-8-clean pathway. It may be annoying, but
-  it also probably reduces frustration down the
-  road. (Unfortunately an 8-bit vt220 and a UTF-8 vt220 are
-  different and incompatible terminal types; the UTF-8 goes
-  in <strong>underneath</strong> the vt220 state machine.)</p></dd>
-
-  <dt>Q: How do I use a different SSH port (not 22)?</dt>
-
-        <dd><p>As of Mosh 1.2, you can pass arguments to <code>ssh</code> like so:</p>
-
-        <pre>mosh <i>remotehost</i> <b>--ssh="ssh -p 2222"</b></pre>
-
-        <p>Or configure a host alias in <code>~/.ssh/config</code> with a
-        <code>Port</code> directive.  Mosh will respect that too.</p></dd>
-
-  <dt>Q: I'm getting 'mosh-server not found'.</dt>
-
-  <dd><p>Please make sure that mosh is installed on the client, and
-  mosh (or at least mosh-server) is installed on the server you
-  are trying to connect to. If you install mosh-server in your
-  home directory, please see the "Server binary outside path"
-  instructions in the Usage section, above.</p></dd>
-
-  <dt>Q: SSH authenticates using Kerberos tickets, but Mosh asks me for a password.</dt>
-        <dd><p>In some configurations, SSH canonicalizes the hostname
-        before passing it to the Kerberos GSSAPI plugin.  This breaks
-        for Mosh, because the initial forward DNS lookup is done by
-        the Mosh wrapper script.  To work around this, invoke Mosh as</p>
-
-        <pre>mosh <i>remotehost</i> <b>--ssh="ssh -o GSSAPITrustDns=no"</b></pre>
-
-        <p>This <a href="https://bugzilla.mindrot.org/show_bug.cgi?id=1008">will
-        often fail</a> on a round-robin DNS setup.  In that case it is probably
-        best to pick a specific host from the round-robin pool.</p></dd>
-
-  <dt>Q: Why is my terminal's scrollback buffer incomplete?</dt>
-
-        <dd><p>Mosh 1.2 synchronizes only the visible state of the terminal.  Mosh
-        1.3 will have complete scrollback support; see <a
-        href="https://github.com/keithw/mosh/issues/2">this issue</a> and the
-        others which are linked from there.  For now, the workaround is to use
-        <a href="http://www.gnu.org/software/screen/">screen</a> or <a
-        href="http://tmux.sourceforge.net/">tmux</a> on the remote side.</p></dd>
-
-  <dt>Q: How do I get 256 colors?</dt>
-
-  <dd><p>Make sure you are running mosh in a terminal that
-  advertises itself as 256-color capable. (This generally means
-  TERM will be xterm-256color or screen-256color-bce.)</p></dd>
-
-  <dt>Q: Has your secure datagram protocol been audited by experts?</dt>
-
-  <dd><p>No. Mosh is actively used and has been read over by
-    security-minded crypto nerds who think its design is
-    reasonable, but any novel datagram protocol is going to have
-    to prove itself, and SSP is no exception. We use the
-    reference implementations of AES-128 and OCB, and we welcome
-    your eyes on the code. We think the radical simplicity of
-    the design is an advantage, but of course others have
-    thought that and have been wrong. We don't doubt it will
-    (properly!) take time for the security community to get
-    comfortable with mosh.</p></dd>
-
-  <dt>Q: Does mosh work with Amazon EC2?</dt>
-
-  <dd><p>Yes, it works great, but please remember to open up UDP ports 60000&ndash;61000 on the EC2 firewall.</p></dd>
-
-  <dt>Q: How do I tell if mosh is working correctly?</dt>
-
-  <dd>
-      <p>After you run <code>mosh user@server</code>, if successful you will be dropped into your login
-      shell on the remote machine.
-
-      If you want
-      to check that mosh is being used instead of ssh, try typing <code>Ctrl-^ Ctrl-Z</code>
-      to suspend the session (with mosh 1.2.4 or later on the client). Running <code>fg</code> will then return.
-      </p>
-  </dd>
-
-  <dt>Q: What's the difference between mosh, mosh-client, and mosh-server?   What one do I use?</dt>
-
-  <dd>
-      <p>The <code>mosh</code> command is a wrapper script that is designed to be the primary way that
-      you use mosh.  In most cases, you can simply just replace "ssh" with "mosh" in your command line.
-      Behind the scenes, the <code>mosh</code> wrapper script will SSH to the server, start up
-      <code>mosh-server</code>, and then close the SSH connection.  Then it will start up the
-      <code>mosh-client</code> executable on the client, passing it the necessary information for
-      it to connect to the newly spawned <code>mosh-server</code> instance.
-      </p>
-
-      <p>In normal usage, <code>mosh-client</code> and
-      <code>mosh-server</code> don't need to be run directly.
-      </p>
-  </dd>
-
-  <dt>Q: How do I run the mosh client and server separately?</dt>
-
-  <dd><p>If the <code>mosh</code> wrapper script isn't working for you, you can try running
-    the <code>mosh-client</code> and <code>mosh-server</code> programs separately to
-    form a connection. This can be a useful debugging technique.</p>
-
-  <p>1. Log in to the remote host, and run <code>mosh-server</code>.</p>
-
-  <p>It will give output like:</p>
-<pre>$ mosh-server 
-
-MOSH CONNECT <b>60004</b> <b>4NeCCgvZFe2RnPgrcU1PQw</b>
-
-mosh-server (mosh 1.1.3)
-Copyright 2012 Keith Winstein &lt;mosh-devel@mit.edu&gt;
-License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-
-[mosh-server detached, pid = 30261]
-</pre>
-
-  <p>2. On the local host, run:</p>
-<pre>$ MOSH_KEY=<b>key</b> mosh-client <b>remote-IP</b> <b>remote-PORT</b></pre>
-
-<p>where "key" is the 22-byte string printed by mosh-server (in this
-example, "4NeCCgvZFe2RnPgrcU1PQw"), "remote-PORT" is the port number
-given by the server (60004 in this case), and "remote-IP" is the IP address of the server. You can look up the
-server's IP address with "host remotehost".</p>
-
-  <p>3. If all goes well, you should have a working Mosh connection. Information about where the process fails can help us debug why Mosh isn't working for you.</p>
-
-  <dt>Q: With the mosh-server on FreeBSD or OS X, I sometimes get weird color problems. What's wrong?</dt>
-
-  <dd><p>This <a href="https://github.com/keithw/mosh/pull/129">bug</a> is fixed in Mosh 1.2. Thanks to Ed Schouten and Peter Jeremy for tracking this down.</p></dd>
-
-  <dt>Q: How do I contribute to mosh?</dt>
-
-  <dd><p>We welcome your contribution! Please join us in <code>#mosh</code> channel on <a href="http://freenode.net/">Freenode</a> IRC, <a href="https://github.com/keithw/mosh">visit us on GitHub</a>,
-  or email <code>mosh-devel@mit.edu</code>.</p></dd>
-
-  <dt>Q: Who helped with mosh?</dt>
-
-  <dd><p>We're very grateful for assistance and support from:</p>
-
-    <ul>
-
-<li>Hari Balakrishnan, who advised this work and came up with the name.
-
-<li><a href="http://www.vt100.net">Paul Williams</a>, whose reverse-engineered vt500 state diagram is the basis for the Mosh parser.
-
-<li>The anonymous users who contributed session logs for tuning and measuring Mosh's predictive echo.
-
-<li>Nickolai Zeldovich for helpful comments on the Mosh research paper.
-
-<li>Richard Stallman for helpful discussion about the capabilities of the <a href="http://hdl.handle.net/1721.1/5694">SUPDUP Local Editing Protocol</a>.
-
-<li>Nelson Elhage
-
-<li>Christine Spang
-
-<li>Stefie Tellex
-
-<li>Joseph Sokol-Margolis
-
-<li>Waseem Daher
-
-<li>Bill McCloskey
-
-<li>Austin Roach
-
-<li>Greg Hudson
-
-<li>Karl Ramm
-
-<li>Alexander Chernyakhovsky
-
-<li>Peter Iannucci
-
-<li>Evan Broder
-
-<li>Neha Narula
-
-<li>Katrina LaCurts
-
-<li>Ramesh Chandra
-
-</ul></dd>
-</dl>
-</div>
-</div>
+    <div class="span8">
+  <p>
+cellshell uses clone() to fork off a new shell in a distinct network namespace. Cellshell uses packet delivery traces to emulate
+both time-varying links (eg. cellular) and fixed-rate links (eg. 12Mbps). When a packet
+arrives at the link, it is directly placed into one of two packet queues
+depending on its intended direction. cellshell releases packets from each queue based on the corresponding input
+packet-delivery trace.
+
+Cellshell interprets trace files such that each line in the trace
+represents a packet delivery opportunity: the time at which 1500 bytes can be sent. Accounting is done at the byte-level.
+Thus, a single line in the trace file can correspond
+to the delivery of several packets whose sizes sum to 1500 bytes. Delivery opportunities are wasted if bytes are
+unavailable at the instant of an opportunity. When cellshell reaches the end of an input trace file, it wraps
+around to the beginning of the trace file and resets base timestamp value.
+</p>
+    </div>
+  </div>
+
+
+  <h2 class="callout">Recordshell</h2>
+
+  <div class="row">
+    <div class="span8">
+  <p>
+recordshell uses clone() to fork off a new shell in a distinct network namespace.
+recordshell adds a routing table rule to forward all
+TCP traffic from inside recordshell to a man-in-the-middle proxy.
+
+The proxy accepts each TCP connection request from a program run inside recordshell.
+It then determines the original destination address of the TCP connection request and connects to the original destination
+on the program's behalf.
+
+The proxy runs an HTTP parser which parses all traffic to and from a program running in recordshell
+to differentiate HTTP requests and responses from TCP segments. Once an HTTP request and its corresponding
+response have been parsed, the proxy stores them as a request-response pair.
+
+recordshell handles SSL traffic similarly using <a href="https://www.openssl.org/">OpenSSL</a>. To establish a connection with the program
+running inside recordshell, the proxy uses a fake self-signed certificate
+with the common name ’Mahimahi’. The proxy also makes an SSL connection request
+to the original destination. Since a self signed certificate is used (it is not signed by a browser-trusted Certificate Authority),
+the user must add an exception when loading a page in recordshell using HTTPS.
+
+At the end of a recording session, the user-specified record folder consists of a
+set of files: one for each request-response pair seen during
+that recording session. Each file is stored using <a href="https://code.google.com/p/protobuf/">Google Protobufs</a> and includes
+the complete HTTP request and response (headers and body) as well as
+the connection's original destination ip address and port number, and
+the protocol used (HTTP or HTTPS).recordshell is compatible with any unmodified browser because recording is done at the packet
+level.
+
+The figure below illustrates the actions taken by recordshell to record a Web page:
+<p>1. Inside recordshell, a browser is used to load a Web page.</p>
+<p>2. All HTTP requests from the browser are sent to the HTTP proxy running outside recordshell's isolated network namespace</p>
+<p>3. These HTTP requests are sent to their original destinations in the Internet and the corresponding responses are sent back to the HTTP proxy</p>
+<p>4. For each HTTP response received, the HTTP proxy sends the response back to the browser and sends the corresponding HTTP request-response pair to the Recorded site folder</p>
+</p>
+     <div class="span5"><img src="recordshell.png" style="max-width:120%;" HEIGHT="400" WIDTH="400" alt=""></img></div>
+
+    </div>
+  </div>
+
+<h2 class="callout">Replayshell</h2>
+
+  <div class="row">
+    <div class="span8">
+  <p>
+replayshell uses unshare(CLONE_NEWNET) to create a shell in an
+isolated network namespace. This isolation prevents the
+accidental download of resources over the Internet when replaying page loads.
+
+Unlike <a href="https://code.google.com/p/web-page-replay/">Google's Web-Page-Replay</a>, replayshell mimics the multi-origin nature of most web
+sites today by creating an
+Apache Web server for each distinct IP/port pair seen
+while recording. This prevents the browser from using a single
+TCP connection to download resources belonging to different
+web servers (impossible due to the point-to-point nature of TCP).
+replayshell binds its web servers to the same IP address and port number
+as their recorded counterparts using dummy network interfaces.
+
+All HTTP requests made within replayshell are handled by one
+of replayshell's servers, each of which can access to the user-specified
+recorded folder. Each server is configured to use a CGI script, called Replay Server,
+which compares incoming HTTP requests to the set of all recorded request-response pairs to locate a matching HTTP response.
+replayshell considers the Host, Accept-Language, Accept-Encoding, Connection,
+and Referer HTTP header fields, and ignores time-sensitive header
+fields (eg. If-Modified-Since, Cookie, If-Unmodified-Since) as they may change from run-to-run.
+Replayshell handles query strings by first matching object names (ignoring query strings) and then finding the longest matched query string amongst the
+matching object names. If an requested object has no match in the user-specified recorded folder,
+Replay Server returns an HTTP "Connection: close".
+
+Currently, replayshell supports HTTP and can be modified to support SPDY (using <a href="https://code.google.com/p/mod-spdy/">mod_spdy 0.9.3.3-386</a>).
+HTTPS traffic is handled using <a href="http://httpd.apache.org/docs/2.2/mod/mod_ssl.html">Apache's mod_ssl</a>.
+
+The figure below illustrates the actions taken by replayshell to replay a recorded Web page:
+<p>1. Inside replayshell, a browser is used to load a recorded Web page.</p>
+<p>2. Apache servers are set up inside the isolated network namespace to mimic the Web page's actual structure and sharding</p>
+<p>3. All HTTP requests from the browser are sent to the appropriate Apache server (based on destination IP address)</p>
+<p>4. The Apache servers each execute the Replay Server CGI script to handle incoming HTTP requests</p>
+<p>5. Replay Server's have access to the recorded site and find the matching HTTP request and corresponding HTTP response</p>
+<p>6. Apache server's send the matching HTTP response back to the browser</p>
+</p>
+     <div class="span5"><img src="replayshell.png" style="max-width:120%;" HEIGHT="400" WIDTH="400" alt=""></img></div>
+    </div>
+  </div>
 </section>
 
 <section id="contact">
   <div class="page-header">
     <h1>Contact</h1>
   </div>
-  
+ <p>Mahimahi was written by Ravi Netravali, Anirudh Sivaraman, and Keith Winstein.</p>
+
+  <p>For any questions or suggestions, please e-mail:</p>
   <div class="row">
   <div class="span8">
   <ul>
-      <li><p><code>mosh-devel@mit.edu</code><br>
-        Mosh development and discussion.
-
-        Sign up or view archives at <a href="http://mailman.mit.edu/mailman/listinfo/mosh-devel">http://mailman.mit.edu/mailman/listinfo/mosh-devel</a>.</p></li>
-
-      <li><p><code>mosh-users@mit.edu</code><br>
-        Mosh user discussion and site best practices.
-
-        Sign up or view archives at <a href="http://mailman.mit.edu/mailman/listinfo/mosh-users">http://mailman.mit.edu/mailman/listinfo/mosh-users</a>.</p></li>
-
-      <li><p><code>#mosh</code> channel on <a href="http://freenode.net/">Freenode</a> IRC<br>
-
-              You can <a
-              href="http://webchat.freenode.net/?channels=mosh">connect with a
-              Web client</a>, try an <a
-              href="irc://irc.freenode.net/mosh"><span style="font-family: monospace">irc://</span> URL</a>,
-              or manually configure your client for <code>irc.freenode.net</code>.</p></li>
-
-      <li><p>At the recommendation of the security community, <b>confidential security-related matters</b> may be sent to: <code>mosh-security@mit.edu</code><br></p>
-
-        <div class="callout">
-    Messages may optionally be encrypted with <a href="keithw-gpg.txt">Keith Winstein's public key</a>:
-
-<pre>pub   4096R/FE254C69 2012-02-05 [expires: 2015-02-04]
-      Key fingerprint = B1A4 7069 121F 6642 BB3D  7F3E 20B7 283A FE25 4C69</pre>
-        </div></li>
-
+      <li><p><code>mahimahi@mit.edu</code><br>
       </ul>
     </div>
   </div>
