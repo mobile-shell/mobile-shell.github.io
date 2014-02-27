@@ -339,6 +339,15 @@ The figure below illustrates the actions taken by replayshell to replay a record
       <p>All programs run inside this shell will have a 100ms round-trip delay for all their packets</p>
     </div>
 
+    <div class="span5">
+      <h3 class="callout">Creating a trace file for a 3Mbps link</h3>
+      <pre>0<br>4<br>8<br>.<br>.<br>.</pre>
+      <p>Since each line in a trace file represents a packet delivery opportunity, you must first convert 3Mbps into ms/packet. We
+         assume a 1500 byte packet size. This yields 4 ms/packet. The trace file should thus increment each line by 4. The trace file should have
+         at least two lines and can be arbitrarily large.</p>
+    </div>
+
+
           <div class="span4">
             <h3 class="callout">Emulating a 12Mbps link</h3>
             <pre>$ cellshell <b>12Mbps_trace 12Mbps_trace</b></pre>
