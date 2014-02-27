@@ -53,8 +53,8 @@
             <ul class="nav">
               <li><a href="#about">About</a></li>
               <li><a href="#getting">Getting Mahimahi</a></li>
-              <li><a href="#usage">Examples</a></li>
               <li><a href="#techinfo">Details</a></li>
+              <li><a href="#usage">Examples</a></li>
               <li><a href="#contact">Contact</a></li>
               <li><a href="https://github.com/ravinet/mahimahi">Mahimahi on GitHub</a></li>
             </ul>
@@ -68,15 +68,18 @@
 <section id="about">
   <div class="hero-unit span10">
     <div class="row">
-      <div class="span5">
+      <div class="span10">
+        <div align="center">
         <h1>Mahimahi</h1>
         <p>A set of lightweight tools aimed at browser developers, website authors, and Web server developers to produce a usable benchmark for Web transport protocols and browser behaviors.</p>
         <p> Mahimahi contains four different tools which can be used to record actual websites and replay them over various emulated link conditions. </p>
         <p>Mahimahi is free software and is available on Ubuntu (version 13.10 or higher). </p>
+        </div>
       </div>
     </div>
-
+    <div align="center">
     <p><a class="btn btn-primary btn-large" href="#getting">Getting Mahimahi &raquo;</a>
+    </div>
   </div>
 
   <div id="features">
@@ -144,7 +147,7 @@
 
   <div id="binaries" class="row-fluid">
     <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png" alt=""></a>Ubuntu <small>10.04 and later</small></h3>
+      <h3 class="callout"><a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png" alt=""></a>Ubuntu <small>13.04 and later</small></h3>
             <pre>$ sudo add-apt-repository ppa:keithw/mahimahi
 $ sudo apt-get update
 $ sudo apt-get install mahimahi</pre>
@@ -193,62 +196,6 @@ $ make
   </div>
 </section>
 
-<section id="usage">
-  <div class="page-header">
-    <h1>Example Commands</h1>
-  </div>
-
-  <div class="row">
-
-    <div class="span4">
-      <h3 class="callout">Emulating a link with 100ms minimum RTT</h3>
-      <pre>$ delayshell <b>50</b></pre>
-      <p>All programs run inside this shell will have a 100ms round-trip delay for all their packets</p>
-    </div>
-
-          <div class="span4">
-            <h3 class="callout">Emulating a 12Mbps link</h3>
-            <pre>$ cellshell <b>12Mbps_trace 12Mbps_trace</b></pre>
-            <p>All programs run inside this shell will have their packets traverse the link according to the input trace files. Since the desired link is 12Mbps in each direction, the same trace file can be used for the uplink and downlink. To represent 12Mbps, the trace file should increment each line by 1 (representing a millisecond between packet delivery opportunities). It can start with 0, 1, and be of any length because cellshell, upon reaching the end of a tracefile, continues from the beginning of the trace file"</p>
-          </div>
-
-          <div class="span4">
-            <h3 class="callout">Record a Web session into the /bome/recorded_site/ directory</h3>
-            <pre>$ recordshell <b>/home/recorded_site/</b></pre>
-            <p>All pages loaded from inside this shell will be recorded into /home/recorded_site/ as HTTP request/response pairs</p>
-          </div>
-
-        </div>
-
-  <div class="row">
-
-    <div class="span3">
-      <h3 class="callout">Replay a Web session using the recorded content in /home/recorded_site/</h3>
-      <pre>$ replayshell <b>/home/recorded_site/</b></pre>
-      <p>All pages loaded during recording can be loaded from this shell. No other pages can be loaded.</p>
-    </div>
-
-    <div class="span9">
-      <h3 class="callout">Replay a Web session using the recorded content in /home/recorded_site/ over an emulated 12Mbps link with 100ms minimum RTT</h3>
-      <pre>$ delayshell <b>50</b></pre>
-      <pre>[delay 10 ms] $ cellshell <b>12Mbps_trace 12Mbps_trace</b></pre>
-      <pre>[delay 10 ms] [cell, up=12Mbps_trace.txt, down=12Mbps_trace.txt] $ replayshell <b>/home/recorded_site</b></pre>
-      <p>All page loads from this inner-most shell will have their packets sent according to the input 12Mbps traces and delayed with a 100ms round-trip delay</p>
-    </div>
-  </div>
-
-  <h3 class="callout">Ending the connection</h3>
-
-  <p>To exit any shell, simply use <i>exit</i>. When nesting shells, <i>exit</i> will only exit the inner-most shell.</p>
-
-  <h3 class="callout">Manual</h3>
-
-  <p>More details can be found in
-  the <code>delayshell(1)</code>, <code>cellshell(1)</code>,
-  <code>recordshell(1)</code>, and <code>replayshell(1)</code> manual pages.</p>
-
-</section>
-
 <section id="techinfo">
   <div class="page-header">
     <h1>Details</h1>
@@ -286,7 +233,7 @@ represents a packet delivery opportunity: the time at which 1500 bytes can be se
 Thus, a single line in the trace file can correspond
 to the delivery of several packets whose sizes sum to 1500 bytes. Delivery opportunities are wasted if bytes are
 unavailable at the instant of an opportunity. When cellshell reaches the end of an input trace file, it wraps
-around to the beginning of the trace file and resets base timestamp value.
+around to the beginning of the trace file and resets it's base timestamp value.
 </p>
     </div>
   </div>
@@ -301,11 +248,11 @@ recordshell uses clone() to fork off a new shell in a distinct network namespace
 recordshell adds a routing table rule to forward all
 TCP traffic from inside recordshell to a man-in-the-middle proxy.
 
-The proxy accepts each TCP connection request from a program run inside recordshell.
+The proxy accepts each TCP connection request from programs run inside recordshell.
 It then determines the original destination address of the TCP connection request and connects to the original destination
 on the program's behalf.
 
-The proxy runs an HTTP parser which parses all traffic to and from a program running in recordshell
+The proxy runs an HTTP parser which parses all TCP traffic to and from a program running in recordshell
 to differentiate HTTP requests and responses from TCP segments. Once an HTTP request and its corresponding
 response have been parsed, the proxy stores them as a request-response pair.
 
@@ -377,6 +324,71 @@ The figure below illustrates the actions taken by replayshell to replay a record
      <div class="span5"><img src="replayshell.png" style="max-width:120%;" HEIGHT="400" WIDTH="400" alt=""></img></div>
     </div>
   </div>
+</section>
+
+<section id="usage">
+  <div class="page-header">
+    <h1>Example Commands</h1>
+  </div>
+
+  <div class="row">
+
+    <div class="span4">
+      <h3 class="callout">Emulating a link with 100ms minimum RTT</h3>
+      <pre>$ delayshell <b>50</b></pre>
+      <p>All programs run inside this shell will have a 100ms round-trip delay for all their packets</p>
+    </div>
+
+          <div class="span4">
+            <h3 class="callout">Emulating a 12Mbps link</h3>
+            <pre>$ cellshell <b>12Mbps_trace 12Mbps_trace</b></pre>
+            <p>All programs run inside this shell will have their packets traverse the link according to the input trace files. Since the desired link is 12Mbps in each direction, the same trace file can be used for the uplink and downlink.</p>
+
+            <p>To emulate a 12Mbps link, the trace file should increment each line by 1 (representing a millisecond between packet delivery opportunities). It should start with 0, 1,..., and be of any length because cellshell, upon reaching the end of a tracefile, continues from the beginning of the trace file</p>
+          </div>
+
+          <div class="span4">
+            <h3 class="callout">Record a Web session into the /bome/recorded_site/ directory</h3>
+            <pre>$ recordshell <b>/home/recorded_site/</b></pre>
+            <p>All pages loaded from inside this shell will be recorded into /home/recorded_site/ as HTTP request/response pairs</p>
+          </div>
+
+        </div>
+
+  <div class="row">
+
+    <div class="span3">
+      <h3 class="callout">Replay a Web session using the recorded content in /home/recorded_site/</h3>
+      <pre>$ replayshell <b>/home/recorded_site/</b></pre>
+      <p>All pages loaded when recording into "/home/recorded_site/" can be loaded from this shell. No other pages can be loaded.</p>
+    </div>
+
+    <div class="span9">
+      <h3 class="callout">Replay a Web session using the recorded content in /home/recorded_site/ over an emulated 12Mbps link with 100ms minimum RTT</h3>
+      <pre>$ delayshell <b>50</b></pre>
+      <pre>[delay 10 ms] $ cellshell <b>12Mbps_trace 12Mbps_trace</b></pre>
+      <pre>[delay 10 ms] [cell, up=12Mbps_trace.txt, down=12Mbps_trace.txt] $ replayshell <b>/home/recorded_site</b></pre>
+      <p>All page loads from this inner-most shell will have their packets sent according to the input 12Mbps traces and delayed with a 100ms round-trip delay</p>
+    </div>
+  </div>
+
+
+
+  <h3 class="callout">Exiting</h3>
+
+  <p>To exit any shell, simply use <i>exit</i>. When nesting shells, <i>exit</i> will only exit the inner-most shell.</p>
+  <p>You can verify that you have exited a given shell by checking that there is no prompt in the terminal (eg. [delay 10 ms] ).</p>
+
+  <p>Replayshell has no prompt associated with it. To verify you have exited replayshell, you can use <i>ifconfig</i> and verify 
+     that there are no network interfaces named "shardedX" (where X is is the sharded server's identification number). </p>
+  
+
+  <h3 class="callout">Manual</h3>
+
+  <p>More details can be found in
+  the <code>delayshell(1)</code>, <code>cellshell(1)</code>,
+  <code>recordshell(1)</code>, and <code>replayshell(1)</code> manual pages.</p>
+
 </section>
 
 <section id="contact">
