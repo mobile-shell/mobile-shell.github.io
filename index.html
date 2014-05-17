@@ -759,6 +759,35 @@ remote servers "feel" more like the local machine!</p>
   room for improvement in many network user interfaces from the
   application of these values.</p></dd>
 
+  <dt>Q: Why do I have to redraw the screen so much (CTRL-L) to fix corrupt/incomplete screen content?</dt>
+
+  <dd><p>If you are using gnome-terminal or xfce4-terminal, you may have hit a bug in vte3.
+	See below referenced bugzillas and other links.
+	A fix is around since at least 2010, which found its way into some
+	(but not all) distribution packages, and even into upstream
+	(3 years later, but unchanged).
+	If you don't want to wait for your distribution to fix the packages,
+	an example script how to rebuild the vte3 package on Fedora 20 is provided.</p>
+
+	<p>After installing a fixed package, for the fix to become effective,
+	make sure you restart <b>all</b> instances of your terminal. Probably
+	best to log out and log in again, or even reboot, to make sure the
+	fixed code will actually be used.</p>
+
+	<p>See also:
+	<ul>
+	<li>Original (?): <a href="https://bugzilla.gnome.org/show_bug.cgi?id=542087"
+		>542087 - Graphical glitches after "change scroll region"</a></li>
+	<li>One of its duplicates: <a href="https://bugzilla.gnome.org/show_bug.cgi?id=54208://bugzilla.gnome.org/show_bug.cgi?id=686097"
+		>686097 - screen not redrawn correctly when using mosh</a></li>
+	<li>Fedora bugzilla including mentioned rebuild script:
+		<a href="https://bugzilla.redhat.com/show_bug.cgi?id=1080662#c1">RHBZ #1080662</a></li>
+	<li>vte upstream commit <a href="https://git.gnome.org/browse/vte/commit/?id=88e8e89560a62d0981ce2b18974a230d0a07dbdd"
+		>88e8e89 widget: Fix invalidation region</a></li>
+	</ul>
+	</p>
+  </dd>
+
   <dt>Q: I'm getting "mosh requires a UTF-8 locale." How can I fix this?</dt>
 
         <dd><p>To diagnose the problem, run <code>locale</code> on the local
