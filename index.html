@@ -759,6 +759,27 @@ remote servers "feel" more like the local machine!</p>
   room for improvement in many network user interfaces from the
   application of these values.</p></dd>
 
+  <dt>Q: I'm using gnome-terminal or xfce4-terminal and seeing glitches in the last line of the terminal. Sometimes they go away when I select the text.</dt>
+
+  <dd><p>This is a bug in some versions of VTE, the terminal emulation library that powers gnome-terminal, xfce4-terminal, and some other terminal emulators. The VTE maintainers have fixed this bug; please see the below referenced bugzillas and other links. Another option is to switch to a non-VTE-based terminal, such as rxvt-unicode or xterm.</p>
+
+	<p>After installing a fixed package, for the fix to become effective,
+	please make sure to restart <b>all</b> instances of the terminal.</p>
+
+	<p>See also:
+	<ul>
+	<li>Original (?): <a href="https://bugzilla.gnome.org/show_bug.cgi?id=542087"
+		>542087 - Graphical glitches after "change scroll region"</a></li>
+	<li>One of its duplicates: <a href="https://bugzilla.gnome.org/show_bug.cgi?id=686097"
+		>686097 - screen not redrawn correctly when using mosh</a></li>
+	<li>Fedora bugzilla including mentioned rebuild script:
+		<a href="https://bugzilla.redhat.com/show_bug.cgi?id=1080662#c1">RHBZ #1080662</a></li>
+	<li>vte upstream commit <a href="https://git.gnome.org/browse/vte/commit/?id=88e8e89560a62d0981ce2b18974a230d0a07dbdd"
+		>88e8e89 widget: Fix invalidation region</a></li>
+	</ul>
+	</p>
+  </dd>
+
   <dt>Q: I'm getting "mosh requires a UTF-8 locale." How can I fix this?</dt>
 
         <dd><p>To diagnose the problem, run <code>locale</code> on the local
