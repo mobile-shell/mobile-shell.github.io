@@ -888,13 +888,13 @@ remote servers "feel" more like the local machine!</p>
       <li>No major security vulnerabilities have <b>ever</b> been
       reported in Mosh. We define major security vulnerabilities to
       include privilege escalation, remote code execution,
-      denial-of-service by an untrusted party, etc.
+      denial-of-service by a third party, etc.
 
       <li>Two denial-of-service issues were discovered and fixed in
 	releases in 2012. One issue allowed a mosh-server to cause the
 	mosh-client to spend excess CPU (CVE-2012-2385, fixed in Mosh
 	1.2.1, released May 2012). Another issue allowed the server
-	host to cause the mosh-client to send UDP packets to an
+	host to cause the mosh-client to send UDP datagrams to an
 	incorrect address, foiling its attempt to connect (fixed in
 	Mosh 1.2.2, released July 2012).
       </ul></dd>
