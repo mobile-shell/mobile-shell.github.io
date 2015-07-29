@@ -1,6 +1,9 @@
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq libtest-html-w3c-perl
+sudo: false
+
+addons:
+  apt:
+    packages:
+    - libtest-html-w3c-perl
 
 script:
   - perl -MTest::HTML::W3C=show_detail -e 'is_valid_file("index.html") or diag_html();'
