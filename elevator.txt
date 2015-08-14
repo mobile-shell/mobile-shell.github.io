@@ -1,0 +1,61 @@
+[Mosh in a Lift, 8/22/2012, by Iain Learmonth <irl at sdf dot org> CC-BY-SA]
+[URL: gopher://sdf.org:70/0/users/irl/blog/2012-08-22-mosh-in-a-lift.md]
+
+Every quater, me and my flatmate pay about _80 to the Aberdeen City
+Council for maintainence of the lifts in our building. As I write this, I
+am trapped in one of these lifts. It appears that none of the buttons
+work except for the alarm button. You'd think this would connect you to
+an operator somewhere who would dispatch a repair team, but no. This
+sounds a loud alarm and nothing else.
+
+I have used the button many times so far, I'm about 20 minutes in, but I
+have no idea if anyone heard it or even knew what it was when they did. I
+certainly had no idea that was the noise that the lift made when someone
+needed assistance.
+
+Why would you build a metal box, which shields almost all radio from
+working, and not put a telephone in it? I have managed to get a few text
+messages to my flatmate who hopefully has phoned the council.
+Unfortunately, the message asking him to phone the council has not been
+sent yet, but he knows I'm trapped in a lift and have barely any signal.
+I have literally only been able to send two text messages in the time
+I've been in here.
+
+I've started to settle in now. I've got my stuff arranged on the floor
+and I'm sat here quite happily typing away, but I can't help but wonder
+what I'm going to do when I need to take a piss.
+
+**The following was written once I left the lift.**
+
+After the first hour, I started to panic a bit. The alarm button wasn't
+getting anyone's attention except for two people who used the other lift
+at some point that started to mock me for being stuck in the lift. Wtf?
+After pacing up and down in this lift, dispite the lack of pacing space,
+I decided it was time to try other methods of contacting the outside
+world.
+
+I'm still in a metal box, but at this point the lift had moved to be
+close enough to my flat to connect to the wifi. My first thought was
+Twitter although this was pretty much a non-starter. The interface
+wouldn't load properly in the web browser and I imagine I was seeing
+quite heavy packet loss. Once I left the lift, I could see the tweet had
+posted, but while in the lift I had no confirmation of it at all.
+
+Then, [mosh][] and the [SDF MetaArray][] to the rescue. mosh can cope
+with this high level of packet loss and worked a hell of a lot better
+than I'd expected to. I managed to get logged in to the SDF MetaArray,
+open mutt and send an email. Within minutes, the fire brigade had been
+called and were on their way to rescue me.
+
+Then, the lift started working again miraculously and let me out. I was
+sitting on the floor so I just threw my MacBook, hoody and bag out of the
+lift and jumped after them. As I did, the door to the lift closed behind
+me. The fire brigade arrived and tested the lifts were working, but I
+took the stairs back up to the flat. I think it'll be a while until I
+trust those lifts again. I might look into boosting the signal on my WiFi
+access point so that I can use mosh again if this happens to occur again.
+
+[mosh]: http://mosh.mit.edu/
+[SDF MetaArray]: http://sdf.org/?tutorials/metaarray
+
+
