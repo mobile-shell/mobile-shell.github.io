@@ -204,6 +204,74 @@ packet loss) helps Iain Learmonth <a href="elevator.txt">escape from an elevator
     <h2 id="binaries">Install from your package manager</h2>
   </div>
 
+  <!-- OSX / Darwin -->
+  <div class="row">
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.apple.com"><img class="logo" src="macosx.png" alt=""></a>OS X <small>10.5 or later</small></h3>
+      <div class="prelike">OS X 10.9 or later: <a href="https://mosh.mit.edu/mosh-1.2.5.pkg"><img src="dmg.png" alt=""> mosh-1.2.5.pkg</a>.</div>
+      <br />
+      <div class="prelike">OS X 10.5&ndash;10.9: <a href="https://mosh.mit.edu/mosh-1.2.5-leopard.pkg"><img src="dmg.png" alt=""> mosh-1.2.5-leopard.pkg</a>.</div>
+      <p><small>This is a standalone OS X package that will work on any supported Macintosh.  However, if you are using a package manager such as Homebrew or MacPorts, we suggest using it to get Mosh, for better compatibility and automatic updates.</small></p>
+    </div>
+
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://mxcl.github.com/homebrew/"><img class="logo" src="homebrew2.png" alt=""></a>Homebrew <small>OS X 10.5 or later</small></h3>
+            <pre>$ brew install mobile-shell</pre>
+      <br />
+    </div>
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.macports.org"><img class="logo" src="macports.png" alt=""></a>MacPorts <small>OS X 10.5 or later</small></h3>
+            <pre>$ sudo port install mosh</pre>
+      <br />
+    </div>
+  </div>
+
+  <!-- Windows -->
+  <div class="row">
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><img class="logo" src="windows.png" alt="">Windows</h3>
+      <div class="prelike">
+        <img src="mosh-chrome.png" alt="" style="height: 24px; width: 24px; display:inline-block; vertical-align:middle">
+        &nbsp;
+        Install <a href="https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj">Mosh for Chrome.</a>
+      </div>
+      <p><small>There is no "native" mosh executable for Windows available at this time. The <a href="https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj">Chrome version of Mosh</a> is the easiest way to use mosh on Windows.</small></p>
+    </div>
+  
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.cygwin.com"><img class="logo" src="Cygwin_logo.svg" width="50" height="50" alt=""></a>Cygwin</h3>
+      <pre>C:\&gt; setup.exe -q mobile-shell</pre>
+      <p><small>Mosh on Cygwin uses OpenSSH and is suitable for Windows users with advanced SSH configurations.
+	  <br />
+	  Mosh is not compatible with Cygwin's built-in Windows Console terminal emulation.  You will need to run Mosh from a full-featured terminal program such as mintty, rxvt, PuTTY, or an X11 terminal emulator.</small></p>
+    </div>
+  </div>
+
+  <!-- Google / Mobile platforms -->
+  <div class="row">
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.android.com/"><img class="logo" src="Android_Robot_100.png" alt=""></a>Android</h3>
+      <div class="prelike">
+        <img src="JuiceSSH.png" alt="" style="height: 24px; width: 24px; display:inline-block; vertical-align:middle">
+        &nbsp;
+        <a href="https://play.google.com/store/apps/details?id=com.sonelli.juicessh">Install JuiceSSH from the Play Store</a>
+        <br /><br />
+        or...<br />
+        <br />
+        Install the <a href="http://dan.drown.org/android/mosh/">port by Daniel Drown</a>, built on Irssi ConnectBot.</div>
+      <br />
+    </div>
+
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.google.com/chrome"><img class="logo" src="chrome.png" alt=""></a>Chrome / Chrome OS</h3>
+      <div class="prelike">
+        <img src="mosh-chrome.png" alt="" style="height: 24px; width: 24px; display:inline-block; vertical-align:middle">
+        &nbsp;
+        Install <a href="https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj">Mosh for Chrome.</a>
+      </div>
+    </div>
+  </div>
+
   <!-- Linux -->
   <div class="row">
     <div class="span4" style="vertical-align: top;">
@@ -264,80 +332,12 @@ packet loss) helps Iain Learmonth <a href="elevator.txt">escape from an elevator
     </div>
   </div>
 
-  <!-- OSX / Darwin -->
-  <div class="row">
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.apple.com"><img class="logo" src="macosx.png" alt=""></a>OS X <small>10.5 or later</small></h3>
-      <div class="prelike">OS X 10.9 or later: <a href="https://mosh.mit.edu/mosh-1.2.5.pkg"><img src="dmg.png" alt=""> mosh-1.2.5.pkg</a>.</div>
-      <br />
-      <div class="prelike">OS X 10.5&ndash;10.9: <a href="https://mosh.mit.edu/mosh-1.2.5-leopard.pkg"><img src="dmg.png" alt=""> mosh-1.2.5-leopard.pkg</a>.</div>
-      <p><small>This is a standalone OS X package that will work on any supported Macintosh.  However, if you are using a package manager such as Homebrew or MacPorts, we suggest using it to get Mosh, for better compatibility and automatic updates.</small></p>
-    </div>
-
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://mxcl.github.com/homebrew/"><img class="logo" src="homebrew2.png" alt=""></a>Homebrew <small>OS X 10.5 or later</small></h3>
-            <pre>$ brew install mobile-shell</pre>
-      <br />
-    </div>
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.macports.org"><img class="logo" src="macports.png" alt=""></a>MacPorts <small>OS X 10.5 or later</small></h3>
-            <pre>$ sudo port install mosh</pre>
-      <br />
-    </div>
-  </div>
-
   <!-- Other UNIXes -->
   <div class="row">
     <div class="span4" style="vertical-align: top;">
       <h3 class="callout"><a href="http://www.opencsw.org"><img class="logo" src="opencsw.png" alt=""></a>OpenCSW <small>Solaris 10 Update 8 or later</small></h3>
       <pre># pkgutil -i mosh</pre>
       <br />
-    </div>
-  </div>
-
-  <!-- Google / Mobile platforms -->
-  <div class="row">
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.android.com/"><img class="logo" src="Android_Robot_100.png" alt=""></a>Android</h3>
-      <div class="prelike">
-        <img src="JuiceSSH.png" alt="" style="height: 24px; width: 24px; display:inline-block; vertical-align:middle">
-        &nbsp;
-        <a href="https://play.google.com/store/apps/details?id=com.sonelli.juicessh">Install JuiceSSH from the Play Store</a>
-        <br /><br />
-        or...<br />
-        <br />
-        Install the <a href="http://dan.drown.org/android/mosh/">port by Daniel Drown</a>, built on Irssi ConnectBot.</div>
-      <br />
-    </div>
-
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.google.com/chrome"><img class="logo" src="chrome.png" alt=""></a>Chrome / Chrome OS</h3>
-      <div class="prelike">
-        <img src="mosh-chrome.png" alt="" style="height: 24px; width: 24px; display:inline-block; vertical-align:middle">
-        &nbsp;
-        Install <a href="https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj">Mosh for Chrome.</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Windows -->
-  <div class="row">
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><img class="logo" src="windows.png" alt="">Windows</h3>
-      <div class="prelike">
-        <img src="mosh-chrome.png" alt="" style="height: 24px; width: 24px; display:inline-block; vertical-align:middle">
-        &nbsp;
-        Install <a href="https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj">Mosh for Chrome.</a>
-      </div>
-      <p><small>There is no "native" mosh executable for Windows available at this time. The <a href="https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj">Chrome version of Mosh</a> is the easiest way to use mosh on Windows.</small></p>
-    </div>
-  
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.cygwin.com"><img class="logo" src="Cygwin_logo.svg" width="50" height="50" alt=""></a>Cygwin</h3>
-      <pre>C:\&gt; setup.exe -q mobile-shell</pre>
-      <p><small>Mosh on Cygwin uses OpenSSH and is suitable for Windows users with advanced SSH configurations.
-	  <br />
-	  Mosh is not compatible with Cygwin's built-in Windows Console terminal emulation.  You will need to run Mosh from a full-featured terminal program such as mintty, rxvt, PuTTY, or an X11 terminal emulator.</small></p>
     </div>
   </div>
 
