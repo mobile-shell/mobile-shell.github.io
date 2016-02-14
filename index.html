@@ -199,80 +199,13 @@ packet loss) helps Iain Learmonth <a href="elevator.txt">escape from an elevator
 <section id="getting">
   <div class="page-header">
     <h1>Getting Mosh</h1>
-    <small>The Mosh package should be installed on both the client and server. Please find your platform below for installation instructions.</small>
+    <p>The Mosh package should be installed on both the client and server. Please find your platform below for installation instructions.</p>
+    
+    <h2 id="binaries">Install from your package manager</h2>
   </div>
 
-  <div id="binaries" class="row-fluid">
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png" alt=""></a>Ubuntu <small>12.04 and later</small></h3>
-            <pre>$ sudo apt-get install mosh</pre>
-      <p><small>The <a href="https://launchpad.net/~keithw/+archive/ubuntu/mosh-dev">ppa:keithw/mosh-dev</a> PPA tracks the development version of Mosh.</small></p>
-                  <br />
-    </div>
-
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.debian.org"><img class="logo" src="debian.png" alt=""></a>Debian <small>squeeze-backports and later</small><br /></h3>
-            <pre>$ sudo apt-get install mosh</pre>
-    </div>
-
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.fedoraproject.org"><img class="logo" src="fedora.png" alt=""></a>Fedora <small>15 or later</small></h3>
-            <pre>$ sudo yum install mosh</pre>
-    </div>
-  </div>
-
+  <!-- OSX / Darwin -->
   <div class="row">
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.gentoo.org"><img class="logo" src="gentoo.png" alt=""></a> Gentoo</h3>
-            <pre># emerge net-misc/mosh</pre>
-      <br />
-    </div>
-
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.archlinux.org"><img class="logo" src="arch.png" alt=""></a> Arch Linux</h3>
-            <pre># pacman -S mosh</pre>
-      <br />
-    </div>
-
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.freebsd.org"><img class="logo" src="freebsd.png" alt=""></a> FreeBSD</h3>
-            <pre># pkg install net/mosh</pre>
-      <br />
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.opensuse.org"><img class="logo" src="openSUSE.png" alt=""></a> openSUSE <small>12.3 or later</small></h3>
-            <pre>$ sudo zypper in mosh</pre>
-      <br />
-    </div>
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.netbsd.org"><img class="logo" src="NetBSD-smaller-tb.png" alt=""></a>NetBSD <small>(pkgsrc)</small></h3>
-      <pre># cd net/mosh; make install clean</pre>
-      <br />
-    </div>
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.android.com/"><img class="logo" src="Android_Robot_100.png" alt=""></a>Android</h3>
-      <div class="prelike">
-        <img src="JuiceSSH.png" alt="" style="height: 24px; width: 24px; display:inline-block; vertical-align:middle">
-        &nbsp;
-        <a href="https://play.google.com/store/apps/details?id=com.sonelli.juicessh">Install JuiceSSH from the Play Store</a>
-        <br /><br />
-        or...<br />
-        <br />
-        Install the <a href="http://dan.drown.org/android/mosh/">port by Daniel Drown</a>, built on Irssi ConnectBot.</div>
-      <br />
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.cygwin.com"><img class="logo" src="Cygwin_logo.svg" width="50" height="50" alt=""></a>Cygwin</h3>
-      <div class="prelike">Install the <a href="http://cygwin.com/install.html">Cygwin package</a> from the Cygwin setup.exe.</div>
-      <br />
-    </div>
-
     <div class="span4" style="vertical-align: top;">
       <h3 class="callout"><a href="http://www.apple.com"><img class="logo" src="macosx.png" alt=""></a>OS X <small>10.5 or later</small></h3>
       <div class="prelike">OS X 10.9 or later: <a href="https://mosh.mit.edu/mosh-1.2.5.pkg"><img src="dmg.png" alt=""> mosh-1.2.5.pkg</a>.</div>
@@ -286,18 +219,110 @@ packet loss) helps Iain Learmonth <a href="elevator.txt">escape from an elevator
             <pre>$ brew install mobile-shell</pre>
       <br />
     </div>
-  </div>
-
-  <div class="row">
     <div class="span4" style="vertical-align: top;">
       <h3 class="callout"><a href="http://www.macports.org"><img class="logo" src="macports.png" alt=""></a>MacPorts <small>OS X 10.5 or later</small></h3>
             <pre>$ sudo port install mosh</pre>
       <br />
     </div>
+  </div>
+
+  <!-- Windows -->
+  <div class="row">
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><img class="logo" src="windows.png" alt="">Windows</h3>
+      <div class="prelike">
+        <img src="mosh-chrome.png" alt="" style="height: 24px; width: 24px; display:inline-block; vertical-align:middle">
+        &nbsp;
+        Install <a href="https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj">Mosh for Chrome.</a>
+      </div>
+      <p><small>There is no "native" mosh executable for Windows available at this time. The <a href="https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj">Chrome version of Mosh</a> is the easiest way to use mosh on Windows.</small></p>
+    </div>
+  
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.cygwin.com"><img class="logo" src="Cygwin_logo.svg" width="50" height="50" alt=""></a>Cygwin</h3>
+      <pre>C:\&gt; setup.exe -q mobile-shell</pre>
+      <p><small>Mosh on Cygwin uses OpenSSH and is suitable for Windows users with advanced SSH configurations.
+	  <br />
+	  Mosh is not compatible with Cygwin's built-in Windows Console terminal emulation.  You will need to run Mosh from a full-featured terminal program such as mintty, rxvt, PuTTY, or an X11 terminal emulator.</small></p>
+    </div>
+  </div>
+
+  <!-- Google / Mobile platforms -->
+  <div class="row">
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.android.com/"><img class="logo" src="Android_Robot_100.png" alt=""></a>Android</h3>
+      <div class="prelike">
+        <img src="JuiceSSH.png" alt="" style="height: 24px; width: 24px; display:inline-block; vertical-align:middle">
+        &nbsp;
+        <a href="https://play.google.com/store/apps/details?id=com.sonelli.juicessh">Install JuiceSSH from the Play Store</a>
+        <br /><br />
+        or...<br />
+        <br />
+        Install the <a href="http://dan.drown.org/android/mosh/">port by Daniel Drown</a>, built on Irssi ConnectBot.</div>
+      <br />
+    </div>
 
     <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.opencsw.org"><img class="logo" src="opencsw.png" alt=""></a>OpenCSW <small>Solaris 10 Update 8 or later</small></h3>
-      <pre># pkgutil -i mosh</pre>
+      <h3 class="callout"><a href="http://www.google.com/chrome"><img class="logo" src="chrome.png" alt=""></a>Chrome / Chrome OS</h3>
+      <div class="prelike">
+        <img src="mosh-chrome.png" alt="" style="height: 24px; width: 24px; display:inline-block; vertical-align:middle">
+        &nbsp;
+        Install <a href="https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj">Mosh for Chrome.</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Linux -->
+  <div class="row">
+    <div class="span4" style="vertical-align: top;">
+        <h3 class="callout"><a href="http://www.alpinelinux.org"><img class="logo" src="alpinelinux-logo.png" alt=""></a>Alpine Linux</h3>
+      <pre># apk add mosh</pre>
+        <br />
+    </div>
+
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.archlinux.org"><img class="logo" src="arch.png" alt=""></a> Arch Linux</h3>
+            <pre># pacman -S mosh</pre>
+      <br />
+    </div>
+
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.debian.org"><img class="logo" src="debian.png" alt=""></a>Debian <small>squeeze-backports and later</small><br /></h3>
+            <pre>$ sudo apt-get install mosh</pre>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.fedoraproject.org"><img class="logo" src="fedora.png" alt=""></a>Fedora <small>15 or later</small></h3>
+            <pre>$ sudo yum install mosh</pre>
+    </div>
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.gentoo.org"><img class="logo" src="gentoo.png" alt=""></a> Gentoo</h3>
+            <pre># emerge net-misc/mosh</pre>
+      <br />
+    </div>
+
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.opensuse.org"><img class="logo" src="openSUSE.png" alt=""></a> openSUSE <small>12.3 or later</small></h3>
+            <pre>$ sudo zypper in mosh</pre>
+      <br />
+    </div>
+  </div>
+  <div class="row">
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.ubuntu.com"><img class="logo" src="ubuntu.png" alt=""></a>Ubuntu <small>12.04 and later</small></h3>
+            <pre>$ sudo apt-get install mosh</pre>
+      <p><small>The <a href="https://launchpad.net/~keithw/+archive/ubuntu/mosh-dev">ppa:keithw/mosh-dev</a> PPA tracks the development version of Mosh.</small></p>
+                  <br />
+    </div>
+  </div>
+
+
+  <!-- *BSD -->
+  <div class="row">
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.freebsd.org"><img class="logo" src="freebsd.png" alt=""></a> FreeBSD</h3>
+            <pre># pkg install net/mosh</pre>
       <br />
     </div>
 
@@ -306,13 +331,19 @@ packet loss) helps Iain Learmonth <a href="elevator.txt">escape from an elevator
       <pre># pkg_add mosh</pre>
         <br />
     </div>
+
     <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="http://www.google.com/chrome"><img class="logo" src="chrome.png" alt=""></a>Chrome / Chrome OS</h3>
-      <div class="prelike">
-        <img src="mosh-chrome.png" alt="" style="height: 24px; width: 24px; display:inline-block; vertical-align:middle">
-        &nbsp;
-        Install <a href="https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj">Mosh for Chrome.</a>
-      </div>
+      <h3 class="callout"><a href="http://www.netbsd.org"><img class="logo" src="NetBSD-smaller-tb.png" alt=""></a>NetBSD <small>(pkgsrc)</small></h3>
+      <pre># cd net/mosh; make install clean</pre>
+    </div>
+  </div>
+
+  <!-- Other UNIXes -->
+  <div class="row">
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="http://www.opencsw.org"><img class="logo" src="opencsw.png" alt=""></a>OpenCSW <small>Solaris 10 Update 8 or later</small></h3>
+      <pre># pkgutil -i mosh</pre>
+      <br />
     </div>
   </div>
 
