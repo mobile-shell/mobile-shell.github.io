@@ -907,10 +907,13 @@ remote servers "feel" more like the local machine!</p>
   <dt>Q: I'm getting 'mosh-server not found'.</dt>
 
   <dd><p>Please make sure that mosh is installed on the client, and
-  mosh (or at least mosh-server) is installed on the server you
-  are trying to connect to. If you install mosh-server in your
-  home directory, please see the "Server binary outside path"
-  instructions in the Usage section, above.</p></dd>
+  mosh (or at least mosh-server) is installed on the server you are
+  trying to connect to.  Also, the server is expected to be available
+  on your server's default login <code>PATH</code>, which is not
+  usually true on OS X and BSD servers, or if you install mosh-server
+  in your home directory.  In these cases please see the "Server
+  binary outside path" instructions in the Usage section,
+  above.</p></dd>
 
   <dt>Q: SSH authenticates using Kerberos tickets, but Mosh asks me for a password.</dt>
         <dd><p>In some configurations, SSH canonicalizes the hostname
@@ -938,6 +941,18 @@ remote servers "feel" more like the local machine!</p>
   <dd><p>Make sure you are running mosh in a terminal that
   advertises itself as 256-color capable. (This generally means
   TERM will be xterm-256color or screen-256color-bce.)</p></dd>
+
+  <dt>Q: How do I type C-^, Mosh's default escape character?</dt>
+
+  <dd><p>On keyboards with the United States layout, this can be typed
+  as Ctrl-Shift-6, or often as Ctrl-6 (this depends on your OS and
+  terminal emulator).  On non-US keyboards, it is often hard to find
+  the right key, and sometimes it's not available at all.  If your
+  keyboard has a dead key with an accent-circumflex, this is not
+  likely to be the right key.  Ctrl-6 sometimes works, though.  If you
+  are unable to type this character, you will need to set
+  the <code>MOSH_ESCAPE_KEY</code> variable; see the Mosh man page for
+  details.</p></dd>
 
   <dt>Q: What is Mosh's security track record so far?</dt>
 
