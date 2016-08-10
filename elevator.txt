@@ -55,7 +55,7 @@ took the stairs back up to the flat. I think it'll be a while until I
 trust those lifts again. I might look into boosting the signal on my WiFi
 access point so that I can use mosh again if this happens to occur again.
 
-[mosh]: http://mosh.mit.edu/
+[mosh]: http://mosh.org/
 [SDF MetaArray]: http://sdf.org/?tutorials/metaarray
 
 
