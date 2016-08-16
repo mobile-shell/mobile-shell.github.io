@@ -4,6 +4,7 @@ addons:
   apt:
     packages:
     - libtest-html-w3c-perl
+    - libxml-xpath-perl
 
 script:
   - perl -MTest::HTML::W3C=show_detail -e 'is_valid_file("index.html") or diag_html();'
