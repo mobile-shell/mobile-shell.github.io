@@ -1,10 +1,10 @@
 sudo: false
+language: java
+jdk:
+  - oraclejdk8
 
-addons:
-  apt:
-    packages:
-    - libtest-html-w3c-perl
-    - libxml-xpath-perl
+install:
+  - pip install --user html5validator
 
 script:
-  - perl -MTest::HTML::W3C=show_detail -e 'is_valid_file("index.html") or diag_html();'
+  - html5validator --root .
