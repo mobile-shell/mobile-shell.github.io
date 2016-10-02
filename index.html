@@ -400,14 +400,17 @@ $ make
       <div class="row-fluid">
         <div class="span12">
           <h3 class="callout">Dependencies</h3><br>
+	  <code>debian/control</code> (in Git) includes an authoritative list of build dependencies.
           <table class="table table-striped" style="width: 100%;">
                   <thead><tr><th>Name</th><th>Typical package</th></tr></thead>
-                  <tr class="deps"><td><a href="https://github.com/google/protobuf">Protocol Buffers</a></td><td>protobuf-compiler, libprotobuf-dev</td></tr>
+                  <tr class="deps"><td>Perl (5.14 or newer)</td><td>perl</td></tr>
+		  <tr><td><a href="https://github.com/google/protobuf">Protocol Buffers</a></td><td>protobuf-compiler, libprotobuf-dev</td></tr>
                   <tr><td>ncurses</td><td>libncurses5-dev</td></tr>
                   <tr><td>zlib</td><td>zlib1g-dev</td></tr>
                   <tr><td>utempter (optional)</td><td>libutempter-dev</td></tr>
             <tr><td>OpenSSL</td><td>libssl-dev</td></tr>
           </table>
+	  Additionally, <code>pkg-config</code> is a build-only dependency on most systems.
         </div>
       </div>
     </div>
