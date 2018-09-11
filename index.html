@@ -1060,6 +1060,18 @@ are tracking this issue; see <a
   <dd><p>Not that we know of&mdash;Mosh uses OCB3. The authors of the
 paper write that the attack is not applicable to OCB3.</p></dd>
 
+  <dt>Q: Why does mosh use AES-128 for a session-key, not AES-192 or AES-256?</dt>
+
+  <dd>
+    <ul>
+      <li>AES-128 is more than an adequate key length for a session key.</li>
+
+      <li>The <a href="https://web.cs.ucdavis.edu/~rogaway/ocb/ocb-faq.htm#what-blockcipher">OCB FAQ</a> recommends AES-128.</li>
+
+      <li>AES-128 is a bit nicer and is not subject to the related-key attacks that afflict AES-192 and AES-256. (Schneier: "the key schedule for 256-bit version is pretty lousy -- something we pointed out in our 2000 paper -- but doesn't extend to AES with a 128-bit key." See <a href="https://www.schneier.com/blog/archives/2009/07/another_new_aes.html">this blog post</a>.)</li>
+    </ul>
+  </dd>
+
   <dt>Q: Does mosh work with Amazon EC2?</dt>
 
   <dd><p>Yes, it works great, but please remember to open up UDP ports 60000&ndash;61000 on the EC2 firewall.</p></dd>
