@@ -610,7 +610,7 @@ in <a href="https://www.usenix.org/publications/login">USENIX
       state of any object from one host to another. Datagrams
       are encrypted and authenticated
       using <a href="http://www.cs.ucdavis.edu/~rogaway/ocb/">AES-128
-      in OCB mode</a>. While SSP takes care of the networking
+      in OCB3 mode</a>. While SSP takes care of the networking
       protocol, it is the implementation of the object being
       synchronized that defines the ultimate semantics of the
       protocol.</p>
@@ -1054,6 +1054,11 @@ are tracking this issue; see <a
       weaknesses of SSH&mdash;at least insofar as they affect the
       brief SSH session that is used to set up a long-running Mosh
       session.</p></dd>
+
+  <dt>Q: Is Mosh affected by the 2018 <a href="https://eprint.iacr.org/2018/1040.pdf">attacks against the OCB2 cipher mode</a>?</dt>
+
+  <dd><p>Not that we know of&mdash;Mosh uses OCB3. The authors of the
+paper write that the attack is not applicable to OCB3.</p></dd>
 
   <dt>Q: Does mosh work with Amazon EC2?</dt>
 
