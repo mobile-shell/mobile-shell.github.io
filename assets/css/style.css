@@ -1,10 +1,10 @@
 body {
-  padding-top: 60px;
-  padding-bottom: 40px;
+  padding-top: 3.75rem;
+  padding-bottom: 2.5rem;
 }
 
 section {
-  padding-top: 25px;
+  padding-top: 1.563rem;
 }
 
 .hero-titles {
@@ -12,26 +12,26 @@ section {
 }
 
 #getting #binaries h3 {
-  height: 62px;
+  height: 3.875rem;
 }
 
 .logo {
-  padding: 8px;
-  max-height: 50px;
+  padding: 0.5rem;
+  max-height: 3.125rem;
 }
 
 .prelike {
   display: block;
-  padding: 8.5px;
-  margin: 0 0 9px;
-  font-size: 12.025px;
-  line-height: 18px;
+  padding: 0.531rem;
+  margin: 0 0 0.563rem;
+  font-size: 0.752rem;
+  line-height: 1.125rem;
   background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  border: 0.063rem solid #ccc;
+  border: 0.063rem solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  border-radius: 0.25rem;
   word-break: break-all;
   word-wrap: break-word;
 }
@@ -43,15 +43,15 @@ tr.inst td {
 }
 
 #about #features .row-fluid {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 #news #news-list li{
-  padding-bottom: 8px;
+  padding-bottom: 0.5rem;
 }
 
 dd {
-  padding-bottom: 9px;
+  padding-bottom: 0.563rem;
 }
 
 #techinfo dl {
