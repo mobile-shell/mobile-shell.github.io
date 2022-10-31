@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+   <title> [mosh-users] mosh 1.4.0 released
+   </title>
+   <link rel="Index" href="https://mailman.mit.edu/pipermail/mosh-users/2022-October/index.html">
+   <link rel="made" href="mailto:mosh-users%40mit.edu?Subject=Re%3A%20%5Bmosh-users%5D%20mosh%201.4.0%20released&amp;In-Reply-To=%3CCAMzhQmOyvd2x5c_ZjQEBYZbzb0Cq2tXz5NN_SAOyPd2aPa6SoA%40mail.gmail.com%3E">
+   <meta name="robots" content="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   
+   
+ </head>
+ <body bgcolor="#ffffff">
+   <h1>[mosh-users] mosh 1.4.0 released</h1>
+    <b>Keith Winstein</b> 
+    <a href="mailto:mosh-users%40mit.edu?Subject=Re%3A%20%5Bmosh-users%5D%20mosh%201.4.0%20released&amp;In-Reply-To=%3CCAMzhQmOyvd2x5c_ZjQEBYZbzb0Cq2tXz5NN_SAOyPd2aPa6SoA%40mail.gmail.com%3E" title="[mosh-users] mosh 1.4.0 released">keithw at cs.stanford.edu
+       </a><br>
+    <i>Mon Oct 31 08:59:06 EDT 2022</i>
+    <p></p><ul>
+        
+        
+         <li> <b>Messages sorted by:</b> 
+              <a href="https://mailman.mit.edu/pipermail/mosh-users/2022-October/date.html#398">[ date ]</a>
+              <a href="https://mailman.mit.edu/pipermail/mosh-users/2022-October/thread.html#398">[ thread ]</a>
+              <a href="https://mailman.mit.edu/pipermail/mosh-users/2022-October/subject.html#398">[ subject ]</a>
+              <a href="https://mailman.mit.edu/pipermail/mosh-users/2022-October/author.html#398">[ author ]</a>
+         </li>
+       </ul>
+    <hr>  
+<!--beginarticle-->
+<pre>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Hello Mosh users and developers,
+
+The Mosh team is pleased to announce the long-awaited 1.4.0 release.
+This is our first release in five years and marks ten years since
+Mosh 1.0.
+
+The source code is at: <a href="https://mosh.org/mosh-1.4.0.tar.gz">https://mosh.org/mosh-1.4.0.tar.gz</a>
+(SHA-256: 872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd)
+
+Release managers were Alex Chernyakhovsky and Benjamin Barenblat, with
+major contributions from Wolfgang Sanyer, John Hood, and Anders Kaseorg.
+
+Compatability: Mosh 1.4.0 is backwards-compatible with mosh-clients
+back to 0.96 and mosh-servers back to 1.0.9.
+
+Bugs: Please let us know of any problems at the GitHub issue tracker,
+at <a href="https://github.com/mobile-shell/mosh/issues.">https://github.com/mobile-shell/mosh/issues.</a> The developers can
+also be found on IRC at &lt;<a href="irc://irc.libera.chat/mosh">irc://irc.libera.chat/mosh</a>&gt;.
+
+Summary: This release has a mix of bug fixes and new features.
+
+New features:
+
+- -    Support OSC 52 clipboard copy integration (Alex Cornejo)
+- -    Allow non-inserting prediction (--predict-overwrite) (John Hood)
+- -    Don't do prediction on large pastes into mosh-client (John Hood)
+- -    Add true color support (Kang Jianbin)
+- -    Add syslog logging of connections (Tom Judge)
+- -    If exec()ing the remote command fails, pause briefly (John Hood)
+
+Bug fixes:
+
+- -    ignore unknown renditions (Keith Winstein)
+- -    Overlays were getting set to the wrong colors (John Hood)
+- -    Fix issue with incorrect true-color background erase colors (John Hood)
+- -    Use HAVE_UTEMPTER instead of HAVE_UPTEMPTER (Michael Jarvis)
+- -    Apply latest consecutive resize, not earliest (Peter Edwards)
+- -    Use CLOCK_MONOTONIC_RAW when available (Harry Sintonen)
+- -    Add tmux and alacritty to title_term_types (Naïm Favier)
+- -    Don't sometimes hang just after launching ssh (Kalle Samuels)
+
+Internal changes:
+
+- -    Reformat printed strings in source (John Hood)
+- -    Code cleanups (John Hood, Anders Kaseorg, Benjamin Barenblat, Alex Chernyakhovsky)
+- -    Always use non-blocking sockets for recvmsg() (John Hood)
+- -    Add Perl compile (John Hood)
+- -    Improvements to the test suite (John Hood)
+- -    Fixes to autoconf configure (Anders Kaseorg)
+- -    Cleanups to our cryptography code (Benjamin Barenblat, Alex Chernyakhovsky)
+
+Infrastructure changes:
+
+- -    Add support for OCLint static checker (John Hood)
+- -    Switch from Travis-CI to Github Actions (Wolfgang E. Sanyer, Alex Chernyakhovsky)
+- -    Add code coverage and fuzzing infrastructure (Alex Chernyakhovsky)
+
+For more details: <a href="https://github.com/mobile-shell/mosh/releases/tag/mosh-1.4.0">https://github.com/mobile-shell/mosh/releases/tag/mosh-1.4.0</a>
+
+Legal: Mosh is distributed under the GNU General Public License
+version 3 or later, with exceptions related to OpenSSL and iOS. Mosh
+is a registered trademark.
+
+Best regards on behalf of the Mosh team,
+Keith Winstein
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEsaRwaRIfZkK7PX8+ILcoOv4lTGkFAmNfxjgACgkQILcoOv4l
+TGkaKA//eWoI0bgZfvDRod99IugUF8sUORIvTFXKeVw23JyEaapK4/DPFZG0eTEM
+z4Xx1Pydwpd6J7/a4T2/bwAt1R1+otvuN/4tal8Ri6ED4Qnk+1AxgzNCpx3Jzjc/
+LDmT1nE2pjyEeTaWMDBTHkm0m52gAwk9Vw6SX6vhej4Xu8K2CkLS/4IpIpEWpAzi
+//AZPyk/Xm5AJqRgwaQrPLYvqicTvgMdcAcA8ChvW8KjsU7K82l82CkpykO/VtLv
+hWEYUk+Aqzr0JU2XBHuWC9clSJn89Vl4wCHZJLc4QQ3hXbW8YTeT5tGhbQOGXNdD
+LmAcvCR88rgVzK2mkrdKxeoL0f0BO1QsRUGirYG4IW+/yKHAtfXvlEgwnOsa1Wqa
+IfrBmiqCDmRXFej8I5MkJ3bj1ZRdIPUudbonAptRolDrME+e9xC2d2H9oGqbLiaD
+MewsPcQg4NxbsCHwtyteFci+ttUnboaK9TQFSyh1qwbD04YL3W9P2Zly5DRo3yXL
+2rxDxboB2jlPrJfc2dUvSXjODPixFwoPO0Xn0w9K55VaELCHaI5GEb+ZLAyceOnY
+QiDqF3RKE0hGX8nygVEcoBQj2dyGQBDKI5F3HESU86Z2M2Dl7NeemqBdoIFcaNcT
+4iKUMynCRENMRIhaW0g+oOfHgdFeKswhMLejGPsgtn96GlVNGQg=
+=CQws
+-----END PGP SIGNATURE-----
+
+</pre>
+
+<!--endarticle-->
+    <hr>
+    <p></p><ul>
+        <!--threads-->
+	
+	
+         <li> <b>Messages sorted by:</b> 
+              <a href="https://mailman.mit.edu/pipermail/mosh-users/2022-October/date.html#398">[ date ]</a>
+              <a href="https://mailman.mit.edu/pipermail/mosh-users/2022-October/thread.html#398">[ thread ]</a>
+              <a href="https://mailman.mit.edu/pipermail/mosh-users/2022-October/subject.html#398">[ subject ]</a>
+              <a href="https://mailman.mit.edu/pipermail/mosh-users/2022-October/author.html#398">[ author ]</a>
+         </li>
+       </ul>
+
+<hr>
+<a href="https://mailman.mit.edu/mailman/listinfo/mosh-users">More information about the mosh-users
+mailing list</a><br>
+
+</body></html>
